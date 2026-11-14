@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practice Quiz",
+    "section": "",
+    "text": "Answer each question, then check the Hint and Solution tabs if you need help."
+  },
+  {
+    "objectID": "index.html#question-1",
+    "href": "index.html#question-1",
+    "title": "Practice Quiz",
+    "section": "Question 1",
+    "text": "Question 1\n\nQuestionHintSolution\n\n\nWhat is the value of \\(3 + 4 \\times 2\\)?\n\n A. 14  B. 11  C. 10  D. 9\n\n\n\n\n\n\n\n\n\nTipHint 1\n\n\n\n\n\nThink about the order of operations.\n\n\n\n\n\n\n\n\n\nTipHint 2\n\n\n\n\n\n\n\n\n\n\n\nAnswer: B. 11\nFollowing the order of operations (PEMDAS), do the multiplication first:\n\\(4 \\times 2 = 8\\), then \\(3 + 8 = 11\\).\n\n\n\nasdf ## Question 2\n\nQuestionHintSolution\n\n\nWhat is thasof \\(3 + 4 \\times 2\\)?\n\n A. 14  B. 11  C. 10  D. 9\n\n\n\n\n\n\n\n\n\nTipHint 1\n\n\n\n\n\nThink about the order of operations.\n\n\n\n\n\n\n\n\n\nTipHint 2\n\n\n\n\n\nMultiplication comes before addition. What is \\(4 \\times 2\\)?\n\n\n\n\n\nAnswer: B. 11\nFollowing the order of operations (PEMDAS), do the multiplication first:\n\\(4 \\times 2 = 8\\), then \\(3 + 8 = 11\\)."
+  },
+  {
+    "objectID": "index.html#submit",
+    "href": "index.html#submit",
+    "title": "Practice Quiz",
+    "section": "Submit",
+    "text": "Submit\nSubmit"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]

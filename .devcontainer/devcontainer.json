@@ -1,0 +1,16 @@
+{
+    "name": "Quarto Quiz",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "quarto.quarto",
+                "ms-vscode.live-server"
+            ]
+        }
+    },
+    // "postCreateCommand": "quarto check",
+    "remoteUser": "vscode"
+}

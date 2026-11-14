@@ -1,0 +1,69 @@
+project:
+  type: website
+
+website:
+  title: "TAC"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    html-math-method: mathjax
+
+# Runs pandoc-ext/diagram on every page in the project.
+# Install once from the project root:
+#   quarto add pandoc-ext/diagram
+filters:
+  - diagram
+
+diagram:
+  # Reuse SVGs whose TikZ hasn't changed, so renders stay fast.
+  cache: false
+  cache-dir: ./_tikz-cache
+
+  engine:
+    tikz:
+      # LaTeX engine used to compile each ```{.tikz} block.
+      # pdflatex also works; lualatex handles fonts better.
+      execpath: lualatex
+
+      header-includes: 
+        \usetikzlibrary{angles,quotes,calc,patterns, decorations.pathreplacing, arrows.meta,positioning,intersections}
+        \tikzset{
+          circ/.style     = {line width=0.9pt},
+          seg/.style      = {line width=0.9pt},
+          center dot/.style = {circle, fill, inner sep=1.3pt},
+          dim brace/.style  = {decorate, decoration={brace, amplitude=7pt, raise=4pt}, line width=0.7pt},
+          callout/.style    = {-{Stealth[length=2mm]}, line width=0.6pt},
+        }
+      # Raw TeX added to the preamble of every diagram.
+      # (additional-packages is passed through unescaped;
+      #  header-includes would escape the backslashes.)
+      additional-packages: |
+        \usepackage[margin=1in]{geometry}
+        \usepackage[T1]{fontenc}
+        \usepackage{lmodern}
+        \usepackage{amsmath,amssymb}
+        \usepackage{tikz} 
+        \usepackage{pgfplots}
+        \usepackage{tkz-euclide}
+        \pgfplotsset{compat=1.18}
+        \usetikzlibrary{angles,quotes,calc,patterns, decorations.pathreplacing, arrows.meta, supplementary, trig,positioning,intersections}
+        \tikzset{
+          circ/.style     = {line width=0.9pt},
+          seg/.style      = {line width=0.9pt},
+          center dot/.style = {circle, fill, inner sep=1.3pt},
+          dim brace/.style  = {decorate, decoration={brace, amplitude=7pt, raise=4pt}, line width=0.7pt},
+          callout/.style    = {-{Stealth[length=2mm]}, line width=0.6pt},
+        }
+        \usepackage{tasks}
+        \usepackage{caption} 
+        \usepackage{needspace}

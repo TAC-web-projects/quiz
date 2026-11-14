@@ -1,0 +1,188 @@
+---
+title: "Practice Quiz"
+format:
+  html:
+    toc: false
+---
+
+Answer each question, then check the **Hint** and **Solution** tabs if you need help.
+
+```{.tikz}
+
+\begin{tikzpicture}[scale=1]
+  \def\R{1.6}
+ 
+  % ---------------- (1) Radius ----------------
+  \begin{scope}[shift={(0,0)}]
+    \draw[circ] (0,0) circle (\R);
+    \draw[seg] (0,0) -- node[right] {$r$} (0,\R);
+    \node[center dot] at (0,0) {};
+    \node at (0,-\R-0.55) {\small (a) Radius};
+  \end{scope}
+ 
+  % ---------------- (2) Area: the r^2 square ----------------
+  \begin{scope}[shift={(4.6,0)}]
+    \draw[circ] (0,0) circle (\R);
+    % hatched r-by-r square in the upper-left quadrant
+    \fill[pattern=north east lines] (-\R,0) rectangle (0,\R);
+    \draw[seg] (-\R,0) rectangle (0,\R);
+    \node[right] at (0,\R/2) {$r$};
+    \node[below] at (-\R/2,0) {$r$};
+    \node[center dot] at (0,0) {};
+    % r^2 call-out
+    \node (lbl) at (-\R-0.6,\R+0.75) {$r^2$};
+    \draw[callout] (lbl.south east) to[bend left=25] (-\R+0.35,\R-0.35);
+    \node at (0,-\R-0.55) {\small (b) Area $=\pi r^2$};
+  \end{scope}
+ 
+  % ---------------- (3) Diameter ----------------
+  \begin{scope}[shift={(9.4,0)}]
+    \draw[circ] (0,0) circle (\R);
+    \draw[seg] (0,-\R) -- (0,\R);
+    \node[right] at (0,\R/2)  {$r$};
+    \node[right] at (0,-\R/2) {$r$};
+    \node[center dot] at (0,0) {};
+    \draw[dim brace] (\R+0.15,\R) -- node[right=11pt] {$2r$} (\R+0.15,-\R);
+    \node at (0,-\R-0.55) {\small (c) Diameter $=2r$};
+  \end{scope}
+\end{tikzpicture}
+```
+
+## Question 1
+
+::: {.panel-tabset}
+
+### Question
+
+What is the value of $3 + 4 \times 2$?
+
+<form class="quiz-question" data-question="Question 1" data-answer="b">
+<label><input type="radio" name="q1" value="a"> A. 14</label><br>
+<label><input type="radio" name="q1" value="b"> B. 11</label><br>
+<label><input type="radio" name="q1" value="c"> C. 10</label><br>
+<label><input type="radio" name="q1" value="d"> D. 9</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+Think about the order of operations.
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+```{.tikz}
+\begin{tikzpicture}
+    % (left) one quarter of the circle: two radii and the chord between their ends
+    \begin{scope}[shift={(0,0)}]  
+      \def\R{1.6}
+
+      \colorlet{sqcol}{red!65!black}     % dark red: square sides
+      \colorlet{circcol}{blue!65!black}  % dark blue: circle
+      \draw[circ] (0,0) circle (\R);
+      \draw[seg, dashed] (-\R,0) -- (0,0) -- node[below, font=\footnotesize]{$r$}(\R,0);
+      \draw[seg, dashed] (0,-\R) -- (0,\R);
+      \draw[seg]
+        (\R,0)  -- node[below=0pt, font=\footnotesize] {$x$}
+        (0,\R)  -- node[below=0pt, font=\footnotesize] {$x$}
+        (-\R,0) -- node[above=0pt, font=\footnotesize] {$x$}
+        (0,-\R) -- node[above=0pt, font=\footnotesize] {$x$}
+        cycle;
+      \node[center dot] at (0,0) {};
+      % C call-out pointing to the circle
+      \node(Clbl) at (\R+0.8,\R+0.2) {$C$};
+      \draw[callout] (Clbl) -- (45:\R+0.05);
+      \node[center dot] at (0,0) {};
+      \node[align=left] at (0,-2.6)
+      {$C > \:x+x+x+x$};
+    \end{scope}
+\end{tikzpicture}}
+```
+:::
+
+### Solution
+
+**Answer: B. 11**
+
+Following the order of operations (PEMDAS), do the multiplication first:
+
+$4 \times 2 = 8$, then $3 + 8 = 11$.
+
+:::
+
+asdf
+## Question 2
+
+::: {.panel-tabset}
+
+### Question
+
+What is thasof $3 + 4 \times 2$?
+
+<form class="quiz-question" data-question="Question 2" data-answer="b">
+<label><input type="radio" name="q1" value="a"> A. 14</label><br>
+<label><input type="radio" name="q1" value="b"> B. 11</label><br>
+<label><input type="radio" name="q1" value="c"> C. 10</label><br>
+<label><input type="radio" name="q1" value="d"> D. 9</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+Think about the order of operations.
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+Multiplication comes before addition. What is $4 \times 2$?
+:::
+
+### Solution
+
+**Answer: B. 11**
+
+Following the order of operations (PEMDAS), do the multiplication first:
+
+$4 \times 2 = 8$, then $3 + 8 = 11$.
+
+:::
+
+## Submit
+
+```{=html}
+<button id="submit-quiz" class="btn btn-primary">Submit</button>
+<div id="quiz-results" style="margin-top: 1em;"></div>
+
+<script>
+  // Stores each student's choice, keyed by question name
+  const choices = {};
+
+  // Record a choice whenever a radio button changes
+  document.querySelectorAll(".quiz-question").forEach(form => {
+    form.addEventListener("change", e => {
+      choices[form.dataset.question] = e.target.value;
+    });
+  });
+
+  // Score the quiz on submit
+  document.getElementById("submit-quiz").addEventListener("click", () => {
+    const questions = document.querySelectorAll(".quiz-question");
+    let score = 0;
+    let details = "";
+
+    questions.forEach(form => {
+      const name = form.dataset.question;
+      const picked = choices[name];
+      const correct = picked === form.dataset.answer;
+      if (correct) score++;
+      details += `<li>${name}: ${picked ? picked.toUpperCase() : "no answer"} ` +
+                 `${correct ? "✅" : "❌"}</li>`;
+    });
+
+    document.getElementById("quiz-results").innerHTML =
+      `<h3>Score: ${score} / ${questions.length}</h3><ul>${details}</ul>`;
+  });
+</script>
+```
