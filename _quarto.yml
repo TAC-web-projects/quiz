@@ -9,7 +9,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
 
 format:
   html:
@@ -19,6 +18,9 @@ format:
     css: styles.css
     toc: true
     html-math-method: mathjax
+    format:
+    include-in-header: login-header.html
+    include-before-body: login.html
 
 # Runs pandoc-ext/diagram on every page in the project.
 # Install once from the project root:

@@ -1,0 +1,23 @@
+<div id="login-overlay">
+    <form id="login-form">
+        <h2>Sign in</h2>
+        <input id="login-user" placeholder="Username" autocomplete="username" required>
+        <input id="login-pass" type="password" placeholder="Password" autocomplete="current-password" required>
+        <button type="submit">Log in</button>
+        <p id="login-error"></p>
+    </form>
+</div>
+<script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const user = document.getElementById("login-user").value;
+        const pass = document.getElementById("login-pass").value;
+
+        if (user === "student" && pass === "act2026") {
+            sessionStorage.setItem("authed", "1");
+            document.documentElement.classList.add("authed");
+        } else {
+            document.getElementById("login-error").textContent = "Incorrect username or password.";
+        }
+    });
+</script>

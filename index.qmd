@@ -5,13 +5,73 @@ format:
     toc: false
 ---
 
+```{=html}
+<style>
+  /* Two columns, filled top-to-bottom, for any number of choices */
+  .quiz-question {
+    columns: 2;
+    column-gap: 2em;
+    max-width: 40em;
+    margin: 1em 0;
+  }
+
+  .quiz-question br {
+    display: none;
+  }
+
+  .quiz-question label {
+    display: block;          /* one choice per line */
+    break-inside: avoid;     /* never split a choice across columns */
+    margin-bottom: 0.6em;
+    cursor: pointer;
+  }
+
+  /* One column on phones */
+  @media (max-width: 500px) {
+    .quiz-question {
+      columns: 1;
+    }
+  }
+</style>
+```
+
 Answer each question, then check the **Hint** and **Solution** tabs if you need help.
+
+
+## Question 1
+
+::: {.panel-tabset}
+
+### Question
+
+Which of the following equations correctly model the relationship between a circle’s Area $A$ and
+Radius $r$ ?
+<br>
+(more than one correct choice)
+
+<!--
+  MULTIPLE-ANSWER QUESTION
+  - Use type="checkbox" so more than one choice can be picked.
+  - List every correct letter in data-answer, separated by commas.
+-->
+<form class="quiz-question" data-question="Question 1" data-answer="b,d">
+<label><input type="checkbox" name="q1" value="a"> A. $A = (\pi r)^2$</label><br>
+<label><input type="checkbox" name="q1" value="b"> B. $\frac{A}{r}=\pi r$</label><br>
+<label><input type="checkbox" name="q1" value="c"> C. $A=\pi^2 r$</label><br>
+<label><input type="checkbox" name="q1" value="d"> D. $A = \pi r^2$</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+Demo of math diagrams
 
 ```{.tikz}
 
 \begin{tikzpicture}[scale=1]
   \def\R{1.6}
- 
+
   % ---------------- (1) Radius ----------------
   \begin{scope}[shift={(0,0)}]
     \draw[circ] (0,0) circle (\R);
@@ -19,7 +79,7 @@ Answer each question, then check the **Hint** and **Solution** tabs if you need 
     \node[center dot] at (0,0) {};
     \node at (0,-\R-0.55) {\small (a) Radius};
   \end{scope}
- 
+
   % ---------------- (2) Area: the r^2 square ----------------
   \begin{scope}[shift={(4.6,0)}]
     \draw[circ] (0,0) circle (\R);
@@ -32,9 +92,8 @@ Answer each question, then check the **Hint** and **Solution** tabs if you need 
     % r^2 call-out
     \node (lbl) at (-\R-0.6,\R+0.75) {$r^2$};
     \draw[callout] (lbl.south east) to[bend left=25] (-\R+0.35,\R-0.35);
-    \node at (0,-\R-0.55) {\small (b) Area $=\pi r^2$};
   \end{scope}
- 
+
   % ---------------- (3) Diameter ----------------
   \begin{scope}[shift={(9.4,0)}]
     \draw[circ] (0,0) circle (\R);
@@ -48,29 +107,6 @@ Answer each question, then check the **Hint** and **Solution** tabs if you need 
 \end{tikzpicture}
 ```
 
-## Question 1
-
-::: {.panel-tabset}
-
-### Question
-
-Which of the following equations correctly model the relationship between a circle’s Area $A$ and
-Radius $r$ ? 
-<br>
-(more than one correct choice)
-
-<form class="quiz-question" data-question="Question 1" data-answer="b">
-<label><input type="radio" name="q1" value="a"> A. $A = (\pi r)^2$</label><br>
-<label><input type="radio" name="q1" value="b"> B. $\frac{A}{r}=\pi r$</label><br>
-<label><input type="radio" name="q1" value="c"> C. $A=\pi^2 r$</label><br>
-<label><input type="radio" name="q1" value="d"> D. $A = \pi r^2$</label>
-</form>
-
-### Hint
-
-::: {.callout-tip collapse="true"}
-## Hint 1
-Think about the order of operations.
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -78,7 +114,7 @@ Think about the order of operations.
 ```{.tikz}
 \begin{tikzpicture}
     % (left) one quarter of the circle: two radii and the chord between their ends
-    \begin{scope}[shift={(0,0)}]  
+    \begin{scope}[shift={(0,0)}]
       \def\R{1.6}
 
       \colorlet{sqcol}{red!65!black}     % dark red: square sides
@@ -106,50 +142,19 @@ Think about the order of operations.
 
 ### Solution
 
-**Answer: B. 11**
-
-Following the order of operations (PEMDAS), do the multiplication first:
-
-$4 \times 2 = 8$, then $3 + 8 = 11$.
-
-:::
-
-asdf
-## Question 2
-
-::: {.panel-tabset}
-
-### Question
-
-What is thasof $3 + 4 \times 2$?
-
-<form class="quiz-question" data-question="Question 2" data-answer="b">
-<label><input type="radio" name="q1" value="a"> A. 14</label><br>
-<label><input type="radio" name="q1" value="b"> B. 11</label><br>
-<label><input type="radio" name="q1" value="c"> C. 10</label><br>
-<label><input type="radio" name="q1" value="d"> D. 9</label>
-</form>
-
-### Hint
-
-::: {.callout-tip collapse="true"}
-## Hint 1
-Think about the order of operations.
-:::
-
-::: {.callout-tip collapse="true"}
-## Hint 2
-Multiplication comes before addition. What is $4 \times 2$?
-:::
-
-### Solution
-**Answer: B. 11**
-
-Following the order of operations (PEMDAS), do the multiplication first:
-
-$4 \times 2 = 8$, then $3 + 8 = 11$.
+**Answer: B & D.**
+<br>
+**B**: <br> 
+$$
+\begin{aligned}
+    \frac{A}{r}&=\pi r \\
+    r*\frac{A}{r}&=\pi r * r \\
+    A&=\pi r^2 \\
+\end{aligned}
+$$
 
 :::
+
 
 ## Submit
 
@@ -158,17 +163,24 @@ $4 \times 2 = 8$, then $3 + 8 = 11$.
 <div id="quiz-results" style="margin-top: 1em;"></div>
 
 <script>
-  // Stores each student's choice, keyed by question name
-  const choices = {};
+  // Turn "b, d" into ["b", "d"] (lowercase, trimmed, sorted)
+  function parseAnswers(str) {
+    return (str || "")
+      .split(",")
+      .map(s => s.trim().toLowerCase())
+      .filter(s => s.length > 0)
+      .sort();
+  }
 
-  // Record a choice whenever a radio button changes
-  document.querySelectorAll(".quiz-question").forEach(form => {
-    form.addEventListener("change", e => {
-      choices[form.dataset.question] = e.target.value;
-    });
-  });
+  // Format ["b", "d"] as "B, D" for display
+  function formatLetters(letters) {
+    return letters.length ? letters.map(l => l.toUpperCase()).join(", ") : "no answer";
+  }
 
-  // Score the quiz on submit
+  // Score the quiz on submit.
+  // Works for both radio (single-answer) and checkbox (multiple-answer) questions:
+  // a question is correct only if the student picked EXACTLY the set of correct
+  // answers, with nothing missing and nothing extra.
   document.getElementById("submit-quiz").addEventListener("click", () => {
     const questions = document.querySelectorAll(".quiz-question");
     let score = 0;
@@ -176,11 +188,20 @@ $4 \times 2 = 8$, then $3 + 8 = 11$.
 
     questions.forEach(form => {
       const name = form.dataset.question;
-      const picked = choices[name];
-      const correct = picked === form.dataset.answer;
+      const answers = parseAnswers(form.dataset.answer);
+      const picked = Array.from(form.querySelectorAll("input:checked"))
+        .map(input => input.value.trim().toLowerCase())
+        .sort();
+
+      const correct =
+        picked.length === answers.length &&
+        picked.every((letter, i) => letter === answers[i]);
+
       if (correct) score++;
-      details += `<li>${name}: ${picked ? picked.toUpperCase() : "no answer"} ` +
-                 `${correct ? "✅" : "❌"}</li>`;
+
+      details += `<li>${name}: ${formatLetters(picked)} ${correct ? "✅" : "❌"}` +
+                 (correct ? "" : ` <em>(correct: ${formatLetters(answers)})</em>`) +
+                 `</li>`;
     });
 
     document.getElementById("quiz-results").innerHTML =

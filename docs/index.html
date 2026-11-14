@@ -74,6 +74,75 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+    #login-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4f6f8;
+    }
+
+    html.authed #login-overlay {
+        display: none;
+    }
+
+    html:not(.authed) body {
+        overflow: hidden;
+    }
+
+    #login-form {
+        background: white;
+        padding: 2rem 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        width: 300px;
+    }
+
+    #login-form h2 {
+        margin: 0 0 .5rem;
+        text-align: center;
+    }
+
+    #login-form input {
+        padding: .6rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    #login-form button {
+        padding: .6rem;
+        border: none;
+        border-radius: 6px;
+        background: #2c7be5;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    #login-form button:hover {
+        background: #1a68d1;
+    }
+
+    #login-error {
+        color: #c0392b;
+        font-size: .9rem;
+        margin: 0;
+        min-height: 1.2em;
+        text-align: center;
+    }
+</style>
+<script>
+    if (sessionStorage.getItem("authed") === "1") {
+        document.documentElement.classList.add("authed");
+    }
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -128,10 +197,6 @@ window.Quarto = {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -147,6 +212,29 @@ window.Quarto = {
     
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
+<div id="login-overlay">
+    <form id="login-form">
+        <h2 class="anchored">Sign in</h2>
+        <input id="login-user" placeholder="Username" autocomplete="username" required="">
+        <input id="login-pass" type="password" placeholder="Password" autocomplete="current-password" required="">
+        <button type="submit">Log in</button>
+        <p id="login-error"></p>
+    </form>
+</div>
+<script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const user = document.getElementById("login-user").value;
+        const pass = document.getElementById("login-pass").value;
+
+        if (user === "student" && pass === "act2026") {
+            sessionStorage.setItem("authed", "1");
+            document.documentElement.classList.add("authed");
+        } else {
+            document.getElementById("login-error").textContent = "Incorrect username or password.";
+        }
+    });
+</script>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -167,8 +255,34 @@ window.Quarto = {
 </header>
 
 
+<style>
+  /* Two columns, filled top-to-bottom, for any number of choices */
+  .quiz-question {
+    columns: 2;
+    column-gap: 2em;
+    max-width: 40em;
+    margin: 1em 0;
+  }
+
+  .quiz-question br {
+    display: none;
+  }
+
+  .quiz-question label {
+    display: block;          /* one choice per line */
+    break-inside: avoid;     /* never split a choice across columns */
+    margin-bottom: 0.6em;
+    cursor: pointer;
+  }
+
+  /* One column on phones */
+  @media (max-width: 500px) {
+    .quiz-question {
+      columns: 1;
+    }
+  }
+</style>
 <p>Answer each question, then check the <strong>Hint</strong> and <strong>Solution</strong> tabs if you need help.</p>
-<img src="index_files/mediabag/c9558d8211edd08a3bf640530dd7b6ef6abe4c61.svg" class="img-fluid">
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -176,7 +290,12 @@ window.Quarto = {
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Which of the following equations correctly model the relationship between a circle’s Area <span class="math inline">\(A\)</span> and Radius <span class="math inline">\(r\)</span> ? <br> (more than one correct choice)</p>
-<form class="quiz-question" data-question="Question 1" data-answer="b">
+<!--
+  MULTIPLE-ANSWER QUESTION
+  - Use type="checkbox" so more than one choice can be picked.
+  - List every correct letter in data-answer, separated by commas.
+-->
+<form class="quiz-question" data-question="Question 1" data-answer="b,d">
 <label><input type="checkbox" name="q1" value="a"> A. <span class="math inline">\(A = (\pi r)^2\)</span></label><br> <label><input type="checkbox" name="q1" value="b"> B. <span class="math inline">\(\frac{A}{r}=\pi r\)</span></label><br> <label><input type="checkbox" name="q1" value="c"> C. <span class="math inline">\(A=\pi^2 r\)</span></label><br> <label><input type="checkbox" name="q1" value="d"> D. <span class="math inline">\(A = \pi r^2\)</span></label>
 </form>
 </div>
@@ -193,7 +312,8 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Think about the order of operations.</p>
+<p>Demo of math diagrams</p>
+<img src="index_files/mediabag/781873df590bee4f348b1bca02b2f173082a0441.svg" class="img-fluid">
 </div>
 </div>
 </div>
@@ -215,60 +335,13 @@ window.Quarto = {
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><strong>Answer: B. 11</strong></p>
-<p>Following the order of operations (PEMDAS), do the multiplication first:</p>
-<p><span class="math inline">\(4 \times 2 = 8\)</span>, then <span class="math inline">\(3 + 8 = 11\)</span>.</p>
-</div>
-</div>
-</div>
-<p>asdf ## Question 2</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Solution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>What is thasof <span class="math inline">\(3 + 4 \times 2\)</span>?</p>
-<form class="quiz-question" data-question="Question 2" data-answer="b">
-<label><input type="radio" name="q1" value="a"> A. 14</label><br> <label><input type="radio" name="q1" value="b"> B. 11</label><br> <label><input type="radio" name="q1" value="c"> C. 10</label><br> <label><input type="radio" name="q1" value="d"> D. 9</label>
-</form>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hint 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Think about the order of operations.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hint 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Multiplication comes before addition. What is <span class="math inline">\(4 \times 2\)</span>?</p>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p><strong>Answer: B. 11</strong></p>
-<p>Following the order of operations (PEMDAS), do the multiplication first:</p>
-<p><span class="math inline">\(4 \times 2 = 8\)</span>, then <span class="math inline">\(3 + 8 = 11\)</span>.</p>
+<p><strong>Answer: B &amp; D.</strong> <br> <strong>B</strong>: <br> <span class="math display">\[
+\begin{aligned}
+    \frac{A}{r}&amp;=\pi r \\
+    r*\frac{A}{r}&amp;=\pi r * r \\
+    A&amp;=\pi r^2 \\
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -279,17 +352,24 @@ window.Quarto = {
 <div id="quiz-results" style="margin-top: 1em;"></div>
 
 <script>
-  // Stores each student's choice, keyed by question name
-  const choices = {};
+  // Turn "b, d" into ["b", "d"] (lowercase, trimmed, sorted)
+  function parseAnswers(str) {
+    return (str || "")
+      .split(",")
+      .map(s => s.trim().toLowerCase())
+      .filter(s => s.length > 0)
+      .sort();
+  }
 
-  // Record a choice whenever a radio button changes
-  document.querySelectorAll(".quiz-question").forEach(form => {
-    form.addEventListener("change", e => {
-      choices[form.dataset.question] = e.target.value;
-    });
-  });
+  // Format ["b", "d"] as "B, D" for display
+  function formatLetters(letters) {
+    return letters.length ? letters.map(l => l.toUpperCase()).join(", ") : "no answer";
+  }
 
-  // Score the quiz on submit
+  // Score the quiz on submit.
+  // Works for both radio (single-answer) and checkbox (multiple-answer) questions:
+  // a question is correct only if the student picked EXACTLY the set of correct
+  // answers, with nothing missing and nothing extra.
   document.getElementById("submit-quiz").addEventListener("click", () => {
     const questions = document.querySelectorAll(".quiz-question");
     let score = 0;
@@ -297,11 +377,20 @@ window.Quarto = {
 
     questions.forEach(form => {
       const name = form.dataset.question;
-      const picked = choices[name];
-      const correct = picked === form.dataset.answer;
+      const answers = parseAnswers(form.dataset.answer);
+      const picked = Array.from(form.querySelectorAll("input:checked"))
+        .map(input => input.value.trim().toLowerCase())
+        .sort();
+
+      const correct =
+        picked.length === answers.length &&
+        picked.every((letter, i) => letter === answers[i]);
+
       if (correct) score++;
-      details += `<li>${name}: ${picked ? picked.toUpperCase() : "no answer"} ` +
-                 `${correct ? "✅" : "❌"}</li>`;
+
+      details += `<li>${name}: ${formatLetters(picked)} ${correct ? "✅" : "❌"}` +
+                 (correct ? "" : ` <em>(correct: ${formatLetters(answers)})</em>`) +
+                 `</li>`;
     });
 
     document.getElementById("quiz-results").innerHTML =
