@@ -44,6 +44,26 @@ format:
     margin-left: 1.5rem;
   }
 
+  /* Memory match: 4 columns on wide screens, 2 on phones */
+  .mm-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5em;
+    max-width: 44em;
+  }
+  .mm-card {
+    min-height: 5em;
+    padding: 0.25rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);   /* text shrinks a little on small screens */
+  }
+  .mm-card .katex {
+    white-space: nowrap;                    /* never break a formula across lines */
+  }
+  @media (max-width: 576px) {
+    .mm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    section.level2 > :not(h2) { margin-left: 0.5rem; }   /* smaller section indent on phones */
+  }
+
   /* Wordle-style yellow (Bootstrap's "warning" is orange in the cosmo theme) */
   .wordle-yellow { background-color: #f5d300 !important; border-color: #f5d300 !important; color: #212529 !important; }
 </style>
@@ -396,7 +416,7 @@ $$
 [Shuffle order]{.btn .btn-outline-secondary data-shuffle="#questions"}
 
 ```{=html}
-<button id="submit-quiz" class="btn btn-primary">Submit</button>
+<button id="submit-quiz" class="btn btn-primary">Submit All</button>
 <div id="quiz-results" style="margin-top: 1em;"></div>
 
 <script>
@@ -715,9 +735,17 @@ A common mistake is $d = \frac{1}{2}r$. That would make the diameter *shorter* t
 //| output: false
 function memory(pairs) {
   const status = html`<p></p>`;
-  const grid = html`<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:.5em; max-width:44em"></div>`;
+  const grid = html`<div class="mm-grid"></div>`;   // 4 columns, 2 on phones (see .mm-grid in the style block)
   const resetBtn = html`<button class="btn btn-secondary mb-2">Reset & shuffle</button>`;
   let open, found, timer;
+
+  // Shrink a card's text until it fits on one line (long formulas on small screens).
+  // Runs again once the math fonts have loaded, since they change the width.
+  const fit = (btn, face) => {
+    const shrink = () => { face.style.fontSize = "";
+      for (let s = 95; s >= 50 && btn.scrollWidth > btn.clientWidth; s -= 5) face.style.fontSize = s + "%"; };
+    shrink(); document.fonts.ready.then(shrink);
+  };
 
   function deal() {                          // build a fresh board
     clearTimeout(timer);                     // cancel a pending flip-back
@@ -728,15 +756,17 @@ function memory(pairs) {
       [{id, face: () => html`<b>${name}</b>`}, {id, face: () => tex`${f}`}]));
 
     for (const card of cards) {
-      const btn = html`<button class="btn btn-outline-primary" style="min-height:5em">?</button>`;
+      const btn = html`<button class="btn btn-outline-primary mm-card">?</button>`;
       btn.onclick = () => {
         if (open.length === 2 || open.some(o => o.btn === btn)) return;   // ignore 3rd click / same card
-        btn.replaceChildren(card.face());
+        const face = html`<span>${card.face()}</span>`;
+        btn.replaceChildren(face);
+        fit(btn, face);
         open.push({...card, btn});
         if (open.length < 2) return;
         const [a, b] = open;
         if (a.id === b.id) {                                               // match: lock both cards
-          for (const o of open) { o.btn.disabled = true; o.btn.className = "btn btn-success"; }
+          for (const o of open) { o.btn.disabled = true; o.btn.className = "btn btn-success mm-card"; }
           open = [];
           status.textContent = ++found === pairs.length ? "All matched! 🎉" : `Pairs found: ${found} / ${pairs.length}`;
         } else {                                                           // no match: flip back
