@@ -271,7 +271,7 @@ window.Quarto = {
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Flip two cards at a time. Match each <strong>name</strong> to its <strong>formula</strong>.</p>
-<div class="quiz-game quiz-memory" data-game="circles/memory-formulas" data-pairs="4" data-topic="circles" data-topic-title="Circles" data-title="Circle Formulas">
+<div class="quiz-game quiz-memory" data-topic-title="Circles" data-pairs="4" data-game="circles/memory-formulas" data-topic="circles" data-title="Circle Formulas">
 <div class="mm-faces">
 <span class="mm-face" data-pair="0"><strong>Area of a circle</strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(= \pi r^2\)</span></span><span class="mm-face" data-pair="1"><strong>Circumference</strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(= 2\pi r\)</span></span><span class="mm-face" data-pair="2"><strong>Diameter</strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(= 2r\)</span></span><span class="mm-face" data-pair="3"><strong>Equation of a circle</strong></span><span class="mm-face" data-pair="3"><span class="math inline">\((x-h)^2 + (y-k)^2 = r^2\)</span></span>
 </div>
@@ -290,7 +290,7 @@ Hint 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Area is measured in square units, so its formula squares the radius: <span class="math inline">\(r^2\)</span>. Circumference is a length, so its radius isn’t squared.</p>
+<p>Think about units. An area is measured in square units (like cm²). A length, such as a circumference or a diameter, is measured in plain units (like cm).</p>
 </div>
 </div>
 </div>
@@ -306,7 +306,23 @@ Hint 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The diameter is two radii long, so the formula for <span class="math inline">\(d\)</span> has a <strong>2</strong> in it. The equation of a circle is the only one with both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>Only one formula contains both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. It describes every point <span class="math inline">\((x, y)\)</span> on a circle with center <span class="math inline">\((h, k)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The diameter is the length of two radii placed end to end.</p>
 </div>
 </div>
 </div>
@@ -338,6 +354,11 @@ Hint 2
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>Area</strong> has <span class="math inline">\(r^2\)</span>, so it is in square units: <span class="math inline">\(A = \pi r^2\)</span>.</li>
+<li><strong>Circumference</strong> is a length, so <span class="math inline">\(r\)</span> is not squared: <span class="math inline">\(C = 2\pi r\)</span>.</li>
+<li><strong>Diameter</strong>: <span class="math inline">\(d = r + r = 2r\)</span>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -349,7 +370,7 @@ Hint 2
 <h3 class="no-anchor" data-anchor-id="circles-wordle">Formula Wordle</h3>
 <p>Fill in the blanks to finish each formula, then press <strong>Enter</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -358,7 +379,7 @@ How to play Wordle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="badge bg-success">Green</span>: right symbol, right spot. It stays filled in on your next try.</li>
@@ -379,13 +400,13 @@ How to play Wordle
 <div class="quiz-quantity">
 Area of a circle
 </div>
-<div class="quiz-game quiz-wordle" data-game="circles/wordle-1-area" data-topic-title="Circles" data-tries="6" data-lhs="A =" data-answer="π r ²" data-topic="circles" data-keys="π r d 2 ² C θ ½" data-title="Area of a circle">
+<div class="quiz-game quiz-wordle" data-lhs="A =" data-keys="π r d 2 ² C θ ½" data-topic-title="Circles" data-answer="π r ²" data-tries="6" data-game="circles/wordle-1-area" data-topic="circles" data-title="Area of a circle">
 
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -394,14 +415,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Area is measured in <strong>square</strong> units (like ft²), so something in the formula gets squared.</p>
+<p>Area is measured in <strong>square</strong> units (like ft²), so one length in the formula is squared.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -410,19 +431,19 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The formula uses the radius, not the diameter, and the constant <span class="math inline">\(\pi\)</span>. Careful: a plain <strong>2</strong> is a different symbol from the exponent <strong>²</strong>.</p>
+<p>The formula uses the constant <span class="math inline">\(\pi\)</span> and the radius <span class="math inline">\(r\)</span> (not the diameter <span class="math inline">\(d\)</span>). A plain <strong>2</strong> and the exponent <strong>²</strong> are different keys.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(A = \pi r^2\)</span></p>
-<p>The area is <span class="math inline">\(\pi\)</span> times the radius <strong>squared</strong>. The other keys are traps:</p>
+<p>The area is <span class="math inline">\(\pi\)</span> times the square of the radius. The other keys are traps:</p>
 <ul>
-<li><strong>2</strong>: belongs in the circumference formula, <span class="math inline">\(C = 2\pi r\)</span>, not in the area formula.</li>
-<li><strong>d</strong>: using the diameter instead of the radius gives an area 4 times too big.</li>
+<li><strong>2</strong>: <span class="math inline">\(2\pi r\)</span> is the circumference, a length, not an area.</li>
+<li><strong>d</strong>: <span class="math inline">\(\pi d^2 = \pi (2r)^2 = 4\pi r^2\)</span>, which is 4 times the area.</li>
 </ul>
 </div>
 </div>
@@ -437,13 +458,13 @@ Hint 2
 <div class="quiz-quantity">
 Circumference of a circle, using its diameter
 </div>
-<div class="quiz-game quiz-wordle" data-game="circles/wordle-2-circumference" data-topic-title="Circles" data-tries="6" data-lhs="C =" data-answer="π d" data-topic="circles" data-keys="π r d 2 ² C θ ½" data-title="Circumference of a circle, using its diameter">
+<div class="quiz-game quiz-wordle" data-lhs="C =" data-keys="π r d 2 ² C θ ½" data-topic-title="Circles" data-answer="π d" data-tries="6" data-game="circles/wordle-2-circumference" data-topic="circles" data-title="Circumference of a circle, using its diameter">
 
 </div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -452,14 +473,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Circumference is a <strong>length</strong>, not an area, so nothing gets squared.</p>
+<p>Circumference is a <strong>length</strong>, not an area, so nothing is squared.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -468,17 +489,33 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(\pi\)</span> is defined as the number of diameters that fit around a circle: the circumference is a little more than 3 diameters long.</p>
+<p>A circle with diameter <span class="math inline">\(d = 10\)</span> has a circumference of about <span class="math inline">\(31.4\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\pi\)</span> is defined as the circumference divided by the diameter: <span class="math inline">\(\pi = \frac{C}{d}\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(C = \pi d\)</span></p>
-<p>This is the definition of <span class="math inline">\(\pi\)</span>: <span class="math inline">\(\pi = \frac{C}{d}\)</span>, so <span class="math inline">\(C = \pi d\)</span>.</p>
-<p>You may also know <span class="math inline">\(C = 2\pi r\)</span>. It’s the same formula written with the radius, since <span class="math inline">\(d = 2r\)</span>, but this puzzle uses the diameter.</p>
+<p>Multiply both sides of <span class="math inline">\(\pi = \frac{C}{d}\)</span> by <span class="math inline">\(d\)</span> to get <span class="math inline">\(C = \pi d\)</span>.</p>
+<p>You may also know <span class="math inline">\(C = 2\pi r\)</span>. It gives the same value, because <span class="math inline">\(d = 2r\)</span>: <span class="math inline">\(\pi d = \pi (2r) = 2\pi r\)</span>. This puzzle asks for the version with <span class="math inline">\(d\)</span>.</p>
 </div>
 </div>
 </div>
@@ -492,13 +529,13 @@ Hint 2
 <div class="quiz-quantity">
 Diameter of a circle, using its radius
 </div>
-<div class="quiz-game quiz-wordle" data-game="circles/wordle-3-diameter" data-topic-title="Circles" data-tries="6" data-lhs="d =" data-answer="2 r" data-topic="circles" data-keys="π r d 2 ² C θ ½" data-title="Diameter of a circle, using its radius">
+<div class="quiz-game quiz-wordle" data-lhs="d =" data-keys="π r d 2 ² C θ ½" data-topic-title="Circles" data-answer="2 r" data-tries="6" data-game="circles/wordle-3-diameter" data-topic="circles" data-title="Diameter of a circle, using its radius">
 
 </div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -507,14 +544,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The diameter goes all the way across the circle, through the center.</p>
+<p>The diameter goes all the way across the circle, through the center. The radius goes from the center to the edge.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -523,17 +560,19 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>How many radii, placed end to end, make one diameter?</p>
+<p>How many radii, placed end to end through the center, make one diameter?</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(d = 2r\)</span></p>
-<p>The diameter is made of two radii placed end to end: <span class="math inline">\(d = r + r = 2r\)</span>.</p>
-<p>A common mistake is <span class="math inline">\(d = \frac{1}{2}r\)</span>. That would make the diameter <em>shorter</em> than the radius, which can’t happen.</p>
+<p>A diameter is two radii placed end to end: <span class="math inline">\(d = r + r = 2r\)</span>.</p>
+<ul>
+<li><strong>½ r</strong>: <span class="math inline">\(d = \frac{1}{2}r\)</span> would make the diameter <em>shorter</em> than the radius. It’s the other way around: <span class="math inline">\(r = \frac{1}{2}d\)</span>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -546,7 +585,7 @@ Hint 2
 <button class="btn btn-outline-secondary" data-shuffle="#circles-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -555,9 +594,13 @@ What the symbols mean
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Symbol</th>
@@ -575,23 +618,23 @@ What the symbols mean
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(d\)</span></td>
-<td style="text-align: left;"><strong>Diameter</strong>: the distance across the circle, through the center</td>
+<td style="text-align: left;"><strong>Diameter</strong>: the length of a segment across the circle through its center</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(r\)</span></td>
-<td style="text-align: left;"><strong>Radius</strong>: the distance from the center to the edge</td>
+<td style="text-align: left;"><strong>Radius</strong>: the distance from the center to any point on the circle</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\pi\)</span></td>
-<td style="text-align: left;"><strong>Pi</strong>: about 3.14, the number of diameters that fit around a circle</td>
+<td style="text-align: left;"><strong>Pi</strong>: <span class="math inline">\(\pi = \frac{C}{d} \approx 3.14\)</span>, the same for every circle</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\theta\)</span></td>
-<td style="text-align: left;"><strong>Central angle</strong>, in degrees</td>
+<td style="text-align: left;"><strong>Central angle</strong>: an angle with its vertex at the center, in degrees</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(^2\)</span></td>
-<td style="text-align: left;"><strong>Squared</strong>: multiply a number by itself</td>
+<td style="text-align: left;"><strong>Squared</strong>: <span class="math inline">\(r^2 = r \cdot r\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
@@ -618,8 +661,8 @@ What the symbols mean
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>Flip two cards at a time. Match each <strong>expression</strong> to its <strong>simplified form</strong>.</p>
-<div class="quiz-game quiz-memory" data-game="exponent-rules/memory-rules" data-pairs="6" data-topic="exponent-rules" data-topic-title="Exponent Rules" data-title="Exponent Rules">
+<p>Flip two cards at a time. Match each <strong>expression</strong> to its <strong>simplified form</strong>. (Assume <span class="math inline">\(x \neq 0\)</span> and <span class="math inline">\(y \neq 0\)</span>.)</p>
+<div class="quiz-game quiz-memory" data-topic-title="Exponent Rules" data-pairs="6" data-game="exponent-rules/memory-rules" data-topic="exponent-rules" data-title="Exponent Rules">
 <div class="mm-faces">
 <span class="mm-face" data-pair="0"><strong><span class="math inline">\(x^a \cdot x^b\)</span></strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(x^{a+b}\)</span></span><span class="mm-face" data-pair="1"><strong><span class="math inline">\(\frac{x^a}{x^b}\)</span></strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(x^{a-b}\)</span></span><span class="mm-face" data-pair="2"><strong><span class="math inline">\((x^a)^b\)</span></strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(x^{ab}\)</span></span><span class="mm-face" data-pair="3"><strong><span class="math inline">\((xy)^a\)</span></strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(x^a y^a\)</span></span><span class="mm-face" data-pair="4"><strong><span class="math inline">\(x^0\)</span></strong></span><span class="mm-face" data-pair="4"><span class="math inline">\(1\)</span></span><span class="mm-face" data-pair="5"><strong><span class="math inline">\(x^{-a}\)</span></strong></span><span class="mm-face" data-pair="5"><span class="math inline">\(\frac{1}{x^a}\)</span></span>
 </div>
@@ -627,7 +670,7 @@ What the symbols mean
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -636,14 +679,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Write it out the long way. <span class="math inline">\(x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)\)</span>: count the <span class="math inline">\(x\)</span>’s.</p>
+<p>Write a small example out as factors and count them: <span class="math inline">\(x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -652,9 +695,25 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Multiplying powers <strong>adds</strong> the exponents, and dividing <strong>subtracts</strong> them. A power of a power <strong>multiplies</strong> them. A negative exponent means “flip it into a fraction”, not “make it negative”.</p>
+<p>For <span class="math inline">\(x^0\)</span>, simplify <span class="math inline">\(\frac{x^3}{x^3}\)</span> two ways: by cancelling, and with the dividing rule.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(x^{-a}\)</span>, continue the pattern <span class="math inline">\(x^2 = x \cdot x\)</span>, <span class="math inline">\(x^1 = x\)</span>, <span class="math inline">\(x^0 = 1\)</span>: each time the exponent goes down by <span class="math inline">\(1\)</span>, the value is divided by <span class="math inline">\(x\)</span>.</p>
 </div>
 </div>
 </div>
@@ -694,7 +753,14 @@ Hint 2
 </tr>
 </tbody>
 </table>
-<p>Each rule comes from counting factors. For example, <span class="math inline">\((x^2)^3 = x^2 \cdot x^2 \cdot x^2 = x^{2+2+2} = x^6\)</span>, so a power of a power multiplies the exponents.</p>
+<p>Each rule comes from counting factors of <span class="math inline">\(x\)</span>:</p>
+<ul>
+<li><span class="math inline">\(x^a \cdot x^b\)</span>: <span class="math inline">\(a\)</span> factors of <span class="math inline">\(x\)</span> followed by <span class="math inline">\(b\)</span> more is <span class="math inline">\(a + b\)</span> factors in total.</li>
+<li><span class="math inline">\(\frac{x^a}{x^b}\)</span>: the <span class="math inline">\(b\)</span> factors in the denominator cancel <span class="math inline">\(b\)</span> of the <span class="math inline">\(a\)</span> factors in the numerator.</li>
+<li><span class="math inline">\((x^a)^b = \underbrace{x^a \cdot x^a \cdots x^a}_{b \text{ factors}} = x^{ab}\)</span>.</li>
+<li><span class="math inline">\((xy)^a\)</span>: each of the <span class="math inline">\(a\)</span> factors <span class="math inline">\(xy\)</span> contributes one <span class="math inline">\(x\)</span> and one <span class="math inline">\(y\)</span>.</li>
+<li><span class="math inline">\(x^0 = \frac{x^3}{x^3} = 1\)</span>, and <span class="math inline">\(x^{-a} = \frac{x^0}{x^a} = \frac{1}{x^a}\)</span>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -706,7 +772,7 @@ Hint 2
 <h3 class="no-anchor" data-anchor-id="exponent-rules-wordle">Formula Wordle</h3>
 <p>Fill in the blanks to finish each formula, then press <strong>Enter</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -715,7 +781,7 @@ How to play Wordle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="badge bg-success">Green</span>: right symbol, right spot. It stays filled in on your next try.</li>
@@ -737,13 +803,13 @@ How to play Wordle
 Multiplying powers with the same base
 </div>
 <p>Fill in the exponent.</p>
-<div class="quiz-game quiz-wordle" data-game="exponent-rules/wordle-1-product" data-topic-title="Exponent Rules" data-tries="6" data-lhs="xᵃ · xᵇ = x" data-answer="ᵃ ⁺ ᵇ" data-topic="exponent-rules" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-title="Multiplying powers with the same base">
+<div class="quiz-game quiz-wordle" data-lhs="xᵃ · xᵇ = x" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-topic-title="Exponent Rules" data-answer="ᵃ ⁺ ᵇ" data-tries="6" data-game="exponent-rules/wordle-1-product" data-topic="exponent-rules" data-title="Multiplying powers with the same base">
 
 </div>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -752,14 +818,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Try real numbers: <span class="math inline">\(x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)\)</span>. How many <span class="math inline">\(x\)</span>’s is that?</p>
+<p>Try specific exponents: <span class="math inline">\(x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)\)</span>. How many factors of <span class="math inline">\(x\)</span> is that?</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -768,7 +834,7 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Check your answer with <span class="math inline">\(a = 2\)</span> and <span class="math inline">\(b = 3\)</span>: it should give <span class="math inline">\(x^5\)</span>.</p>
 </div>
@@ -777,10 +843,10 @@ Hint 2
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(x^a \cdot x^b = x^{a+b}\)</span></p>
-<p>You’re counting factors: <span class="math inline">\(a\)</span> of them, then <span class="math inline">\(b\)</span> more, so <span class="math inline">\(a + b\)</span> in all.</p>
+<p><span class="math inline">\(x^a\)</span> has <span class="math inline">\(a\)</span> factors of <span class="math inline">\(x\)</span> and <span class="math inline">\(x^b\)</span> has <span class="math inline">\(b\)</span> more, so the product has <span class="math inline">\(a + b\)</span> factors of <span class="math inline">\(x\)</span>.</p>
 <ul>
-<li><strong>ᵃ ᵇ</strong> (<span class="math inline">\(x^{ab}\)</span>): that’s the rule for a power of a power, <span class="math inline">\((x^a)^b\)</span>.</li>
-<li><strong>ᵃ ⁻ ᵇ</strong>: subtracting is for <strong>dividing</strong> powers.</li>
+<li><strong>ᵃ ᵇ</strong>: <span class="math inline">\(x^{ab}\)</span> is <span class="math inline">\((x^a)^b\)</span>, a power of a power.</li>
+<li><strong>ᵃ ⁻ ᵇ</strong>: <span class="math inline">\(x^{a-b}\)</span> is <span class="math inline">\(\frac{x^a}{x^b}\)</span>, a quotient.</li>
 </ul>
 </div>
 </div>
@@ -795,14 +861,14 @@ Hint 2
 <div class="quiz-quantity">
 Dividing powers with the same base
 </div>
-<p>Fill in the exponent.</p>
-<div class="quiz-game quiz-wordle" data-game="exponent-rules/wordle-2-quotient" data-topic-title="Exponent Rules" data-tries="6" data-lhs="xᵃ ÷ xᵇ = x" data-answer="ᵃ ⁻ ᵇ" data-topic="exponent-rules" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-title="Dividing powers with the same base">
+<p>Fill in the exponent. (Assume <span class="math inline">\(x \neq 0\)</span>.)</p>
+<div class="quiz-game quiz-wordle" data-lhs="xᵃ ÷ xᵇ = x" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-topic-title="Exponent Rules" data-answer="ᵃ ⁻ ᵇ" data-tries="6" data-game="exponent-rules/wordle-2-quotient" data-topic="exponent-rules" data-title="Dividing powers with the same base">
 
 </div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -811,14 +877,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Try real numbers: <span class="math inline">\(\frac{x^5}{x^2} = \frac{x \cdot x \cdot x \cdot x \cdot x}{x \cdot x}\)</span>. Cancel the pairs. How many <span class="math inline">\(x\)</span>’s are left?</p>
+<p>Try specific exponents: <span class="math inline">\(\frac{x^5}{x^2} = \frac{x \cdot x \cdot x \cdot x \cdot x}{x \cdot x}\)</span>. Cancel matching factors. How many factors of <span class="math inline">\(x\)</span> are left?</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -827,19 +893,19 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Order matters: the exponent from the <strong>top</strong> comes first.</p>
+<p>Order matters. Check your answer with <span class="math inline">\(a = 5\)</span> and <span class="math inline">\(b = 2\)</span>: it should give <span class="math inline">\(x^3\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(\frac{x^a}{x^b} = x^{a-b}\)</span></p>
-<p>Each <span class="math inline">\(x\)</span> on the bottom cancels one <span class="math inline">\(x\)</span> on the top, so you take <span class="math inline">\(b\)</span> away from <span class="math inline">\(a\)</span>.</p>
+<p>Each of the <span class="math inline">\(b\)</span> factors of <span class="math inline">\(x\)</span> in the denominator cancels one of the <span class="math inline">\(a\)</span> factors in the numerator, leaving <span class="math inline">\(a - b\)</span>.</p>
 <ul>
-<li><strong>ᵇ ⁻ ᵃ</strong>: backwards. <span class="math inline">\(\frac{x^5}{x^2} = x^3\)</span>, not <span class="math inline">\(x^{-3}\)</span>.</li>
-<li><strong>ᵃ ⁺ ᵇ</strong>: adding is for <strong>multiplying</strong> powers.</li>
+<li><strong>ᵇ ⁻ ᵃ</strong>: backwards. <span class="math inline">\(\frac{x^5}{x^2} = x^{5-2} = x^3\)</span>, not <span class="math inline">\(x^{2-5} = x^{-3}\)</span>.</li>
+<li><strong>ᵃ ⁺ ᵇ</strong>: <span class="math inline">\(x^{a+b}\)</span> is <span class="math inline">\(x^a \cdot x^b\)</span>, a product.</li>
 </ul>
 </div>
 </div>
@@ -854,14 +920,14 @@ Hint 2
 <div class="quiz-quantity">
 A power raised to a power
 </div>
-<p>Fill in the exponent. (Two letters side by side, like <span class="math inline">\(ab\)</span>, means <span class="math inline">\(a\)</span> times <span class="math inline">\(b\)</span>.)</p>
-<div class="quiz-game quiz-wordle" data-game="exponent-rules/wordle-3-power" data-topic-title="Exponent Rules" data-tries="6" data-lhs="(xᵃ)ᵇ = x" data-answer="ᵃ ᵇ" data-topic="exponent-rules" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-title="A power raised to a power">
+<p>Fill in the exponent. (Two letters side by side, like <span class="math inline">\(ab\)</span>, means <span class="math inline">\(a \cdot b\)</span>.)</p>
+<div class="quiz-game quiz-wordle" data-lhs="(xᵃ)ᵇ = x" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-topic-title="Exponent Rules" data-answer="ᵃ ᵇ" data-tries="6" data-game="exponent-rules/wordle-3-power" data-topic="exponent-rules" data-title="A power raised to a power">
 
 </div>
 </div>
 <div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -870,14 +936,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Try real numbers: <span class="math inline">\((x^2)^3 = x^2 \cdot x^2 \cdot x^2\)</span>.</p>
+<p>Try specific exponents: <span class="math inline">\((x^2)^3 = x^2 \cdot x^2 \cdot x^2\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -886,9 +952,9 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You have <span class="math inline">\(b\)</span> copies of <span class="math inline">\(x^a\)</span>. Adding <span class="math inline">\(a\)</span> to itself <span class="math inline">\(b\)</span> times is the same as…</p>
+<p><span class="math inline">\((x^a)^b\)</span> is <span class="math inline">\(b\)</span> factors of <span class="math inline">\(x^a\)</span>. By the product rule their exponents add: <span class="math inline">\(a + a + \cdots + a\)</span>, with <span class="math inline">\(b\)</span> terms. What is that sum?</p>
 </div>
 </div>
 </div>
@@ -897,7 +963,7 @@ Hint 2
 <p><strong>Answer:</strong> <span class="math inline">\((x^a)^b = x^{ab}\)</span></p>
 <p><span class="math inline">\((x^2)^3 = x^2 \cdot x^2 \cdot x^2 = x^{2+2+2} = x^6\)</span>, and <span class="math inline">\(2 \cdot 3 = 6\)</span>.</p>
 <ul>
-<li><strong>ᵃ ⁺ ᵇ</strong>: that’s for <span class="math inline">\(x^a \cdot x^b\)</span>, two powers multiplied side by side, not one inside the other.</li>
+<li><strong>ᵃ ⁺ ᵇ</strong>: <span class="math inline">\(x^{a+b}\)</span> is <span class="math inline">\(x^a \cdot x^b\)</span>. Here <span class="math inline">\(x^a\)</span> is raised to the power <span class="math inline">\(b\)</span>, not multiplied by <span class="math inline">\(x^b\)</span>.</li>
 </ul>
 </div>
 </div>
@@ -912,13 +978,14 @@ Hint 2
 <div class="quiz-quantity">
 A negative exponent
 </div>
-<div class="quiz-game quiz-wordle" data-game="exponent-rules/wordle-4-negative" data-topic-title="Exponent Rules" data-tries="6" data-lhs="x⁻ᵃ =" data-answer="1 ÷ xᵃ" data-topic="exponent-rules" data-keys="1 0 − ÷ xᵃ x" data-title="A negative exponent">
+<p>Assume <span class="math inline">\(x \neq 0\)</span>.</p>
+<div class="quiz-game quiz-wordle" data-lhs="x⁻ᵃ =" data-keys="1 0 − ÷ xᵃ x" data-topic-title="Exponent Rules" data-answer="1 ÷ xᵃ" data-tries="6" data-game="exponent-rules/wordle-4-negative" data-topic="exponent-rules" data-title="A negative exponent">
 
 </div>
 </div>
 <div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -927,14 +994,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A negative exponent does <strong>not</strong> make the answer negative. <span class="math inline">\(2^{-1}\)</span> is <span class="math inline">\(\frac{1}{2}\)</span>, not <span class="math inline">\(-2\)</span>.</p>
+<p>Follow the pattern: <span class="math inline">\(x^3 = x \cdot x \cdot x\)</span>, <span class="math inline">\(x^2 = x \cdot x\)</span>, <span class="math inline">\(x^1 = x\)</span>. Each time the exponent goes down by <span class="math inline">\(1\)</span>, the value is divided by <span class="math inline">\(x\)</span>. Continue the pattern to <span class="math inline">\(x^0\)</span> and <span class="math inline">\(x^{-1}\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -943,18 +1010,19 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Follow the pattern: <span class="math inline">\(x^2 = x \cdot x\)</span>, <span class="math inline">\(x^1 = x\)</span>, <span class="math inline">\(x^0 = 1\)</span>. Each step down <strong>divides</strong> by <span class="math inline">\(x\)</span>. One more step gives <span class="math inline">\(x^{-1} = \frac{1}{x}\)</span>.</p>
+<p>A negative exponent does <strong>not</strong> make the value negative. For example, <span class="math inline">\(2^{-1} = \frac{1}{2}\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(x^{-a} = \frac{1}{x^a}\)</span></p>
-<p>A negative exponent means “move it to the bottom of a fraction”.</p>
+<p><span class="math inline">\(x^{-a}\)</span> is the reciprocal of <span class="math inline">\(x^a\)</span>. For example, <span class="math inline">\(2^{-3} = \frac{1}{2^3} = \frac{1}{8}\)</span>.</p>
 <ul>
-<li><strong>− xᵃ</strong>: the most common mistake. The minus sign belongs to the exponent, not to the number.</li>
+<li><strong>− xᵃ</strong>: the minus sign is part of the exponent. It doesn’t make the value negative: <span class="math inline">\(2^{-3} = \frac{1}{8}\)</span>, not <span class="math inline">\(-8\)</span>.</li>
+<li><strong>0</strong>: <span class="math inline">\(x^{-a}\)</span> is never <span class="math inline">\(0\)</span>, because <span class="math inline">\(\frac{1}{x^a} \neq 0\)</span>.</li>
 </ul>
 </div>
 </div>
@@ -968,7 +1036,7 @@ Hint 2
 <button class="btn btn-outline-secondary" data-shuffle="#exponent-rules-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -977,7 +1045,7 @@ What the symbols mean
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
@@ -993,23 +1061,23 @@ What the symbols mean
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x\)</span></td>
-<td style="text-align: left;">The <strong>base</strong>: the number being multiplied</td>
+<td style="text-align: left;">The <strong>base</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span></td>
-<td style="text-align: left;"><strong>Exponents</strong>: how many times the base is multiplied by itself</td>
+<td style="text-align: left;"><strong>Exponents</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x^a\)</span></td>
-<td style="text-align: left;">“<span class="math inline">\(x\)</span> to the <span class="math inline">\(a\)</span>”: <span class="math inline">\(x\)</span> multiplied by itself <span class="math inline">\(a\)</span> times</td>
+<td style="text-align: left;">For a whole number <span class="math inline">\(a\)</span>: the product of <span class="math inline">\(a\)</span> factors of <span class="math inline">\(x\)</span>. Example: <span class="math inline">\(x^3 = x \cdot x \cdot x\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(x^0\)</span></td>
-<td style="text-align: left;">Any nonzero base to the 0 power is <span class="math inline">\(1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x^0 = 1\)</span> for every <span class="math inline">\(x \neq 0\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x^{-a}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\frac{1}{x^a}\)</span>: a negative exponent flips the power into a fraction</td>
+<td style="text-align: left;"><span class="math inline">\(x^{-a} = \frac{1}{x^a}\)</span> for <span class="math inline">\(x \neq 0\)</span> (the reciprocal of <span class="math inline">\(x^a\)</span>)</td>
 </tr>
 </tbody>
 </table>
@@ -1032,8 +1100,8 @@ What the symbols mean
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-3" role="tab" aria-controls="tabset-10-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
-<p>Match each <strong>FOIL letter</strong> to the bracket where its two multiplied terms are shown in red.</p>
-<div class="quiz-game quiz-memory" data-game="expanding-with-foil/memory-1-foil-steps" data-pairs="4" data-topic="expanding-with-foil" data-topic-title="Expanding with FOIL" data-title="FOIL: which terms get multiplied?">
+<p>FOIL multiplies <span class="math inline">\((a + b)(c + d)\)</span> one pair of terms at a time. Match each <strong>letter</strong> to the product in which that step’s two terms are shown in red.</p>
+<div class="quiz-game quiz-memory" data-topic-title="Expanding with FOIL" data-pairs="4" data-game="expanding-with-foil/memory-1-foil-steps" data-topic="expanding-with-foil" data-title="FOIL: which terms get multiplied?">
 <div class="mm-faces">
 <span class="mm-face" data-pair="0"><strong>F</strong></span><span class="mm-face" data-pair="0"><span class="math inline">\((\textcolor{#A60000}{a} + b)(\textcolor{#A60000}{c} + d)\)</span></span><span class="mm-face" data-pair="1"><strong>O</strong></span><span class="mm-face" data-pair="1"><span class="math inline">\((\textcolor{#A60000}{a} + b)(c + \textcolor{#A60000}{d})\)</span></span><span class="mm-face" data-pair="2"><strong>I</strong></span><span class="mm-face" data-pair="2"><span class="math inline">\((a + \textcolor{#A60000}{b})(\textcolor{#A60000}{c} + d)\)</span></span><span class="mm-face" data-pair="3"><strong>L</strong></span><span class="mm-face" data-pair="3"><span class="math inline">\((a + \textcolor{#A60000}{b})(c + \textcolor{#A60000}{d})\)</span></span>
 </div>
@@ -1041,7 +1109,7 @@ What the symbols mean
 </div>
 <div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1050,14 +1118,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>F</strong>irst: the first term in each bracket. <strong>L</strong>ast: the last term in each bracket.</p>
+<p>FOIL stands for <strong>F</strong>irst, <strong>O</strong>uter, <strong>I</strong>nner, <strong>L</strong>ast. Each step multiplies one term from the first bracket by one term from the second bracket.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1066,9 +1134,25 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>O</strong>uter: the two terms on the far ends. <strong>I</strong>nner: the two in the middle, next to each other.</p>
+<p><strong>First</strong>: the first term of each bracket. <strong>Last</strong>: the last term of each bracket.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Outer</strong>: the leftmost and rightmost terms of the whole product. <strong>Inner</strong>: the two terms in the middle, where the brackets meet.</p>
 <img src="index_files/mediabag/89da33d7c33d1ecd5e82d373b667e37687d25b51.svg" class="img-fluid">
 </div>
 </div>
@@ -1118,7 +1202,7 @@ Hint 2
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
 <p>Match each <strong>product</strong> to its <strong>expanded form</strong>.</p>
-<div class="quiz-game quiz-memory" data-game="expanding-with-foil/memory-2-special-products" data-pairs="4" data-topic="expanding-with-foil" data-topic-title="Expanding with FOIL" data-title="Special Products">
+<div class="quiz-game quiz-memory" data-topic-title="Expanding with FOIL" data-pairs="4" data-game="expanding-with-foil/memory-2-special-products" data-topic="expanding-with-foil" data-title="Special Products">
 <div class="mm-faces">
 <span class="mm-face" data-pair="0"><strong><span class="math inline">\((a + b)(c + d)\)</span></strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(ac + ad + bc + bd\)</span></span><span class="mm-face" data-pair="1"><strong><span class="math inline">\((a + b)^2\)</span></strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(a^2 + 2ab + b^2\)</span></span><span class="mm-face" data-pair="2"><strong><span class="math inline">\((a - b)^2\)</span></strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(a^2 - 2ab + b^2\)</span></span><span class="mm-face" data-pair="3"><strong><span class="math inline">\((a + b)(a - b)\)</span></strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(a^2 - b^2\)</span></span>
 </div>
@@ -1126,7 +1210,7 @@ Hint 2
 </div>
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1135,14 +1219,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A square means the bracket times <strong>itself</strong>: <span class="math inline">\((a + b)^2 = (a + b)(a + b)\)</span>. Then FOIL it.</p>
+<p>A square is a product of a bracket with itself: <span class="math inline">\((a + b)^2 = (a + b)(a + b)\)</span>. Expand it with FOIL.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1151,9 +1235,9 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In <span class="math inline">\((a + b)(a - b)\)</span>, the Outer and Inner products are <span class="math inline">\(-ab\)</span> and <span class="math inline">\(+ab\)</span>. What happens when you add them?</p>
+<p>Only two of the expanded forms contain a <span class="math inline">\(2ab\)</span> term: one with <span class="math inline">\(+2ab\)</span> and one with <span class="math inline">\(-2ab\)</span>. In <span class="math inline">\((a + b)(a - b)\)</span>, compare the Outer product <span class="math inline">\(a \cdot (-b)\)</span> with the Inner product <span class="math inline">\(b \cdot a\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1192,7 +1276,7 @@ Hint 2
     (a + b)(a - b) &amp;= a^2 - ab + ab - b^2 = a^2 - b^2
 \end{aligned}
 \]</span></p>
-<p>The most common mistake is <span class="math inline">\((a + b)^2 = a^2 + b^2\)</span>. It forgets the two middle terms, <span class="math inline">\(2ab\)</span>.</p>
+<p>A common mistake is <span class="math inline">\((a + b)^2 = a^2 + b^2\)</span>. It leaves out the middle term <span class="math inline">\(ab + ab = 2ab\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1209,7 +1293,7 @@ Hint 2
 <h3 class="no-anchor" data-anchor-id="expanding-with-foil-wordle">Formula Wordle</h3>
 <p>Fill in the blanks to finish each formula, then press <strong>Enter</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1218,7 +1302,7 @@ How to play Wordle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="badge bg-success">Green</span>: right symbol, right spot. It stays filled in on your next try.</li>
@@ -1239,137 +1323,11 @@ How to play Wordle
 <div class="quiz-quantity">
 Expand (x + 3)(x + 5)
 </div>
-<div class="quiz-game quiz-wordle" data-game="expanding-with-foil/wordle-1-sum" data-topic-title="Expanding with FOIL" data-tries="6" data-lhs="x² +" data-answer="8 x + 1 5" data-topic="expanding-with-foil" data-keys="1 2 3 5 8 x + −" data-title="Expand (x + 3)(x + 5)">
+<div class="quiz-game quiz-wordle" data-lhs="x² +" data-keys="1 2 3 5 8 x + −" data-topic-title="Expanding with FOIL" data-answer="8 x + 1 5" data-tries="6" data-game="expanding-with-foil/wordle-1-sum" data-topic="expanding-with-foil" data-title="Expand (x + 3)(x + 5)">
 
 </div>
 </div>
 <div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>FOIL gives four products: <span class="math inline">\(x^2\)</span>, <span class="math inline">\(5x\)</span>, <span class="math inline">\(3x\)</span> and <span class="math inline">\(15\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Combine the two middle terms: <span class="math inline">\(5x + 3x\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
-<p><strong>Answer:</strong> <span class="math inline">\((x + 3)(x + 5) = x^2 + 8x + 15\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-    (x + 3)(x + 5) &amp;= x^2 + 5x + 3x + 15 \\
-                   &amp;= x^2 + 8x + 15
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>1 5 x</strong>: multiplying the middle terms (<span class="math inline">\(3 \cdot 5 = 15\)</span>) instead of adding them. Outer and Inner get <strong>added</strong> to each other.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="expanding-with-foil-wordle-2-square-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-2-square-title">Wordle <span class="slide-num">2</span> of 3: Expand (x − 4)²</h4>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">Solution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
-<div class="quiz-quantity">
-Expand (x − 4)²
-</div>
-<div class="quiz-game quiz-wordle" data-game="expanding-with-foil/wordle-2-square" data-topic-title="Expanding with FOIL" data-tries="6" data-lhs="x²" data-answer="− 8 x + 1 6" data-topic="expanding-with-foil" data-keys="1 2 4 6 8 x + −" data-title="Expand (x − 4)²">
-
-</div>
-</div>
-<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Write it as <span class="math inline">\((x - 4)(x - 4)\)</span> and FOIL.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The Outer and Inner products are both <span class="math inline">\(-4x\)</span>. And a negative times a negative is positive: <span class="math inline">\((-4)(-4) = +16\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
-<p><strong>Answer:</strong> <span class="math inline">\((x - 4)^2 = x^2 - 8x + 16\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-    (x - 4)^2 &amp;= (x - 4)(x - 4) \\
-              &amp;= x^2 - 4x - 4x + 16 \\
-              &amp;= x^2 - 8x + 16
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>x² − 16</strong>: squaring each term separately. That drops the middle term, <span class="math inline">\(-8x\)</span>.</li>
-<li><strong>− 1 6</strong> at the end: <span class="math inline">\((-4)(-4)\)</span> is <span class="math inline">\(+16\)</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="expanding-with-foil-wordle-3-difference-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-3-difference-title">Wordle <span class="slide-num">3</span> of 3: Expand (x + 6)(x − 6)</h4>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-3" role="tab" aria-controls="tabset-14-3" aria-selected="false">Solution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
-<div class="quiz-quantity">
-Expand (x + 6)(x − 6)
-</div>
-<div class="quiz-game quiz-wordle" data-game="expanding-with-foil/wordle-3-difference" data-topic-title="Expanding with FOIL" data-tries="6" data-lhs="=" data-answer="x ² − 3 6" data-topic="expanding-with-foil" data-keys="x ² 1 2 3 6 + −" data-title="Expand (x + 6)(x − 6)">
-
-</div>
-</div>
-<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1382,7 +1340,7 @@ Hint 1
 </div>
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>FOIL it: the Outer product is <span class="math inline">\(-6x\)</span> and the Inner product is <span class="math inline">\(+6x\)</span>.</p>
+<p>Use FOIL: multiply the First, Outer, Inner and Last pairs of terms, then add the four products.</p>
 </div>
 </div>
 </div>
@@ -1398,7 +1356,165 @@ Hint 2
 </div>
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(-6x + 6x = 0\)</span>, so the middle disappears. Only First and Last are left.</p>
+<p>The four products are <span class="math inline">\(x \cdot x = x^2\)</span>, <span class="math inline">\(x \cdot 5 = 5x\)</span>, <span class="math inline">\(3 \cdot x = 3x\)</span> and <span class="math inline">\(3 \cdot 5 = 15\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(5x\)</span> and <span class="math inline">\(3x\)</span> are like terms. Combine them.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
+<p><strong>Answer:</strong> <span class="math inline">\((x + 3)(x + 5) = x^2 + 8x + 15\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+    (x + 3)(x + 5) &amp;= x^2 + 5x + 3x + 15 \\
+                   &amp;= x^2 + 8x + 15
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>15x</strong> as the middle term: <span class="math inline">\(15 = 3 \cdot 5\)</span> is the Last product, the constant term. The middle term is the sum of the Outer and Inner products: <span class="math inline">\(5x + 3x = 8x\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="expanding-with-foil-wordle-2-square-title" class="level4 unlisted no-anchor carousel-item">
+<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-2-square-title">Wordle <span class="slide-num">2</span> of 3: Expand (x − 4)²</h4>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
+<div class="quiz-quantity">
+Expand (x − 4)²
+</div>
+<div class="quiz-game quiz-wordle" data-lhs="x²" data-keys="1 2 4 6 8 x + −" data-topic-title="Expanding with FOIL" data-answer="− 8 x + 1 6" data-tries="6" data-game="expanding-with-foil/wordle-2-square" data-topic="expanding-with-foil" data-title="Expand (x − 4)²">
+
+</div>
+</div>
+<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Write the square as a product: <span class="math inline">\((x - 4)^2 = (x - 4)(x - 4)\)</span>. Then use FOIL.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outer: <span class="math inline">\(x \cdot (-4)\)</span>. Inner: <span class="math inline">\((-4) \cdot x\)</span>. Last: <span class="math inline">\((-4) \cdot (-4)\)</span>. Watch the signs.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
+<p><strong>Answer:</strong> <span class="math inline">\((x - 4)^2 = x^2 - 8x + 16\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+    (x - 4)^2 &amp;= (x - 4)(x - 4) \\
+              &amp;= x^2 - 4x - 4x + 16 \\
+              &amp;= x^2 - 8x + 16
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>x² + 16</strong> or <strong>x² − 16</strong>: <span class="math inline">\((x - 4)^2 \neq x^2 \pm 16\)</span>. Squaring each term separately leaves out the middle term, <span class="math inline">\(-8x\)</span>.</li>
+<li><strong>− 1 6</strong> at the end: <span class="math inline">\((-4) \cdot (-4) = +16\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="expanding-with-foil-wordle-3-difference-title" class="level4 unlisted no-anchor carousel-item">
+<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-3-difference-title">Wordle <span class="slide-num">3</span> of 3: Expand (x + 6)(x − 6)</h4>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-3" role="tab" aria-controls="tabset-14-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
+<div class="quiz-quantity">
+Expand (x + 6)(x − 6)
+</div>
+<div class="quiz-game quiz-wordle" data-lhs="=" data-keys="x ² 1 2 3 6 + −" data-topic-title="Expanding with FOIL" data-answer="x ² − 3 6" data-tries="6" data-game="expanding-with-foil/wordle-3-difference" data-topic="expanding-with-foil" data-title="Expand (x + 6)(x − 6)">
+
+</div>
+</div>
+<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use FOIL, and pay close attention to the Outer and Inner products.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outer: <span class="math inline">\(x \cdot (-6) = -6x\)</span>. Inner: <span class="math inline">\(6 \cdot x = 6x\)</span>. What is their sum?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First: <span class="math inline">\(x \cdot x\)</span>. Last: <span class="math inline">\(6 \cdot (-6)\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1413,7 +1529,7 @@ Hint 2
 \]</span></p>
 <p>This is the <strong>difference of squares</strong> pattern: <span class="math inline">\((a + b)(a - b) = a^2 - b^2\)</span>.</p>
 <ul>
-<li><strong>+ 3 6</strong>: the Last product is <span class="math inline">\((+6)(-6) = -36\)</span>.</li>
+<li><strong>+ 3 6</strong>: the Last product is <span class="math inline">\(6 \cdot (-6) = -36\)</span>.</li>
 </ul>
 </div>
 </div>
@@ -1427,7 +1543,7 @@ Hint 2
 <button class="btn btn-outline-secondary" data-shuffle="#expanding-with-foil-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1436,9 +1552,9 @@ What FOIL means
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To multiply <span class="math inline">\((a + b)(c + d)\)</span>, multiply every term in the first bracket by every term in the second:</p>
+<p>To multiply <span class="math inline">\((a + b)(c + d)\)</span>, multiply each term of the first bracket by each term of the second:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1470,7 +1586,7 @@ What FOIL means
 </tr>
 </tbody>
 </table>
-<p>Then add them and combine like terms: <span class="math inline">\(ac + ad + bc + bd\)</span>.</p>
+<p>Then add the four products and combine like terms: <span class="math inline">\((a + b)(c + d) = ac + ad + bc + bd\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1490,8 +1606,8 @@ What FOIL means
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-3" role="tab" aria-controls="tabset-15-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
-<p>Flip two cards at a time. Match each <strong>sum or difference</strong> to its <strong>combined fraction</strong>.</p>
-<div class="quiz-game quiz-memory" data-game="adding-fractions/memory-rules" data-pairs="5" data-topic="adding-fractions" data-topic-title="Adding Fractions" data-title="Adding &amp; Subtracting Fractions">
+<p>Flip two cards at a time. Match each <strong>sum or difference</strong> to the <strong>single fraction</strong> it equals. (Assume no denominator is <span class="math inline">\(0\)</span>.)</p>
+<div class="quiz-game quiz-memory" data-topic-title="Adding Fractions" data-pairs="5" data-game="adding-fractions/memory-rules" data-topic="adding-fractions" data-title="Adding &amp; Subtracting Fractions">
 <div class="mm-faces">
 <span class="mm-face" data-pair="0"><strong><span class="math inline">\(\frac{a}{x} + \frac{b}{x}\)</span></strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(\frac{a + b}{x}\)</span></span><span class="mm-face" data-pair="1"><strong><span class="math inline">\(\frac{a}{b} + \frac{c}{d}\)</span></strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(\frac{ad + bc}{bd}\)</span></span><span class="mm-face" data-pair="2"><strong><span class="math inline">\(\frac{a}{b} - \frac{c}{d}\)</span></strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(\frac{ad - bc}{bd}\)</span></span><span class="mm-face" data-pair="3"><strong><span class="math inline">\(\frac{1}{x} + \frac{1}{y}\)</span></strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(\frac{y + x}{xy}\)</span></span><span class="mm-face" data-pair="4"><strong><span class="math inline">\(\frac{2}{x} + \frac{3}{x^2}\)</span></strong></span><span class="mm-face" data-pair="4"><span class="math inline">\(\frac{2x + 3}{x^2}\)</span></span>
 </div>
@@ -1499,7 +1615,7 @@ What FOIL means
 </div>
 <div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1508,14 +1624,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You can only add tops when the bottoms match. If they already match (same <span class="math inline">\(x\)</span>), just add the tops.</p>
+<p>Look for a card whose two fractions already have the same denominator (bottom). Those can be combined without changing anything.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1524,9 +1640,25 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If the bottoms don’t match, cross multiply: each top gets multiplied by the <strong>other</strong> fraction’s bottom, and the new bottom is the two bottoms multiplied. Careful with <span class="math inline">\(\frac{2}{x} + \frac{3}{x^2}\)</span>: <span class="math inline">\(x^2\)</span> is already a multiple of <span class="math inline">\(x\)</span>, so the common bottom is just <span class="math inline">\(x^2\)</span>.</p>
+<p>When the denominators are different, rewrite both fractions over a common denominator: <span class="math inline">\(\frac{p}{q} + \frac{r}{s} = \frac{p \cdot s}{q \cdot s} + \frac{r \cdot q}{s \cdot q}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In <span class="math inline">\(\frac{2}{x} + \frac{3}{x^2}\)</span>, the denominator <span class="math inline">\(x\)</span> is a factor of <span class="math inline">\(x^2\)</span>, so <span class="math inline">\(x^2\)</span> is already a common denominator.</p>
 </div>
 </div>
 </div>
@@ -1562,13 +1694,13 @@ Hint 2
 </tr>
 </tbody>
 </table>
-<p>Cross multiplying multiplies each fraction by a form of <span class="math inline">\(1\)</span>, so nothing changes in value: <span class="math display">\[
+<p>Multiplying a fraction by <span class="math inline">\(\frac{d}{d} = 1\)</span> (with <span class="math inline">\(d \neq 0\)</span>) doesn’t change its value, so: <span class="math display">\[
 \begin{aligned}
     \frac{a}{b} + \frac{c}{d} &amp;= \frac{a}{b} \cdot \frac{d}{d} + \frac{c}{d} \cdot \frac{b}{b} \\
                               &amp;= \frac{ad}{bd} + \frac{bc}{bd} \\
                               &amp;= \frac{ad + bc}{bd}
 \end{aligned}
-\]</span></p>
+\]</span> For <span class="math inline">\(\frac{2}{x} + \frac{3}{x^2}\)</span>, only the first fraction needs to change: <span class="math inline">\(\frac{2 \cdot x}{x \cdot x} + \frac{3}{x^2} = \frac{2x + 3}{x^2}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1580,7 +1712,7 @@ Hint 2
 <h3 class="no-anchor" data-anchor-id="adding-fractions-wordle">Formula Wordle</h3>
 <p>Fill in the blanks to finish each formula, then press <strong>Enter</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1589,7 +1721,7 @@ How to play Wordle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="badge bg-success">Green</span>: right symbol, right spot. It stays filled in on your next try.</li>
@@ -1610,13 +1742,13 @@ How to play Wordle
 <div class="quiz-quantity">
 Subtracting two fractions, a/b − c/d
 </div>
-<div class="quiz-game quiz-wordle" data-game="adding-fractions/wordle-1-cross-multiply" data-topic-title="Adding Fractions" data-tries="6" data-lhs="a/b − c/d =" data-answer="( ad − bc ) ÷ bd" data-topic="adding-fractions" data-keys="( ) ad bc ac bd + − ÷" data-title="Subtracting two fractions, a/b − c/d">
+<div class="quiz-game quiz-wordle" data-lhs="a/b − c/d =" data-keys="( ) ad bc ac bd + − ÷" data-topic-title="Adding Fractions" data-answer="( ad − bc ) ÷ bd" data-tries="6" data-game="adding-fractions/wordle-1-cross-multiply" data-topic="adding-fractions" data-title="Subtracting two fractions, a/b − c/d">
 
 </div>
 </div>
 <div id="tabset-16-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1625,15 +1757,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The bottoms <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> are different. Cross multiply to give both fractions the bottom <span class="math inline">\(bd\)</span>.</p>
-<img src="index_files/mediabag/83abdc23335fc413ad72b7e9431d391b66fbdbb3.svg" class="img-fluid">
+<p>The denominators <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> are different. Before subtracting, rewrite both fractions with the same denominator. The product <span class="math inline">\(bd\)</span> works.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1642,9 +1773,26 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Each top is multiplied by the <strong>other</strong> fraction’s bottom. Keep the minus sign in the middle, and keep <span class="math inline">\(a\)</span>’s product first.</p>
+<p>To give <span class="math inline">\(\frac{a}{b}\)</span> the denominator <span class="math inline">\(bd\)</span>, multiply it by <span class="math inline">\(\frac{d}{d}\)</span>. To give <span class="math inline">\(\frac{c}{d}\)</span> the denominator <span class="math inline">\(bd\)</span>, multiply it by <span class="math inline">\(\frac{b}{b}\)</span>. This is called <strong>cross multiplying</strong>:</p>
+<img src="index_files/mediabag/d94e3cd805fa05723908b1745b8b6873e8187f71.svg" class="img-fluid">
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Subtract in the same order as the question: the first fraction’s new numerator, minus the second fraction’s new numerator.</p>
 </div>
 </div>
 </div>
@@ -1658,29 +1806,30 @@ Hint 2
 \end{aligned}
 \]</span></p>
 <ul>
-<li><strong>ac</strong> or <strong>bd</strong> on top: that multiplies straight across, which is the rule for <em>multiplying</em> fractions, not adding or subtracting them.</li>
-<li><strong>( bc − ad )</strong>: backwards. That gives the opposite sign.</li>
+<li><strong>ac</strong> in the numerator: that multiplies straight across, <span class="math inline">\(\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}\)</span>, which is the rule for <em>multiplying</em> fractions.</li>
+<li><strong>( bc − ad )</strong>: backwards. <span class="math inline">\(\frac{bc - ad}{bd} = -\frac{ad - bc}{bd}\)</span>, the opposite of the answer.</li>
 </ul>
 </div>
 </div>
 </div>
 </section>
 <section id="adding-fractions-wordle-2-variables-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-2-variables-title">Wordle <span class="slide-num">2</span> of 3: Subtracting fractions with variables on the bottom, 3/x − 2/y</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-2-variables-title">Wordle <span class="slide-num">2</span> of 3: Subtracting fractions with variables in the denominator, 3/x − 2/y</h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-3" role="tab" aria-controls="tabset-17-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
 <div class="quiz-quantity">
-Subtracting fractions with variables on the bottom, 3/x − 2/y
+Subtracting fractions with variables in the denominator, 3/x − 2/y
 </div>
-<div class="quiz-game quiz-wordle" data-game="adding-fractions/wordle-2-variables" data-topic-title="Adding Fractions" data-tries="6" data-lhs="3/x − 2/y =" data-answer="( 3y − 2x ) ÷ xy" data-topic="adding-fractions" data-keys="( ) 3y 2x 3x 2y 6 xy + − ÷" data-title="Subtracting fractions with variables on the bottom, 3/x − 2/y">
+<p>Assume <span class="math inline">\(x \neq 0\)</span> and <span class="math inline">\(y \neq 0\)</span>.</p>
+<div class="quiz-game quiz-wordle" data-lhs="3/x − 2/y =" data-keys="( ) 3y 2x 3x 2y 6 xy + − ÷" data-topic-title="Adding Fractions" data-answer="( 3y − 2x ) ÷ xy" data-tries="6" data-game="adding-fractions/wordle-2-variables" data-topic="adding-fractions" data-title="Subtracting fractions with variables in the denominator, 3/x − 2/y">
 
 </div>
 </div>
 <div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1689,14 +1838,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The bottoms are <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Multiply them to get a common bottom: <span class="math inline">\(xy\)</span>.</p>
+<p>The denominators <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are different, so first rewrite both fractions with a common denominator. Which expression has both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as factors?</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1705,9 +1854,9 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Multiply each top by the <strong>other</strong> bottom: <span class="math inline">\(3\)</span> gets multiplied by <span class="math inline">\(y\)</span>, and <span class="math inline">\(2\)</span> gets multiplied by <span class="math inline">\(x\)</span>.</p>
+<p>Use the common denominator <span class="math inline">\(xy\)</span>: multiply <span class="math inline">\(\frac{3}{x}\)</span> by <span class="math inline">\(\frac{y}{y}\)</span>, and multiply <span class="math inline">\(\frac{2}{y}\)</span> by <span class="math inline">\(\frac{x}{x}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1721,10 +1870,10 @@ Hint 2
 \end{aligned}
 \]</span></p>
 <ul>
-<li><strong>3x</strong> or <strong>2y</strong>: each top was multiplied by its <em>own</em> bottom. It has to be the other one.</li>
-<li><strong>6</strong> on top: multiplying the tops together is never part of adding or subtracting.</li>
+<li><strong>3x</strong> or <strong>2y</strong>: each numerator must be multiplied by the <em>other</em> fraction’s denominator, not its own.</li>
+<li><strong>6</strong>: the numerators are never multiplied together when adding or subtracting.</li>
 </ul>
-<p>Check with numbers: if <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 2\)</span>, then <span class="math inline">\(\frac{3}{1} - \frac{2}{2} = 2\)</span>, and <span class="math inline">\(\frac{3 \cdot 2 - 2 \cdot 1}{1 \cdot 2} = \frac{4}{2} = 2\)</span>.</p>
+<p>Check with numbers: if <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 2\)</span>, then <span class="math inline">\(\frac{3}{1} - \frac{2}{2} = 3 - 1 = 2\)</span>, and <span class="math inline">\(\frac{3 \cdot 2 - 2 \cdot 1}{1 \cdot 2} = \frac{4}{2} = 2\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1738,14 +1887,14 @@ Hint 2
 <div class="quiz-quantity">
 Least common denominator of 2/x and 3/x²
 </div>
-<p>The <strong>least common denominator</strong> (LCD) is the smallest bottom that both fractions can be rewritten with.</p>
-<div class="quiz-game quiz-wordle" data-game="adding-fractions/wordle-3-lcd" data-topic-title="Adding Fractions" data-tries="6" data-lhs="LCD =" data-answer="x²" data-topic="adding-fractions" data-keys="x x² x³ 2x 5 6" data-title="Least common denominator of 2/x and 3/x²">
+<p>The <strong>least common denominator</strong> (LCD) is the simplest expression that both denominators divide into evenly. Assume <span class="math inline">\(x \neq 0\)</span>.</p>
+<div class="quiz-game quiz-wordle" data-lhs="LCD =" data-keys="x x² x³ 2x 5 6" data-topic-title="Adding Fractions" data-answer="x²" data-tries="6" data-game="adding-fractions/wordle-3-lcd" data-topic="adding-fractions" data-title="Least common denominator of 2/x and 3/x²">
 
 </div>
 </div>
 <div id="tabset-18-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1754,14 +1903,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Can one bottom already be turned into the other? <span class="math inline">\(x^2 = x \cdot x\)</span>, so <span class="math inline">\(x\)</span> goes into <span class="math inline">\(x^2\)</span>.</p>
+<p>The denominators are <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span>. Is one of them already a multiple of the other?</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1770,9 +1919,25 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Multiplying the two bottoms together (<span class="math inline">\(x \cdot x^2 = x^3\)</span>) always works, but it’s not always the <em>least</em> one. Look for something smaller.</p>
+<p><span class="math inline">\(x^2 = x \cdot x\)</span>. So <span class="math inline">\(\frac{2}{x}\)</span> can be rewritten with denominator <span class="math inline">\(x^2\)</span> by multiplying it by <span class="math inline">\(\frac{x}{x}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Multiplying the denominators gives <span class="math inline">\(x \cdot x^2 = x^3\)</span>. That is <em>a</em> common denominator, but not the least one.</p>
 </div>
 </div>
 </div>
@@ -1786,8 +1951,8 @@ Hint 2
 \end{aligned}
 \]</span></p>
 <ul>
-<li><strong>x³</strong>: cross multiplying gives <span class="math inline">\(x^3\)</span>. It isn’t wrong, but you’d have to simplify at the end. The LCD saves that step.</li>
-<li><strong>5</strong> or <strong>6</strong>: the denominator comes from the bottoms, not the tops.</li>
+<li><strong>x³</strong>: a common denominator, but not the least one. Using it gives <span class="math inline">\(\frac{2x^2 + 3x}{x^3}\)</span>, which still has to be simplified by cancelling an <span class="math inline">\(x\)</span>.</li>
+<li><strong>2x</strong>, <strong>5</strong> or <strong>6</strong>: the LCD comes from the denominators only. The numerators <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> don’t affect it.</li>
 </ul>
 </div>
 </div>
@@ -1801,7 +1966,7 @@ Hint 2
 <button class="btn btn-outline-secondary" data-shuffle="#adding-fractions-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1810,16 +1975,17 @@ Steps for adding or subtracting fractions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>The <strong>numerator</strong> is the top of a fraction and the <strong>denominator</strong> is the bottom. No denominator can be <span class="math inline">\(0\)</span>.</p>
 <ol type="1">
-<li><strong>Same bottoms?</strong> Add or subtract the tops and keep the bottom: <span class="math inline">\(\frac{a}{x} + \frac{b}{x} = \frac{a + b}{x}\)</span>.</li>
-<li><strong>Different bottoms?</strong> Find a common bottom.
+<li><strong>Same denominators?</strong> Add or subtract the numerators and keep the denominator: <span class="math inline">\(\frac{a}{x} + \frac{b}{x} = \frac{a + b}{x}\)</span>.</li>
+<li><strong>Different denominators?</strong> Rewrite both fractions over a common denominator.
 <ul>
-<li><strong>Cross multiply</strong> (always works): <span class="math inline">\(\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}\)</span>.</li>
-<li><strong>Least common denominator</strong> (less simplifying afterwards): if one bottom already divides the other, use the bigger one. For example, <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span> have LCD <span class="math inline">\(x^2\)</span>.</li>
+<li><strong>Cross multiply</strong>: <span class="math inline">\(\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}\)</span>. The product <span class="math inline">\(bd\)</span> is always a common denominator.</li>
+<li><strong>Least common denominator (LCD)</strong>: if one denominator is a factor of the other, the other one is the LCD. Example: <span class="math inline">\(x\)</span> is a factor of <span class="math inline">\(x^2\)</span>, so the LCD of <span class="math inline">\(\frac{2}{x}\)</span> and <span class="math inline">\(\frac{3}{x^2}\)</span> is <span class="math inline">\(x^2\)</span>.</li>
 </ul></li>
-<li><strong>Never</strong> add the bottoms: <span class="math inline">\(\frac{1}{x} + \frac{1}{y} \neq \frac{2}{x + y}\)</span>.</li>
+<li><strong>Never</strong> add the denominators: <span class="math inline">\(\frac{1}{x} + \frac{1}{y} \neq \frac{2}{x + y}\)</span>.</li>
 </ol>
 </div>
 </div>
@@ -1841,7 +2007,7 @@ Steps for adding or subtracting fractions
 <div class="tab-content">
 <div id="tabset-19-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-19-1-tab">
 <p>Flip two cards at a time. Match each <strong>name</strong> to its <strong>formula</strong>.</p>
-<div class="quiz-game quiz-memory" data-game="slope-point-slope/memory-formulas" data-pairs="5" data-topic="slope-point-slope" data-topic-title="Slope &amp; Point-Slope" data-title="Line Formulas">
+<div class="quiz-game quiz-memory" data-topic-title="Slope &amp; Point-Slope" data-pairs="5" data-game="slope-point-slope/memory-formulas" data-topic="slope-point-slope" data-title="Line Formulas">
 <div class="mm-faces">
 <span class="mm-face" data-pair="0"><strong>Slope from two points</strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(= \frac{y_1 - y_2}{x_1 - x_2}\)</span></span><span class="mm-face" data-pair="1"><strong>Slope from a graph</strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(= \frac{\text{rise}}{\text{run}}\)</span></span><span class="mm-face" data-pair="2"><strong>Point-slope form</strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(y - y_1 = m(x - x_1)\)</span></span><span class="mm-face" data-pair="3"><strong>Slope-intercept form</strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(= mx + b\)</span></span><span class="mm-face" data-pair="4"><strong>Slope of a horizontal line</strong></span><span class="mm-face" data-pair="4"><span class="math inline">\(= 0\)</span></span>
 </div>
@@ -1849,7 +2015,7 @@ Steps for adding or subtracting fractions
 </div>
 <div id="tabset-19-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-19-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1858,14 +2024,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Slope compares <strong>up-and-down</strong> change to <strong>left-and-right</strong> change. Up-and-down (<span class="math inline">\(y\)</span>, rise) goes on top.</p>
+<p>Slope <span class="math inline">\(m\)</span> measures steepness: how much <span class="math inline">\(y\)</span> changes when <span class="math inline">\(x\)</span> increases by <span class="math inline">\(1\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1874,9 +2040,25 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Point-slope form is the only one that uses a point <span class="math inline">\((x_1, y_1)\)</span> <em>and</em> has <span class="math inline">\(y\)</span> on the left. Slope-intercept form has a <span class="math inline">\(b\)</span>: where the line crosses the <span class="math inline">\(y\)</span>-axis.</p>
+<p>Slope is the change in <span class="math inline">\(y\)</span> divided by the change in <span class="math inline">\(x\)</span>. Two cards say this: one with coordinates, one with words.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Point-slope form uses a known point <span class="math inline">\((x_1, y_1)\)</span>. Slope-intercept form uses the <span class="math inline">\(y\)</span>-intercept <span class="math inline">\(b\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1912,7 +2094,8 @@ Hint 2
 </tr>
 </tbody>
 </table>
-<p>A horizontal line never goes up or down, so its rise is <span class="math inline">\(0\)</span> and <span class="math inline">\(m = \frac{0}{\text{run}} = 0\)</span>. (A vertical line has a run of <span class="math inline">\(0\)</span>, and dividing by <span class="math inline">\(0\)</span> is impossible, so its slope is <strong>undefined</strong>.)</p>
+<p>On a horizontal line, <span class="math inline">\(y\)</span> never changes, so the rise is <span class="math inline">\(0\)</span> and <span class="math inline">\(m = \frac{0}{\text{run}} = 0\)</span>.</p>
+<p>(On a vertical line, <span class="math inline">\(x\)</span> never changes, so the run is <span class="math inline">\(0\)</span>. Division by <span class="math inline">\(0\)</span> is undefined, so the slope of a vertical line is <strong>undefined</strong>. Avoid saying “no slope”: some books use that phrase to mean a slope of <span class="math inline">\(0\)</span>.)</p>
 </div>
 </div>
 </div>
@@ -1924,7 +2107,7 @@ Hint 2
 <h3 class="no-anchor" data-anchor-id="slope-point-slope-wordle">Formula Wordle</h3>
 <p>Fill in the blanks to finish each formula, then press <strong>Enter</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1933,7 +2116,7 @@ How to play Wordle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="badge bg-success">Green</span>: right symbol, right spot. It stays filled in on your next try.</li>
@@ -1954,13 +2137,13 @@ How to play Wordle
 <div class="quiz-quantity">
 Slope of a line from its graph
 </div>
-<div class="quiz-game quiz-wordle" data-game="slope-point-slope/wordle-1-rise-run" data-topic-title="Slope &amp; Point-Slope" data-tries="6" data-lhs="m =" data-answer="rise ÷ run" data-topic="slope-point-slope" data-keys="rise run ÷ × + −" data-title="Slope of a line from its graph">
+<div class="quiz-game quiz-wordle" data-lhs="m =" data-keys="rise run ÷ × + −" data-topic-title="Slope &amp; Point-Slope" data-answer="rise ÷ run" data-tries="6" data-game="slope-point-slope/wordle-1-rise-run" data-topic="slope-point-slope" data-title="Slope of a line from its graph">
 
 </div>
 </div>
 <div id="tabset-20-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-20-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1969,15 +2152,15 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div id="callout-58" class="callout-58-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Slope measures how <strong>steep</strong> the line is: how far it goes up for each step to the right.</p>
+<p>Slope measures how <strong>steep</strong> a line is. In the diagram, going from <span class="math inline">\((1, 1)\)</span> to <span class="math inline">\((4, 3)\)</span>, the line moves <span class="math inline">\(3\)</span> to the right (the run) and <span class="math inline">\(2\)</span> up (the rise).</p>
 <img src="index_files/mediabag/94d139fcb16957835f571d10b7eac962d2683385.svg" class="img-fluid">
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1986,18 +2169,18 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div id="callout-59" class="callout-59-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>“Rise over run”: the up-and-down change goes <strong>on top</strong>. A steep line rises a lot for a small run, so its slope should come out big.</p>
+<p>A steep line rises a lot over a short run, so its slope should be a large number. Which order of division makes that happen?</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-20-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-20-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(m = \frac{\text{rise}}{\text{run}}\)</span></p>
-<p>In the diagram, the line rises <span class="math inline">\(2\)</span> while it runs <span class="math inline">\(3\)</span>, so <span class="math inline">\(m = \frac{2}{3}\)</span>.</p>
+<p>In the diagram, the rise is <span class="math inline">\(2\)</span> and the run is <span class="math inline">\(3\)</span>, so <span class="math inline">\(m = \frac{2}{3}\)</span>.</p>
 <ul>
-<li><strong>run ÷ rise</strong>: upside down. It would make steep lines have <em>small</em> slopes.</li>
+<li><strong>run ÷ rise</strong>: upside down. It would give steep lines <em>small</em> slopes: here <span class="math inline">\(\frac{3}{2}\)</span> instead of <span class="math inline">\(\frac{2}{3}\)</span>.</li>
 </ul>
 </div>
 </div>
@@ -2012,14 +2195,14 @@ Hint 2
 <div class="quiz-quantity">
 Slope through two points, (x₁, y₁) and (x₂, y₂)
 </div>
-<p>The top of the fraction is filled in. Finish the bottom.</p>
-<div class="quiz-game quiz-wordle" data-game="slope-point-slope/wordle-2-two-points" data-topic-title="Slope &amp; Point-Slope" data-tries="6" data-lhs="m = (y₁ − y₂) ÷" data-answer="( x₁ − x₂ )" data-topic="slope-point-slope" data-keys="( ) x₁ x₂ y₁ y₂ − +" data-title="Slope through two points, (x₁, y₁) and (x₂, y₂)">
+<p>The numerator <span class="math inline">\((y_1 - y_2)\)</span> is given. Fill in the denominator. Assume <span class="math inline">\(x_1 \neq x_2\)</span>.</p>
+<div class="quiz-game quiz-wordle" data-lhs="m = (y₁ − y₂) ÷" data-keys="( ) x₁ x₂ y₁ y₂ − +" data-topic-title="Slope &amp; Point-Slope" data-answer="( x₁ − x₂ )" data-tries="6" data-game="slope-point-slope/wordle-2-two-points" data-topic="slope-point-slope" data-title="Slope through two points, (x₁, y₁) and (x₂, y₂)">
 
 </div>
 </div>
 <div id="tabset-21-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-21-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2028,14 +2211,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div id="callout-60" class="callout-60-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The top is the change in <span class="math inline">\(y\)</span> (the rise). The bottom is the change in <span class="math inline">\(x\)</span> (the run).</p>
+<p>Slope is rise over run. The numerator <span class="math inline">\(y_1 - y_2\)</span> is the rise (a change in <span class="math inline">\(y\)</span>). Which coordinates give the run?</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2044,26 +2227,26 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div id="callout-61" class="callout-61-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Keep the order the same on top and bottom: if the top starts with point 1 (<span class="math inline">\(y_1\)</span>), the bottom must start with point 1 too.</p>
+<p>Subtract in the same order as the numerator: the numerator is “point 1 minus point 2”.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-21-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-21-3-tab">
 <p><strong>Answer:</strong> <span class="math inline">\(m = \frac{y_1 - y_2}{x_1 - x_2}\)</span></p>
-<p>This is “rise over run” written with coordinates. For <span class="math inline">\((1, 1)\)</span> and <span class="math inline">\((4, 3)\)</span>: <span class="math display">\[
+<p>This is “rise over run” written with coordinates. For the points <span class="math inline">\((1, 1)\)</span> and <span class="math inline">\((4, 3)\)</span>: <span class="math display">\[
 \begin{aligned}
     m &amp;= \frac{1 - 3}{1 - 4} \\
       &amp;= \frac{-2}{-3} = \frac{2}{3}
 \end{aligned}
 \]</span></p>
 <ul>
-<li><strong>( x₂ − x₁ )</strong>: mixing the order flips the sign: <span class="math inline">\(\frac{1 - 3}{4 - 1} = -\frac{2}{3}\)</span>, which is wrong.</li>
-<li><strong>y</strong>’s on the bottom: that’s run over rise, upside down.</li>
+<li><strong>( x₂ − x₁ )</strong>: mixing the order changes the sign: <span class="math inline">\(\frac{1 - 3}{4 - 1} = -\frac{2}{3}\)</span>, which is wrong.</li>
+<li><strong>y₁</strong>, <strong>y₂</strong> in the denominator: that would be a change in <span class="math inline">\(y\)</span> over a change in <span class="math inline">\(y\)</span>, not rise over run.</li>
 </ul>
-<p>You can also write <span class="math inline">\(m = \frac{y_2 - y_1}{x_2 - x_1}\)</span>. Either order works, as long as top and bottom match.</p>
+<p><span class="math inline">\(m = \frac{y_2 - y_1}{x_2 - x_1}\)</span> is also correct: both differences use the same order (point 2 minus point 1).</p>
 </div>
 </div>
 </div>
@@ -2077,13 +2260,13 @@ Hint 2
 <div class="quiz-quantity">
 Point-slope form of a line through (x₁, y₁) with slope m
 </div>
-<div class="quiz-game quiz-wordle" data-game="slope-point-slope/wordle-3-point-slope" data-topic-title="Slope &amp; Point-Slope" data-tries="6" data-lhs="y − y₁ =" data-answer="m ( x − x₁ )" data-topic="slope-point-slope" data-keys="m b x y x₁ y₁ ( ) − +" data-title="Point-slope form of a line through (x₁, y₁) with slope m">
+<div class="quiz-game quiz-wordle" data-lhs="y − y₁ =" data-keys="m b x y x₁ y₁ ( ) − +" data-topic-title="Slope &amp; Point-Slope" data-answer="m ( x − x₁ )" data-tries="6" data-game="slope-point-slope/wordle-3-point-slope" data-topic="slope-point-slope" data-title="Point-slope form of a line through (x₁, y₁) with slope m">
 
 </div>
 </div>
 <div id="tabset-22-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-22-2-tab">
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2092,14 +2275,14 @@ Hint 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div id="callout-62" class="callout-62-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Start from the slope formula with one point <span class="math inline">\((x_1, y_1)\)</span> and any other point <span class="math inline">\((x, y)\)</span> on the line: <span class="math inline">\(m = \frac{y - y_1}{x - x_1}\)</span>.</p>
+<p>Point-slope form comes from the slope formula. Use the known point <span class="math inline">\((x_1, y_1)\)</span> and a general point <span class="math inline">\((x, y)\)</span> on the line.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2108,9 +2291,25 @@ Hint 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div id="callout-63" class="callout-63-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Multiply both sides by <span class="math inline">\((x - x_1)\)</span> to clear the fraction.</p>
+<p>The slope between those two points is <span class="math inline">\(m = \frac{y - y_1}{x - x_1}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-64" class="callout-64-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Multiply both sides by <span class="math inline">\((x - x_1)\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2123,10 +2322,10 @@ Hint 2
     m(x - x_1) &amp;= y - y_1
 \end{aligned}
 \]</span></p>
-<p>Example: through <span class="math inline">\((2, 5)\)</span> with slope <span class="math inline">\(3\)</span>, the line is <span class="math inline">\(y - 5 = 3(x - 2)\)</span>.</p>
+<p>Example: the line through <span class="math inline">\((2, 5)\)</span> with slope <span class="math inline">\(3\)</span> is <span class="math inline">\(y - 5 = 3(x - 2)\)</span>.</p>
 <ul>
-<li><strong>+ x₁</strong>: the signs are minus on both sides. With the point <span class="math inline">\((2, 5)\)</span>, you get <span class="math inline">\(x - 2\)</span>, not <span class="math inline">\(x + 2\)</span>.</li>
-<li><strong>b</strong>: the <span class="math inline">\(y\)</span>-intercept belongs to slope-intercept form, <span class="math inline">\(y = mx + b\)</span>.</li>
+<li><strong>+</strong>: both sides subtract the known point’s coordinate. With the point <span class="math inline">\((2, 5)\)</span>, the right side is <span class="math inline">\(3(x - 2)\)</span>, not <span class="math inline">\(3(x + 2)\)</span>.</li>
+<li><strong>b</strong>: <span class="math inline">\(b\)</span> is the <span class="math inline">\(y\)</span>-intercept, which belongs to slope-intercept form, <span class="math inline">\(y = mx + b\)</span>.</li>
 </ul>
 </div>
 </div>
@@ -2140,7 +2339,7 @@ Hint 2
 <button class="btn btn-outline-secondary" data-shuffle="#slope-point-slope-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2149,7 +2348,7 @@ What the symbols mean
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div id="callout-65" class="callout-65-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -2161,7 +2360,7 @@ What the symbols mean
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(m\)</span></td>
-<td style="text-align: left;"><strong>Slope</strong>: how steep the line is (rise over run)</td>
+<td style="text-align: left;"><strong>Slope</strong>: <span class="math inline">\(\frac{\text{change in } y}{\text{change in } x}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\((x_1, y_1)\)</span></td>
@@ -2169,7 +2368,7 @@ What the symbols mean
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\((x_2, y_2)\)</span></td>
-<td style="text-align: left;">A second known point (“point 2”)</td>
+<td style="text-align: left;">A second known point (“point 2”), with <span class="math inline">\(x_2 \neq x_1\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\((x, y)\)</span></td>
@@ -2177,15 +2376,15 @@ What the symbols mean
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(b\)</span></td>
-<td style="text-align: left;"><strong><span class="math inline">\(y\)</span>-intercept</strong>: where the line crosses the <span class="math inline">\(y\)</span>-axis</td>
+<td style="text-align: left;"><strong><span class="math inline">\(y\)</span>-intercept</strong>: the line crosses the <span class="math inline">\(y\)</span>-axis at the point <span class="math inline">\((0, b)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">rise</td>
-<td style="text-align: left;">Change in <span class="math inline">\(y\)</span> (up is positive, down is negative)</td>
+<td style="text-align: left;">Change in <span class="math inline">\(y\)</span>: positive going up, negative going down</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">run</td>
-<td style="text-align: left;">Change in <span class="math inline">\(x\)</span> (right is positive, left is negative)</td>
+<td style="text-align: left;">Change in <span class="math inline">\(x\)</span>: positive going right, negative going left</td>
 </tr>
 </tbody>
 </table>

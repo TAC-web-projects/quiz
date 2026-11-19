@@ -6,14 +6,14 @@ answer: 2 r
 ---
 
 ## Hint
-The diameter goes all the way across the circle, through the center.
+The diameter goes all the way across the circle, through the center. The radius goes from the center to the edge.
 
 ## Hint
-How many radii, placed end to end, make one diameter?
+How many radii, placed end to end through the center, make one diameter?
 
 ## Solution
 **Answer:** $d = 2r$
 
-The diameter is made of two radii placed end to end: $d = r + r = 2r$.
+A diameter is two radii placed end to end: $d = r + r = 2r$.
 
-A common mistake is $d = \frac{1}{2}r$. That would make the diameter *shorter* than the radius, which can't happen.
+- **½ r**: $d = \frac{1}{2}r$ would make the diameter *shorter* than the radius. It's the other way around: $r = \frac{1}{2}d$.

@@ -3,7 +3,7 @@ type: memory
 title: "FOIL: which terms get multiplied?"
 ---
 
-Match each **FOIL letter** to the bracket where its two multiplied terms are shown in red.
+FOIL multiplies $(a + b)(c + d)$ one pair of terms at a time. Match each **letter** to the product in which that step's two terms are shown in red.
 
 | Letter | Terms multiplied |
 |:------:|:-----------------|
@@ -13,10 +13,13 @@ Match each **FOIL letter** to the bracket where its two multiplied terms are sho
 | L | $(a + \textcolor{#A60000}{b})(c + \textcolor{#A60000}{d})$ |
 
 ## Hint
-**F**irst: the first term in each bracket. **L**ast: the last term in each bracket.
+FOIL stands for **F**irst, **O**uter, **I**nner, **L**ast. Each step multiplies one term from the first bracket by one term from the second bracket.
 
 ## Hint
-**O**uter: the two terms on the far ends. **I**nner: the two in the middle, next to each other.
+**First**: the first term of each bracket. **Last**: the last term of each bracket.
+
+## Hint
+**Outer**: the leftmost and rightmost terms of the whole product. **Inner**: the two terms in the middle, where the brackets meet.
 
 ```{.tikz}
 \begin{tikzpicture}

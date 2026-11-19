@@ -6,16 +6,16 @@ answer: π r ²
 ---
 
 ## Hint
-Area is measured in **square** units (like ft²), so something in the formula gets squared.
+Area is measured in **square** units (like ft²), so one length in the formula is squared.
 
 ## Hint
-The formula uses the radius, not the diameter, and the constant $\pi$.
-Careful: a plain **2** is a different symbol from the exponent **²**.
+The formula uses the constant $\pi$ and the radius $r$ (not the diameter $d$).
+A plain **2** and the exponent **²** are different keys.
 
 ## Solution
 **Answer:** $A = \pi r^2$
 
-The area is $\pi$ times the radius **squared**. The other keys are traps:
+The area is $\pi$ times the square of the radius. The other keys are traps:
 
-- **2**: belongs in the circumference formula, $C = 2\pi r$, not in the area formula.
-- **d**: using the diameter instead of the radius gives an area 4 times too big.
+- **2**: $2\pi r$ is the circumference, a length, not an area.
+- **d**: $\pi d^2 = \pi (2r)^2 = 4\pi r^2$, which is 4 times the area.

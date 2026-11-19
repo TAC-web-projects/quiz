@@ -7,10 +7,13 @@ keys: 1 2 3 5 8 x + −
 ---
 
 ## Hint
-FOIL gives four products: $x^2$, $5x$, $3x$ and $15$.
+Use FOIL: multiply the First, Outer, Inner and Last pairs of terms, then add the four products.
 
 ## Hint
-Combine the two middle terms: $5x + 3x$.
+The four products are $x \cdot x = x^2$, $x \cdot 5 = 5x$, $3 \cdot x = 3x$ and $3 \cdot 5 = 15$.
+
+## Hint
+$5x$ and $3x$ are like terms. Combine them.
 
 ## Solution
 **Answer:** $(x + 3)(x + 5) = x^2 + 8x + 15$
@@ -22,4 +25,4 @@ $$
 \end{aligned}
 $$
 
-- **1 5 x**: multiplying the middle terms ($3 \cdot 5 = 15$) instead of adding them. Outer and Inner get **added** to each other.
+- **15x** as the middle term: $15 = 3 \cdot 5$ is the Last product, the constant term. The middle term is the sum of the Outer and Inner products: $5x + 3x = 8x$.

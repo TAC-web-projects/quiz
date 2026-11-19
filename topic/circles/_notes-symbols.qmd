@@ -9,10 +9,10 @@ type: notes
 |:------:|:--------|
 | $A$ | **Area**: the space inside the circle (square units) |
 | $C$ | **Circumference**: the distance around the circle |
-| $d$ | **Diameter**: the distance across the circle, through the center |
-| $r$ | **Radius**: the distance from the center to the edge |
-| $\pi$ | **Pi**: about 3.14, the number of diameters that fit around a circle |
-| $\theta$ | **Central angle**, in degrees |
-| $^2$ | **Squared**: multiply a number by itself |
+| $d$ | **Diameter**: the length of a segment across the circle through its center |
+| $r$ | **Radius**: the distance from the center to any point on the circle |
+| $\pi$ | **Pi**: $\pi = \frac{C}{d} \approx 3.14$, the same for every circle |
+| $\theta$ | **Central angle**: an angle with its vertex at the center, in degrees |
+| $^2$ | **Squared**: $r^2 = r \cdot r$ |
 | $\frac{1}{2}$ | **One half** |
 :::

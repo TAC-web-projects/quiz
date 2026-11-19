@@ -12,11 +12,15 @@ title: Line Formulas
 | Slope of a horizontal line | $m = 0$ |
 
 ## Hint
-Slope compares **up-and-down** change to **left-and-right** change. Up-and-down ($y$, rise) goes on top.
+Slope $m$ measures steepness: how much $y$ changes when $x$ increases by $1$.
 
 ## Hint
-Point-slope form is the only one that uses a point $(x_1, y_1)$ *and* has $y$ on the left. Slope-intercept form has a $b$: where the line crosses the $y$-axis.
+Slope is the change in $y$ divided by the change in $x$. Two cards say this: one with coordinates, one with words.
+
+## Hint
+Point-slope form uses a known point $(x_1, y_1)$. Slope-intercept form uses the $y$-intercept $b$.
 
 ## Solution
-A horizontal line never goes up or down, so its rise is $0$ and $m = \frac{0}{\text{run}} = 0$.
-(A vertical line has a run of $0$, and dividing by $0$ is impossible, so its slope is **undefined**.)
+On a horizontal line, $y$ never changes, so the rise is $0$ and $m = \frac{0}{\text{run}} = 0$.
+
+(On a vertical line, $x$ never changes, so the run is $0$. Division by $0$ is undefined, so the slope of a vertical line is **undefined**. Avoid saying "no slope": some books use that phrase to mean a slope of $0$.)

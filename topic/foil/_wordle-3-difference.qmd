@@ -7,10 +7,13 @@ keys: x ² 1 2 3 6 + −
 ---
 
 ## Hint
-FOIL it: the Outer product is $-6x$ and the Inner product is $+6x$.
+Use FOIL, and pay close attention to the Outer and Inner products.
 
 ## Hint
-$-6x + 6x = 0$, so the middle disappears. Only First and Last are left.
+Outer: $x \cdot (-6) = -6x$. Inner: $6 \cdot x = 6x$. What is their sum?
+
+## Hint
+First: $x \cdot x$. Last: $6 \cdot (-6)$.
 
 ## Solution
 **Answer:** $(x + 6)(x - 6) = x^2 - 36$
@@ -24,4 +27,4 @@ $$
 
 This is the **difference of squares** pattern: $(a + b)(a - b) = a^2 - b^2$.
 
-- **+ 3 6**: the Last product is $(+6)(-6) = -36$.
+- **+ 3 6**: the Last product is $6 \cdot (-6) = -36$.

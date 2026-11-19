@@ -7,10 +7,13 @@ keys: m b x y x₁ y₁ ( ) − +
 ---
 
 ## Hint
-Start from the slope formula with one point $(x_1, y_1)$ and any other point $(x, y)$ on the line: $m = \frac{y - y_1}{x - x_1}$.
+Point-slope form comes from the slope formula. Use the known point $(x_1, y_1)$ and a general point $(x, y)$ on the line.
 
 ## Hint
-Multiply both sides by $(x - x_1)$ to clear the fraction.
+The slope between those two points is $m = \frac{y - y_1}{x - x_1}$.
+
+## Hint
+Multiply both sides by $(x - x_1)$.
 
 ## Solution
 **Answer:** $y - y_1 = m(x - x_1)$
@@ -22,7 +25,7 @@ $$
 \end{aligned}
 $$
 
-Example: through $(2, 5)$ with slope $3$, the line is $y - 5 = 3(x - 2)$.
+Example: the line through $(2, 5)$ with slope $3$ is $y - 5 = 3(x - 2)$.
 
-- **+ x₁**: the signs are minus on both sides. With the point $(2, 5)$, you get $x - 2$, not $x + 2$.
-- **b**: the $y$-intercept belongs to slope-intercept form, $y = mx + b$.
+- **+**: both sides subtract the known point's coordinate. With the point $(2, 5)$, the right side is $3(x - 2)$, not $3(x + 2)$.
+- **b**: $b$ is the $y$-intercept, which belongs to slope-intercept form, $y = mx + b$.

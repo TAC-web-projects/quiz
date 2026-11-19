@@ -3,7 +3,7 @@ type: memory
 title: Adding & Subtracting Fractions
 ---
 
-Flip two cards at a time. Match each **sum or difference** to its **combined fraction**.
+Flip two cards at a time. Match each **sum or difference** to the **single fraction** it equals. (Assume no denominator is $0$.)
 
 | Expression | Combined |
 |:-----------|:---------|
@@ -14,14 +14,16 @@ Flip two cards at a time. Match each **sum or difference** to its **combined fra
 | $\frac{2}{x} + \frac{3}{x^2}$ | $\frac{2x + 3}{x^2}$ |
 
 ## Hint
-You can only add tops when the bottoms match. If they already match (same $x$), just add the tops.
+Look for a card whose two fractions already have the same denominator (bottom). Those can be combined without changing anything.
 
 ## Hint
-If the bottoms don't match, cross multiply: each top gets multiplied by the **other** fraction's bottom, and the new bottom is the two bottoms multiplied.
-Careful with $\frac{2}{x} + \frac{3}{x^2}$: $x^2$ is already a multiple of $x$, so the common bottom is just $x^2$.
+When the denominators are different, rewrite both fractions over a common denominator: $\frac{p}{q} + \frac{r}{s} = \frac{p \cdot s}{q \cdot s} + \frac{r \cdot q}{s \cdot q}$.
+
+## Hint
+In $\frac{2}{x} + \frac{3}{x^2}$, the denominator $x$ is a factor of $x^2$, so $x^2$ is already a common denominator.
 
 ## Solution
-Cross multiplying multiplies each fraction by a form of $1$, so nothing changes in value:
+Multiplying a fraction by $\frac{d}{d} = 1$ (with $d \neq 0$) doesn't change its value, so:
 $$
 \begin{aligned}
     \frac{a}{b} + \frac{c}{d} &= \frac{a}{b} \cdot \frac{d}{d} + \frac{c}{d} \cdot \frac{b}{b} \\
@@ -29,3 +31,4 @@ $$
                               &= \frac{ad + bc}{bd}
 \end{aligned}
 $$
+For $\frac{2}{x} + \frac{3}{x^2}$, only the first fraction needs to change: $\frac{2 \cdot x}{x \cdot x} + \frac{3}{x^2} = \frac{2x + 3}{x^2}$.

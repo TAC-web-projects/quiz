@@ -11,7 +11,15 @@ title: Circle Formulas
 | Equation of a circle | $(x-h)^2 + (y-k)^2 = r^2$ |
 
 ## Hint
-Area is measured in square units, so its formula squares the radius: $r^2$. Circumference is a length, so its radius isn't squared.
+Think about units. An area is measured in square units (like cm²). A length, such as a circumference or a diameter, is measured in plain units (like cm).
 
 ## Hint
-The diameter is two radii long, so the formula for $d$ has a **2** in it. The equation of a circle is the only one with both $x$ and $y$.
+Only one formula contains both $x$ and $y$. It describes every point $(x, y)$ on a circle with center $(h, k)$.
+
+## Hint
+The diameter is the length of two radii placed end to end.
+
+## Solution
+- **Area** has $r^2$, so it is in square units: $A = \pi r^2$.
+- **Circumference** is a length, so $r$ is not squared: $C = 2\pi r$.
+- **Diameter**: $d = r + r = 2r$.

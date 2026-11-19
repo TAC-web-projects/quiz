@@ -7,7 +7,7 @@ keys: rise run ÷ × + −
 ---
 
 ## Hint
-Slope measures how **steep** the line is: how far it goes up for each step to the right.
+Slope measures how **steep** a line is. In the diagram, going from $(1, 1)$ to $(4, 3)$, the line moves $3$ to the right (the run) and $2$ up (the rise).
 
 ```{.tikz}
 \begin{tikzpicture}[scale=0.8]
@@ -28,11 +28,11 @@ Slope measures how **steep** the line is: how far it goes up for each step to th
 ```
 
 ## Hint
-"Rise over run": the up-and-down change goes **on top**. A steep line rises a lot for a small run, so its slope should come out big.
+A steep line rises a lot over a short run, so its slope should be a large number. Which order of division makes that happen?
 
 ## Solution
 **Answer:** $m = \frac{\text{rise}}{\text{run}}$
 
-In the diagram, the line rises $2$ while it runs $3$, so $m = \frac{2}{3}$.
+In the diagram, the rise is $2$ and the run is $3$, so $m = \frac{2}{3}$.
 
-- **run ÷ rise**: upside down. It would make steep lines have *small* slopes.
+- **run ÷ rise**: upside down. It would give steep lines *small* slopes: here $\frac{3}{2}$ instead of $\frac{2}{3}$.

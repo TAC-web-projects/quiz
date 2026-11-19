@@ -1,16 +1,18 @@
 ---
 type: wordle
-title: Subtracting fractions with variables on the bottom, 3/x − 2/y
+title: Subtracting fractions with variables in the denominator, 3/x − 2/y
 lhs: "3/x − 2/y ="
 answer: ( 3y − 2x ) ÷ xy
 keys: ( ) 3y 2x 3x 2y 6 xy + − ÷
 ---
 
-## Hint
-The bottoms are $x$ and $y$. Multiply them to get a common bottom: $xy$.
+Assume $x \neq 0$ and $y \neq 0$.
 
 ## Hint
-Multiply each top by the **other** bottom: $3$ gets multiplied by $y$, and $2$ gets multiplied by $x$.
+The denominators $x$ and $y$ are different, so first rewrite both fractions with a common denominator. Which expression has both $x$ and $y$ as factors?
+
+## Hint
+Use the common denominator $xy$: multiply $\frac{3}{x}$ by $\frac{y}{y}$, and multiply $\frac{2}{y}$ by $\frac{x}{x}$.
 
 ## Solution
 **Answer:** $\frac{3}{x} - \frac{2}{y} = \frac{3y - 2x}{xy}$
@@ -22,7 +24,7 @@ $$
 \end{aligned}
 $$
 
-- **3x** or **2y**: each top was multiplied by its *own* bottom. It has to be the other one.
-- **6** on top: multiplying the tops together is never part of adding or subtracting.
+- **3x** or **2y**: each numerator must be multiplied by the *other* fraction's denominator, not its own.
+- **6**: the numerators are never multiplied together when adding or subtracting.
 
-Check with numbers: if $x = 1$ and $y = 2$, then $\frac{3}{1} - \frac{2}{2} = 2$, and $\frac{3 \cdot 2 - 2 \cdot 1}{1 \cdot 2} = \frac{4}{2} = 2$.
+Check with numbers: if $x = 1$ and $y = 2$, then $\frac{3}{1} - \frac{2}{2} = 3 - 1 = 2$, and $\frac{3 \cdot 2 - 2 \cdot 1}{1 \cdot 2} = \frac{4}{2} = 2$.

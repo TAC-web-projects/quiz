@@ -3,7 +3,7 @@ type: memory
 title: Exponent Rules
 ---
 
-Flip two cards at a time. Match each **expression** to its **simplified form**.
+Flip two cards at a time. Match each **expression** to its **simplified form**. (Assume $x \neq 0$ and $y \neq 0$.)
 
 | Expression | Simplified |
 |:-----------|:-----------|
@@ -15,11 +15,19 @@ Flip two cards at a time. Match each **expression** to its **simplified form**.
 | $x^{-a}$ | $\frac{1}{x^a}$ |
 
 ## Hint
-Write it out the long way. $x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)$: count the $x$'s.
+Write a small example out as factors and count them: $x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)$.
 
 ## Hint
-Multiplying powers **adds** the exponents, and dividing **subtracts** them. A power of a power **multiplies** them.
-A negative exponent means "flip it into a fraction", not "make it negative".
+For $x^0$, simplify $\frac{x^3}{x^3}$ two ways: by cancelling, and with the dividing rule.
+
+## Hint
+For $x^{-a}$, continue the pattern $x^2 = x \cdot x$, $x^1 = x$, $x^0 = 1$: each time the exponent goes down by $1$, the value is divided by $x$.
 
 ## Solution
-Each rule comes from counting factors. For example, $(x^2)^3 = x^2 \cdot x^2 \cdot x^2 = x^{2+2+2} = x^6$, so a power of a power multiplies the exponents.
+Each rule comes from counting factors of $x$:
+
+- $x^a \cdot x^b$: $a$ factors of $x$ followed by $b$ more is $a + b$ factors in total.
+- $\frac{x^a}{x^b}$: the $b$ factors in the denominator cancel $b$ of the $a$ factors in the numerator.
+- $(x^a)^b = \underbrace{x^a \cdot x^a \cdots x^a}_{b \text{ factors}} = x^{ab}$.
+- $(xy)^a$: each of the $a$ factors $xy$ contributes one $x$ and one $y$.
+- $x^0 = \frac{x^3}{x^3} = 1$, and $x^{-a} = \frac{x^0}{x^a} = \frac{1}{x^a}$.

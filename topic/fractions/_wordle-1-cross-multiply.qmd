@@ -7,7 +7,10 @@ keys: ( ) ad bc ac bd + − ÷
 ---
 
 ## Hint
-The bottoms $b$ and $d$ are different. Cross multiply to give both fractions the bottom $bd$.
+The denominators $b$ and $d$ are different. Before subtracting, rewrite both fractions with the same denominator. The product $bd$ works.
+
+## Hint
+To give $\frac{a}{b}$ the denominator $bd$, multiply it by $\frac{d}{d}$. To give $\frac{c}{d}$ the denominator $bd$, multiply it by $\frac{b}{b}$. This is called **cross multiplying**:
 
 ```{.tikz}
 \begin{tikzpicture}
@@ -24,12 +27,11 @@ The bottoms $b$ and $d$ are different. Cross multiply to give both fractions the
   \node[fill=white, inner sep=1pt] at (1,0) {$-$};   % drawn last so the arrows don't hide it
   \node[red!65!black, font=\footnotesize] at (1,-1.15) {$a \cdot d$};
   \node[blue!65!black, font=\footnotesize] at (1,1.15) {$c \cdot b$};
-  \node at (4.3,0) {$= \dfrac{\textcolor{red!65!black}{ad} - \textcolor{blue!65!black}{bc}}{bd}$};
 \end{tikzpicture}
 ```
 
 ## Hint
-Each top is multiplied by the **other** fraction's bottom. Keep the minus sign in the middle, and keep $a$'s product first.
+Subtract in the same order as the question: the first fraction's new numerator, minus the second fraction's new numerator.
 
 ## Solution
 **Answer:** $\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}$
@@ -41,5 +43,5 @@ $$
 \end{aligned}
 $$
 
-- **ac** or **bd** on top: that multiplies straight across, which is the rule for *multiplying* fractions, not adding or subtracting them.
-- **( bc − ad )**: backwards. That gives the opposite sign.
+- **ac** in the numerator: that multiplies straight across, $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, which is the rule for *multiplying* fractions.
+- **( bc − ad )**: backwards. $\frac{bc - ad}{bd} = -\frac{ad - bc}{bd}$, the opposite of the answer.

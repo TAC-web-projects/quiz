@@ -13,10 +13,10 @@ Match each **product** to its **expanded form**.
 | $(a + b)(a - b)$ | $a^2 - b^2$ |
 
 ## Hint
-A square means the bracket times **itself**: $(a + b)^2 = (a + b)(a + b)$. Then FOIL it.
+A square is a product of a bracket with itself: $(a + b)^2 = (a + b)(a + b)$. Expand it with FOIL.
 
 ## Hint
-In $(a + b)(a - b)$, the Outer and Inner products are $-ab$ and $+ab$. What happens when you add them?
+Only two of the expanded forms contain a $2ab$ term: one with $+2ab$ and one with $-2ab$. In $(a + b)(a - b)$, compare the Outer product $a \cdot (-b)$ with the Inner product $b \cdot a$.
 
 ## Solution
 $$
@@ -27,4 +27,4 @@ $$
 \end{aligned}
 $$
 
-The most common mistake is $(a + b)^2 = a^2 + b^2$. It forgets the two middle terms, $2ab$.
+A common mistake is $(a + b)^2 = a^2 + b^2$. It leaves out the middle term $ab + ab = 2ab$.

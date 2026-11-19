@@ -7,9 +7,9 @@ type: notes
 
 | Symbol | Meaning |
 |:------:|:--------|
-| $x$ | The **base**: the number being multiplied |
-| $a$, $b$ | **Exponents**: how many times the base is multiplied by itself |
-| $x^a$ | "$x$ to the $a$": $x$ multiplied by itself $a$ times |
-| $x^0$ | Any nonzero base to the 0 power is $1$ |
-| $x^{-a}$ | $\frac{1}{x^a}$: a negative exponent flips the power into a fraction |
+| $x$ | The **base** |
+| $a$, $b$ | **Exponents** |
+| $x^a$ | For a whole number $a$: the product of $a$ factors of $x$. Example: $x^3 = x \cdot x \cdot x$ |
+| $x^0$ | $x^0 = 1$ for every $x \neq 0$ |
+| $x^{-a}$ | $x^{-a} = \frac{1}{x^a}$ for $x \neq 0$ (the reciprocal of $x^a$) |
 :::

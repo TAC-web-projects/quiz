@@ -6,18 +6,18 @@ answer: ᵃ ⁻ ᵇ
 keys: ᵃ ᵇ ⁺ ⁻ ¹ ²
 ---
 
-Fill in the exponent.
+Fill in the exponent. (Assume $x \neq 0$.)
 
 ## Hint
-Try real numbers: $\frac{x^5}{x^2} = \frac{x \cdot x \cdot x \cdot x \cdot x}{x \cdot x}$. Cancel the pairs. How many $x$'s are left?
+Try specific exponents: $\frac{x^5}{x^2} = \frac{x \cdot x \cdot x \cdot x \cdot x}{x \cdot x}$. Cancel matching factors. How many factors of $x$ are left?
 
 ## Hint
-Order matters: the exponent from the **top** comes first.
+Order matters. Check your answer with $a = 5$ and $b = 2$: it should give $x^3$.
 
 ## Solution
 **Answer:** $\frac{x^a}{x^b} = x^{a-b}$
 
-Each $x$ on the bottom cancels one $x$ on the top, so you take $b$ away from $a$.
+Each of the $b$ factors of $x$ in the denominator cancels one of the $a$ factors in the numerator, leaving $a - b$.
 
-- **ᵇ ⁻ ᵃ**: backwards. $\frac{x^5}{x^2} = x^3$, not $x^{-3}$.
-- **ᵃ ⁺ ᵇ**: adding is for **multiplying** powers.
+- **ᵇ ⁻ ᵃ**: backwards. $\frac{x^5}{x^2} = x^{5-2} = x^3$, not $x^{2-5} = x^{-3}$.
+- **ᵃ ⁺ ᵇ**: $x^{a+b}$ is $x^a \cdot x^b$, a product.

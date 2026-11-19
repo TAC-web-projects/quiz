@@ -60,8 +60,18 @@ To check a diagram, run `scripts/check.sh`. A TikZ error makes it fail.
 Each game file has its body split by `## Hint` and `## Solution` headings. The filter turns them into the Hint/Solution tabs. File formats are covered in the `quiz-authoring` skill.
 
 - **Title:** for a Wordle, `title:` names the quantity in words ("Area of a circle", "Circumference of a circle, using its diameter"). It's shown above the board, so it should say exactly what is being asked.
-- **Hints:** usually two. Hint 1 nudges ("Area is measured in square units…") and may show a diagram. Hint 2 gives a concrete check ("How many radii make one diameter?", "try $r = 3$").
+- **Hints:** as many as the question needs (one is fine, three is fine), ordered from gentlest to most direct.
+  - **Hint 1 must not give the answer away**, and neither may a diagram in it (e.g. don't draw the finished result). It names the idea to use, or asks a guiding question ("Is one denominator already a multiple of the other?").
+  - Later hints get more concrete: a worked number example, the first step, or a check ("with $a = 2$, $b = 3$ it should give $x^5$").
+  - For a Memory Match, no single hint should settle a pair outright.
 - **Solution:** start with `**Answer:** $A = \pi r^2$`, give the reasoning (multi-step work in `aligned`), then name the likely traps as bullets that start with the bold key or mistake ("**d**: using the diameter instead of the radius gives an area 4 times too big.").
+- **Precision:** every statement must be unambiguously true as written.
+  - Prefer symbols to loose words: "$\pi = \frac{C}{d}$", not "the number of diameters around a circle"; "$x^{-a} = \frac{1}{x^a}$", not "flip it into a fraction"; "the product of $a$ factors of $x$", not "$x$ multiplied by itself $a$ times".
+  - State the conditions: $x \neq 0$ for $x^0$, negative exponents and denominators; $x_1 \neq x_2$ for slope.
+  - Say "numerator/denominator" (with "top/bottom" in brackets the first time), and "same base" for exponent rules.
+  - Avoid phrases that read two ways: "no slope" (say "undefined" or "$m = 0$"), and "bigger" for expressions like $x$ vs $x^2$ (say "a factor of").
+  - In trap bullets, name the mistake precisely and show it with numbers when you can ("$(x-4)^2 \neq x^2 \pm 16$").
+  - Re-derive every worked example.
 - **Voice:** short, plain sentences for a teenager. Use units to reason ("square units means area"). No em dashes; use colons or periods instead.
 
 The old multiple-choice format (checkbox forms, "Why the others are wrong" by letter) is archived in `archive/_multiple-choice-circles.qmd` and is no longer used.

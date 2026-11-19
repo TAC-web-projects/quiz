@@ -6,15 +6,18 @@ answer: 1 ÷ xᵃ
 keys: 1 0 − ÷ xᵃ x
 ---
 
-## Hint
-A negative exponent does **not** make the answer negative. $2^{-1}$ is $\frac{1}{2}$, not $-2$.
+Assume $x \neq 0$.
 
 ## Hint
-Follow the pattern: $x^2 = x \cdot x$, $x^1 = x$, $x^0 = 1$. Each step down **divides** by $x$. One more step gives $x^{-1} = \frac{1}{x}$.
+Follow the pattern: $x^3 = x \cdot x \cdot x$, $x^2 = x \cdot x$, $x^1 = x$. Each time the exponent goes down by $1$, the value is divided by $x$. Continue the pattern to $x^0$ and $x^{-1}$.
+
+## Hint
+A negative exponent does **not** make the value negative. For example, $2^{-1} = \frac{1}{2}$.
 
 ## Solution
 **Answer:** $x^{-a} = \frac{1}{x^a}$
 
-A negative exponent means "move it to the bottom of a fraction".
+$x^{-a}$ is the reciprocal of $x^a$. For example, $2^{-3} = \frac{1}{2^3} = \frac{1}{8}$.
 
-- **− xᵃ**: the most common mistake. The minus sign belongs to the exponent, not to the number.
+- **− xᵃ**: the minus sign is part of the exponent. It doesn't make the value negative: $2^{-3} = \frac{1}{8}$, not $-8$.
+- **0**: $x^{-a}$ is never $0$, because $\frac{1}{x^a} \neq 0$.

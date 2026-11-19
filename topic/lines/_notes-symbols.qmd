@@ -7,11 +7,11 @@ type: notes
 
 | Symbol | Meaning |
 |:------:|:--------|
-| $m$ | **Slope**: how steep the line is (rise over run) |
+| $m$ | **Slope**: $\frac{\text{change in } y}{\text{change in } x}$ |
 | $(x_1, y_1)$ | A known point on the line ("point 1") |
-| $(x_2, y_2)$ | A second known point ("point 2") |
+| $(x_2, y_2)$ | A second known point ("point 2"), with $x_2 \neq x_1$ |
 | $(x, y)$ | Any point on the line |
-| $b$ | **$y$-intercept**: where the line crosses the $y$-axis |
-| rise | Change in $y$ (up is positive, down is negative) |
-| run | Change in $x$ (right is positive, left is negative) |
+| $b$ | **$y$-intercept**: the line crosses the $y$-axis at the point $(0, b)$ |
+| rise | Change in $y$: positive going up, negative going down |
+| run | Change in $x$: positive going right, negative going left |
 :::

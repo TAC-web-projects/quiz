@@ -6,18 +6,18 @@ answer: ( x₁ − x₂ )
 keys: ( ) x₁ x₂ y₁ y₂ − +
 ---
 
-The top of the fraction is filled in. Finish the bottom.
+The numerator $(y_1 - y_2)$ is given. Fill in the denominator. Assume $x_1 \neq x_2$.
 
 ## Hint
-The top is the change in $y$ (the rise). The bottom is the change in $x$ (the run).
+Slope is rise over run. The numerator $y_1 - y_2$ is the rise (a change in $y$). Which coordinates give the run?
 
 ## Hint
-Keep the order the same on top and bottom: if the top starts with point 1 ($y_1$), the bottom must start with point 1 too.
+Subtract in the same order as the numerator: the numerator is "point 1 minus point 2".
 
 ## Solution
 **Answer:** $m = \frac{y_1 - y_2}{x_1 - x_2}$
 
-This is "rise over run" written with coordinates. For $(1, 1)$ and $(4, 3)$:
+This is "rise over run" written with coordinates. For the points $(1, 1)$ and $(4, 3)$:
 $$
 \begin{aligned}
     m &= \frac{1 - 3}{1 - 4} \\
@@ -25,7 +25,7 @@ $$
 \end{aligned}
 $$
 
-- **( x₂ − x₁ )**: mixing the order flips the sign: $\frac{1 - 3}{4 - 1} = -\frac{2}{3}$, which is wrong.
-- **y**'s on the bottom: that's run over rise, upside down.
+- **( x₂ − x₁ )**: mixing the order changes the sign: $\frac{1 - 3}{4 - 1} = -\frac{2}{3}$, which is wrong.
+- **y₁**, **y₂** in the denominator: that would be a change in $y$ over a change in $y$, not rise over run.
 
-You can also write $m = \frac{y_2 - y_1}{x_2 - x_1}$. Either order works, as long as top and bottom match.
+$m = \frac{y_2 - y_1}{x_2 - x_1}$ is also correct: both differences use the same order (point 2 minus point 1).
