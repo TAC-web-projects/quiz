@@ -1,0 +1,46 @@
+---
+type: memory
+title: "FOIL steps for (x + 3)(x + 5)"
+---
+
+For $(x + 3)(x + 5)$, match each **FOIL step** to the **product** it gives.
+
+| Step | Product |
+|:-----|:--------|
+| First | $x \cdot x = x^2$ |
+| Outer | $x \cdot 5 = 5x$ |
+| Inner | $3 \cdot x = 3x$ |
+| Last | $3 \cdot 5 = 15$ |
+
+## Hint
+**F**irst: the first term in each bracket. **L**ast: the last term in each bracket.
+
+## Hint
+**O**uter: the two terms on the far ends, $(\underline{x} + 3)(x + \underline{5})$. **I**nner: the two in the middle, $(x + \underline{3})(\underline{x} + 5)$.
+
+```{.tikz}
+\begin{tikzpicture}
+  % area model: each FOIL product is one box of the rectangle
+  \draw[seg] (0,0) rectangle (4,3.2);
+  \draw[seg] (2.4,0) -- (2.4,3.2);
+  \draw[seg] (0,1.2) -- (4,1.2);
+  \node[above] at (1.2,3.2) {$x$};
+  \node[above] at (3.2,3.2) {$+5$};
+  \node[left] at (0,2.2) {$x$};
+  \node[left] at (0,0.6) {$+3$};
+  \node at (1.2,2.2) {$x^2$};
+  \node at (3.2,2.2) {$5x$};
+  \node at (1.2,0.6) {$3x$};
+  \node at (3.2,0.6) {$15$};
+  \node at (2,-0.6) {$x^2 + 5x + 3x + 15$};
+\end{tikzpicture}
+```
+
+## Solution
+Add the four products and combine the like terms in the middle:
+$$
+\begin{aligned}
+    (x + 3)(x + 5) &= x^2 + 5x + 3x + 15 \\
+                   &= x^2 + 8x + 15
+\end{aligned}
+$$

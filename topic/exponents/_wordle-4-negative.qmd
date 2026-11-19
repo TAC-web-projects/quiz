@@ -1,0 +1,20 @@
+---
+type: wordle
+title: A negative exponent
+lhs: "x⁻ᵃ ="
+answer: 1 ÷ xᵃ
+keys: 1 0 − ÷ xᵃ x
+---
+
+## Hint
+A negative exponent does **not** make the answer negative. $2^{-1}$ is $\frac{1}{2}$, not $-2$.
+
+## Hint
+Follow the pattern: $x^2 = x \cdot x$, $x^1 = x$, $x^0 = 1$. Each step down **divides** by $x$. One more step gives $x^{-1} = \frac{1}{x}$.
+
+## Solution
+**Answer:** $x^{-a} = \frac{1}{x^a}$
+
+A negative exponent means "move it to the bottom of a fraction".
+
+- **− xᵃ**: the most common mistake. The minus sign belongs to the exponent, not to the number.

@@ -1,0 +1,15 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What the symbols mean
+
+| Symbol | Meaning |
+|:------:|:--------|
+| $x$ | The **base**: the number being multiplied |
+| $a$, $b$ | **Exponents**: how many times the base is multiplied by itself |
+| $x^a$ | "$x$ to the $a$": $x$ multiplied by itself $a$ times |
+| $x^0$ | Any nonzero base to the 0 power is $1$ |
+| $x^{-a}$ | $\frac{1}{x^a}$: a negative exponent flips the power into a fraction |
+:::

@@ -50,7 +50,13 @@
   font-weight: 600;
   margin: 0.25em 0 0.75em;
 }
-.wordle-tile { width: 2.2em; height: 2.2em; }
+/* Tiles shrink a little on phones and widen for word symbols ("rise") */
+.wordle-tile { min-width: min(2.2em, 11vw); height: min(2.2em, 11vw); padding: 0 0.15em; }
+.wordle-row { white-space: nowrap; }
+/* Long left sides ("m = (y₁ − y₂) ÷") move above the board when rows don't fit */
+.wordle-lhs-top { display: none; }
+.wordle-lhs-above .wordle-lhs-top { display: block; }
+.wordle-lhs-above .wordle-lhs { display: none; }
 .wordle-msg { min-height: 1.5em; }
 /* Wordle-style yellow (Bootstrap's "warning" is orange in the cosmo theme) */
 .wordle-yellow { background-color: #f5d300 !important; border-color: #f5d300 !important; color: #212529 !important; }

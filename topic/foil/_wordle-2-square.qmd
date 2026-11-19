@@ -1,0 +1,27 @@
+---
+type: wordle
+title: "Expand (x − 4)²"
+lhs: "x²"
+answer: − 8 x + 1 6
+keys: 1 2 4 6 8 x + −
+---
+
+## Hint
+Write it as $(x - 4)(x - 4)$ and FOIL.
+
+## Hint
+The Outer and Inner products are both $-4x$. And a negative times a negative is positive: $(-4)(-4) = +16$.
+
+## Solution
+**Answer:** $(x - 4)^2 = x^2 - 8x + 16$
+
+$$
+\begin{aligned}
+    (x - 4)^2 &= (x - 4)(x - 4) \\
+              &= x^2 - 4x - 4x + 16 \\
+              &= x^2 - 8x + 16
+\end{aligned}
+$$
+
+- **x² − 16**: squaring each term separately. That drops the middle term, $-8x$.
+- **− 1 6** at the end: $(-4)(-4)$ is $+16$.

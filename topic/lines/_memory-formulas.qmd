@@ -1,0 +1,22 @@
+---
+type: memory
+title: Line Formulas
+---
+
+| Name | Formula |
+|:-----|:--------|
+| Slope from two points | $m = \frac{y_1 - y_2}{x_1 - x_2}$ |
+| Slope from a graph | $m = \frac{\text{rise}}{\text{run}}$ |
+| Point-slope form | $y - y_1 = m(x - x_1)$ |
+| Slope-intercept form | $y = mx + b$ |
+| Slope of a horizontal line | $m = 0$ |
+
+## Hint
+Slope compares **up-and-down** change to **left-and-right** change. Up-and-down ($y$, rise) goes on top.
+
+## Hint
+Point-slope form is the only one that uses a point $(x_1, y_1)$ *and* has $y$ on the left. Slope-intercept form has a $b$: where the line crosses the $y$-axis.
+
+## Solution
+A horizontal line never goes up or down, so its rise is $0$ and $m = \frac{0}{\text{run}} = 0$.
+(A vertical line has a run of $0$, and dividing by $0$ is impossible, so its slope is **undefined**.)

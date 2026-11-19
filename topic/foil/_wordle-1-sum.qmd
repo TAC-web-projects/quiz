@@ -1,0 +1,25 @@
+---
+type: wordle
+title: "Expand (x + 3)(x + 5)"
+lhs: "x² +"
+answer: 8 x + 1 5
+keys: 1 2 3 5 8 x + −
+---
+
+## Hint
+FOIL gives four products: $x^2$, $5x$, $3x$ and $15$.
+
+## Hint
+Combine the two middle terms: $5x + 3x$.
+
+## Solution
+**Answer:** $(x + 3)(x + 5) = x^2 + 8x + 15$
+
+$$
+\begin{aligned}
+    (x + 3)(x + 5) &= x^2 + 5x + 3x + 15 \\
+                   &= x^2 + 8x + 15
+\end{aligned}
+$$
+
+- **1 5 x**: multiplying the middle terms ($3 \cdot 5 = 15$) instead of adding them. Outer and Inner get **added** to each other.

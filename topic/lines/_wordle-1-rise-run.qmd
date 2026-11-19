@@ -1,0 +1,38 @@
+---
+type: wordle
+title: Slope of a line from its graph
+lhs: "m ="
+answer: rise ÷ run
+keys: rise run ÷ × + −
+---
+
+## Hint
+Slope measures how **steep** the line is: how far it goes up for each step to the right.
+
+```{.tikz}
+\begin{tikzpicture}[scale=0.8]
+  % grid and axes
+  \draw[gray!30, very thin] (-0.5,-0.5) grid (5.5,4.5);
+  \draw[-{Stealth[length=2mm]}] (-0.5,0) -- (5.7,0) node[right] {$x$};
+  \draw[-{Stealth[length=2mm]}] (0,-0.5) -- (0,4.7) node[above] {$y$};
+  % the line through (1,1) and (4,3)
+  \draw[seg, blue!65!black] (0,0.333) -- (5,3.667);
+  % run (across), then rise (up)
+  \draw[seg, red!65!black, dashed] (1,1) -- node[below, font=\footnotesize] {run $= 3$} (4,1)
+                                          -- node[right, font=\footnotesize] {rise $= 2$} (4,3);
+  \node[center dot] at (1,1) {};
+  \node[center dot] at (4,3) {};
+  \node[above left, font=\footnotesize] at (1,1) {$(1, 1)$};
+  \node[above left, font=\footnotesize] at (4,3) {$(4, 3)$};
+\end{tikzpicture}
+```
+
+## Hint
+"Rise over run": the up-and-down change goes **on top**. A steep line rises a lot for a small run, so its slope should come out big.
+
+## Solution
+**Answer:** $m = \frac{\text{rise}}{\text{run}}$
+
+In the diagram, the line rises $2$ while it runs $3$, so $m = \frac{2}{3}$.
+
+- **run ÷ rise**: upside down. It would make steep lines have *small* slopes.

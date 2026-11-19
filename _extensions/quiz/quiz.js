@@ -193,8 +193,18 @@
               : "secondary");
       }
 
+      // If a row (left side + tiles) is too wide for the screen, show the left
+      // side once above the board instead of at the start of every row.
+      const lhsTop = h(`<div class="wordle-lhs-top fs-4 mb-1"></div>`);
+      lhsTop.textContent = lhs + " …";
+      const checkFit = () => {
+        el.classList.remove("wordle-lhs-above");
+        const first = board.firstElementChild;
+        if (first && first.scrollWidth > first.clientWidth + 1) el.classList.add("wordle-lhs-above");
+      };
+
       function newRow() {
-        row = h(`<div class="d-flex gap-1 align-items-center"><span class="fs-4 me-2"></span></div>`);
+        row = h(`<div class="wordle-row d-flex gap-1 align-items-center"><span class="wordle-lhs fs-4 me-2"></span></div>`);
         row.firstChild.textContent = lhs;
         answer.forEach((a, i) => {
           const tile = h(`<span class="${tileCls} ${locked[i] ? look.success[0] : ""}"></span>`);
@@ -246,8 +256,15 @@
         kb.append(keyBtns[k]);
       }
       resetBtn.onclick = () => { game.save({ guesses: [] }); reset([]); };
-      el.append(board, msg, kb, resetBtn);
+      el.append(lhsTop, board, msg, kb, resetBtn);
       reset(game.state.guesses || []);
+      // Measure once visible (topics/slides start hidden), and on resize.
+      let lastWidth = 0;
+      new ResizeObserver(() => {
+        const w = el.clientWidth;
+        if (w > 0 && w !== lastWidth) { lastWidth = w; checkFit(); }
+      }).observe(el);
+      document.fonts && document.fonts.ready.then(checkFit);
     },
 
     summary(s) {

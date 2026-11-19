@@ -1,0 +1,27 @@
+---
+type: wordle
+title: "Expand (x + 6)(x − 6)"
+lhs: "="
+answer: x ² − 3 6
+keys: x ² 1 2 3 6 + −
+---
+
+## Hint
+FOIL it: the Outer product is $-6x$ and the Inner product is $+6x$.
+
+## Hint
+$-6x + 6x = 0$, so the middle disappears. Only First and Last are left.
+
+## Solution
+**Answer:** $(x + 6)(x - 6) = x^2 - 36$
+
+$$
+\begin{aligned}
+    (x + 6)(x - 6) &= x^2 - 6x + 6x - 36 \\
+                   &= x^2 - 36
+\end{aligned}
+$$
+
+This is the **difference of squares** pattern: $(a + b)(a - b) = a^2 - b^2$.
+
+- **+ 3 6**: the Last product is $(+6)(-6) = -36$.

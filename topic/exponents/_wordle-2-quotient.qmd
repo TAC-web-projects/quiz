@@ -1,0 +1,23 @@
+---
+type: wordle
+title: Dividing powers with the same base
+lhs: "xᵃ ÷ xᵇ = x"
+answer: ᵃ ⁻ ᵇ
+keys: ᵃ ᵇ ⁺ ⁻ ¹ ²
+---
+
+Fill in the exponent.
+
+## Hint
+Try real numbers: $\frac{x^5}{x^2} = \frac{x \cdot x \cdot x \cdot x \cdot x}{x \cdot x}$. Cancel the pairs. How many $x$'s are left?
+
+## Hint
+Order matters: the exponent from the **top** comes first.
+
+## Solution
+**Answer:** $\frac{x^a}{x^b} = x^{a-b}$
+
+Each $x$ on the bottom cancels one $x$ on the top, so you take $b$ away from $a$.
+
+- **ᵇ ⁻ ᵃ**: backwards. $\frac{x^5}{x^2} = x^3$, not $x^{-3}$.
+- **ᵃ ⁺ ᵇ**: adding is for **multiplying** powers.

@@ -32,6 +32,8 @@ $$
 
 - Keep Memory Match formulas to one short inline formula. Cards never wrap a formula, and they shrink text to fit a phone-width card.
 - In Wordle, a plain **2** and the exponent **²** are different keys. Make sure `answer:` uses the one the formula means.
+- Wordle exponents and subscripts use Unicode: superscripts `ᵃ ᵇ ⁺ ⁻ ⁰ ¹ ²` (product of exponents = two tiles side by side, `ᵃ ᵇ`, never `ˣ`), subscripts `x₁ y₂`, operators `− ÷ ×` (true minus `−`, not hyphen). A tile can be a whole word or term (`rise`, `xᵃ`). Keep answers to about 6 tiles so the board fits a phone; a long `lhs:` is fine (it moves above the board on narrow screens).
+- When a formula's left side *is* the thing being asked (e.g. FOIL, exponent rules), put it in the Memory Match **first column** instead of in the formula: `| $x^a \cdot x^b$ | $x^{a+b}$ |`. Math works in either column.
 
 ## TikZ diagrams
 

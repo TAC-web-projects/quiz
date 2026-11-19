@@ -17,5 +17,14 @@ Your progress is saved on this device, and **Check your results** at the bottom 
 ::: {.topic folder="topic/circles" title="Circles"}
 :::
 
+::: {.topic folder="topic/exponents" title="Exponent Rules"}
+:::
+
+::: {.topic folder="topic/foil" title="Expanding with FOIL"}
+:::
+
+::: {.topic folder="topic/lines" title="Slope & Point-Slope"}
+:::
+
 ::: {.quiz-results}
 :::

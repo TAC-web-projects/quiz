@@ -1,0 +1,31 @@
+---
+type: wordle
+title: Slope through two points, (x₁, y₁) and (x₂, y₂)
+lhs: "m = (y₁ − y₂) ÷"
+answer: ( x₁ − x₂ )
+keys: ( ) x₁ x₂ y₁ y₂ − +
+---
+
+The top of the fraction is filled in. Finish the bottom.
+
+## Hint
+The top is the change in $y$ (the rise). The bottom is the change in $x$ (the run).
+
+## Hint
+Keep the order the same on top and bottom: if the top starts with point 1 ($y_1$), the bottom must start with point 1 too.
+
+## Solution
+**Answer:** $m = \frac{y_1 - y_2}{x_1 - x_2}$
+
+This is "rise over run" written with coordinates. For $(1, 1)$ and $(4, 3)$:
+$$
+\begin{aligned}
+    m &= \frac{1 - 3}{1 - 4} \\
+      &= \frac{-2}{-3} = \frac{2}{3}
+\end{aligned}
+$$
+
+- **( x₂ − x₁ )**: mixing the order flips the sign: $\frac{1 - 3}{4 - 1} = -\frac{2}{3}$, which is wrong.
+- **y**'s on the bottom: that's run over rise, upside down.
+
+You can also write $m = \frac{y_2 - y_1}{x_2 - x_1}$. Either order works, as long as top and bottom match.
