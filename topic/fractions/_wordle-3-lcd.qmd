@@ -1,0 +1,29 @@
+---
+type: wordle
+title: Least common denominator of 2/x and 3/x²
+lhs: "LCD ="
+answer: x²
+keys: x x² x³ 2x 5 6
+---
+
+The **least common denominator** (LCD) is the smallest bottom that both fractions can be rewritten with.
+
+## Hint
+Can one bottom already be turned into the other? $x^2 = x \cdot x$, so $x$ goes into $x^2$.
+
+## Hint
+Multiplying the two bottoms together ($x \cdot x^2 = x^3$) always works, but it's not always the *least* one. Look for something smaller.
+
+## Solution
+**Answer:** $\text{LCD} = x^2$
+
+Only the first fraction needs to change:
+$$
+\begin{aligned}
+    \frac{2}{x} + \frac{3}{x^2} &= \frac{2 \cdot x}{x \cdot x} + \frac{3}{x^2} \\
+                                &= \frac{2x + 3}{x^2}
+\end{aligned}
+$$
+
+- **x³**: cross multiplying gives $x^3$. It isn't wrong, but you'd have to simplify at the end. The LCD saves that step.
+- **5** or **6**: the denominator comes from the bottoms, not the tops.

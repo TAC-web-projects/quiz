@@ -23,6 +23,9 @@ Your progress is saved on this device, and **Check your results** at the bottom 
 ::: {.topic folder="topic/foil" title="Expanding with FOIL"}
 :::
 
+::: {.topic folder="topic/fractions" title="Adding Fractions"}
+:::
+
 ::: {.topic folder="topic/lines" title="Slope & Point-Slope"}
 :::
 

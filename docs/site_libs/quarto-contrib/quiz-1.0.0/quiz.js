@@ -199,8 +199,16 @@
       lhsTop.textContent = lhs + " …";
       const checkFit = () => {
         el.classList.remove("wordle-lhs-above");
+        el.style.removeProperty("--tile");
         const first = board.firstElementChild;
-        if (first && first.scrollWidth > first.clientWidth + 1) el.classList.add("wordle-lhs-above");
+        const overflows = () => first && first.scrollWidth > first.clientWidth + 1;
+        if (!overflows()) return;
+        el.classList.add("wordle-lhs-above");
+        // Still too wide (many tiles): shrink the tiles to share the width.
+        if (overflows()) {
+          const gap = 4, n = answer.length;
+          el.style.setProperty("--tile", Math.floor((first.clientWidth - gap * (n - 1)) / n) + "px");
+        }
       };
 
       function newRow() {

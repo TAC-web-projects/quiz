@@ -1,0 +1,13 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## Steps for adding or subtracting fractions
+
+1. **Same bottoms?** Add or subtract the tops and keep the bottom: $\frac{a}{x} + \frac{b}{x} = \frac{a + b}{x}$.
+2. **Different bottoms?** Find a common bottom.
+   - **Cross multiply** (always works): $\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$.
+   - **Least common denominator** (less simplifying afterwards): if one bottom already divides the other, use the bigger one. For example, $x$ and $x^2$ have LCD $x^2$.
+3. **Never** add the bottoms: $\frac{1}{x} + \frac{1}{y} \neq \frac{2}{x + y}$.
+:::

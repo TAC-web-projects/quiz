@@ -41,7 +41,11 @@
 .mm-card .mm-face { display: none; }
 .mm-card.open .mm-face { display: inline; }
 .mm-card.open .mm-q { display: none; }
-.mm-card mjx-container { white-space: nowrap; }   /* never break a formula across lines */
+.mm-card mjx-container {
+  white-space: nowrap;                            /* never break a formula across lines */
+  /* white chip: colored terms (e.g. FOIL's dark red) stay readable on green/blue cards */
+  background: #fff; color: #212529; border-radius: 0.25rem; padding: 0.1em 0.3em;
+}
 .mm-faces { display: none; }                      /* faces wait here until quiz.js deals */
 
 /* ---------- Formula Wordle ---------- */
@@ -52,6 +56,11 @@
 }
 /* Tiles shrink a little on phones and widen for word symbols ("rise") */
 .wordle-tile { min-width: min(2.2em, 11vw); height: min(2.2em, 11vw); padding: 0 0.15em; }
+/* quiz.js sets --tile when a row has too many tiles for the screen */
+.quiz-wordle[style*="--tile"] .wordle-tile {
+  min-width: var(--tile); width: var(--tile); height: var(--tile);
+  padding: 0; font-size: calc(var(--tile) * 0.5) !important;
+}
 .wordle-row { white-space: nowrap; }
 /* Long left sides ("m = (y₁ − y₂) ÷") move above the board when rows don't fit */
 .wordle-lhs-top { display: none; }

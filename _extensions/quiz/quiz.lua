@@ -110,14 +110,19 @@ local function tabset(question, hints, solution)
   return pandoc.Div(blocks, attr("", { "panel-tabset" }))
 end
 
--- One slide: "Wordle 1 of 3: Area" + its tabs.
+-- One slide: "Wordle 1 of 3: Area" (or "Wordle: Area" when it's the only one) + its tabs.
 local function carousel_item(game)
-  local title = pandoc.Inlines {
-    pandoc.Str(game.label), pandoc.Space(),
-    pandoc.Span(pandoc.Str(tostring(game.index)), attr("", { "slide-num" })),
-    pandoc.Space(), pandoc.Str("of"), pandoc.Space(), pandoc.Str(tostring(game.count) .. ":"),
-    pandoc.Space(),
-  }
+  local title
+  if game.count > 1 then
+    title = pandoc.Inlines {
+      pandoc.Str(game.label), pandoc.Space(),
+      pandoc.Span(pandoc.Str(tostring(game.index)), attr("", { "slide-num" })),
+      pandoc.Space(), pandoc.Str("of"), pandoc.Space(), pandoc.Str(tostring(game.count) .. ":"),
+      pandoc.Space(),
+    }
+  else
+    title = pandoc.Inlines { pandoc.Str(game.label .. ":"), pandoc.Space() }
+  end
   title:extend(game.title)
   local classes = { "carousel-item" }
   if game.index == 1 then table.insert(classes, "active") end
@@ -127,9 +132,15 @@ local function carousel_item(game)
   }, attr("", classes))
 end
 
--- A carousel of slides plus Previous / Next / Shuffle buttons.
+-- A carousel of slides plus Previous / Next / Shuffle buttons
+-- (the buttons are left out when there is only one slide).
 local function carousel(id, noun, items)
   local inner = pandoc.Div(items, attr("", { "carousel-inner" }))
+  if #items < 2 then
+    return pandoc.Blocks {
+      pandoc.Div({ inner }, attr(id, { "carousel", "slide", "mb-4" }, { ["data-bs-interval"] = "false" })),
+    }
+  end
   local html = string.format([[
 <div class="quiz-nav">
 <button class="btn btn-outline-primary" data-bs-target="#%s" data-bs-slide="prev">‹ Previous %s</button>

@@ -46,18 +46,22 @@ diagram:
       # pdflatex also works; lualatex handles fonts better.
       execpath: lualatex
 
-      header-includes: 
-        \usetikzlibrary{angles,quotes,calc,patterns, decorations.pathreplacing, arrows.meta,positioning,intersections}
-        \tikzset{
+      # THIS is the preamble that actually reaches every diagram. Add packages,
+      # libraries and styles here, ONE LaTeX command per list item (two commands
+      # in one item get a stray "\\" between them and the diagram fails).
+      header-includes:
+        - \usepackage{amsmath,amssymb}
+        - \usetikzlibrary{angles,quotes,calc,patterns, decorations.pathreplacing, arrows.meta,positioning,intersections}
+        - \tikzset{
           circ/.style     = {line width=0.9pt},
           seg/.style      = {line width=0.9pt},
           center dot/.style = {circle, fill, inner sep=1.3pt},
           dim brace/.style  = {decorate, decoration={brace, amplitude=7pt, raise=4pt}, line width=0.7pt},
           callout/.style    = {-{Stealth[length=2mm]}, line width=0.6pt},
-        }
-      # Raw TeX added to the preamble of every diagram.
-      # (additional-packages is passed through unescaped;
-      #  header-includes would escape the backslashes.)
+          }
+      # NOT APPLIED: the diagram filter turns this `|` block into plain text,
+      # which drops the LaTeX, so none of these packages are loaded (checked
+      # Nov 2026: it arrives empty). Kept for reference; use header-includes.
       additional-packages: |
         \usepackage[margin=1in]{geometry}
         \usepackage[T1]{fontenc}

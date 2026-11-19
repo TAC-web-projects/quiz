@@ -1,0 +1,45 @@
+---
+type: wordle
+title: Subtracting two fractions, a/b − c/d
+lhs: "a/b − c/d ="
+answer: ( ad − bc ) ÷ bd
+keys: ( ) ad bc ac bd + − ÷
+---
+
+## Hint
+The bottoms $b$ and $d$ are different. Cross multiply to give both fractions the bottom $bd$.
+
+```{.tikz}
+\begin{tikzpicture}
+  % a/b - c/d with the two cross products
+  \node (a) at (0,0.45) {$a$};
+  \node (b) at (0,-0.45) {$b$};
+  \draw[seg] (-0.3,0) -- (0.3,0);
+  \node (c) at (2,0.45) {$c$};
+  \node (d) at (2,-0.45) {$d$};
+  \draw[seg] (1.7,0) -- (2.3,0);
+  % cross products: a times d, c times b
+  \draw[callout, red!65!black] (a) -- (d);
+  \draw[callout, blue!65!black] (c) -- (b);
+  \node[fill=white, inner sep=1pt] at (1,0) {$-$};   % drawn last so the arrows don't hide it
+  \node[red!65!black, font=\footnotesize] at (1,-1.15) {$a \cdot d$};
+  \node[blue!65!black, font=\footnotesize] at (1,1.15) {$c \cdot b$};
+  \node at (4.3,0) {$= \dfrac{\textcolor{red!65!black}{ad} - \textcolor{blue!65!black}{bc}}{bd}$};
+\end{tikzpicture}
+```
+
+## Hint
+Each top is multiplied by the **other** fraction's bottom. Keep the minus sign in the middle, and keep $a$'s product first.
+
+## Solution
+**Answer:** $\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}$
+
+$$
+\begin{aligned}
+    \frac{a}{b} - \frac{c}{d} &= \frac{a \cdot d}{b \cdot d} - \frac{c \cdot b}{d \cdot b} \\
+                              &= \frac{ad - bc}{bd}
+\end{aligned}
+$$
+
+- **ac** or **bd** on top: that multiplies straight across, which is the rule for *multiplying* fractions, not adding or subtracting them.
+- **( bc − ad )**: backwards. That gives the opposite sign.

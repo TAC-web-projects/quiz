@@ -37,7 +37,7 @@ $$
 
 ## TikZ diagrams
 
-Write a fenced ` ```{.tikz} ` block holding just `\begin{tikzpicture}...\end{tikzpicture}`. The preamble comes from `diagram.engine.tikz.additional-packages` in `_quarto.yml`. It loads amsmath, pgfplots, tkz-euclide and the libraries `angles, quotes, calc, patterns, decorations.pathreplacing, arrows.meta, positioning, intersections`, and it defines these styles. Use them rather than hand-coding widths:
+Write a fenced ` ```{.tikz} ` block holding just `\begin{tikzpicture}...\end{tikzpicture}`. The preamble comes from the `diagram.engine.tikz.header-includes` list in `_quarto.yml`. It loads `amsmath,amssymb` (so `\dfrac` works) and the libraries `angles, quotes, calc, patterns, decorations.pathreplacing, arrows.meta, positioning, intersections`, and it defines these styles. Use them rather than hand-coding widths:
 
 - `circ`, `seg`: circles and line segments (0.9pt)
 - `center dot`: `\node[center dot] at (0,0) {};`
@@ -49,7 +49,8 @@ House conventions:
 - Set multi-panel figures side by side with `\begin{scope}[shift={(4.6,0)}]`, introduce each panel with a `% ---- (a) Name ----` comment, and caption it with `\node at (0,-\R-0.55) {\small (a) Name};`.
 - Labels are math (`{$r$}`). Use `font=\footnotesize` on crowded labels. Hatch a shaded region with `pattern=north east lines`.
 - Add color only to tell parts apart: `red!65!black` and `blue!65!black`. Everything else stays black.
-- If you need a new library or style, add it to `additional-packages`. That key passes raw TeX through. `header-includes` escapes the backslashes, so it has no effect.
+- The same dark red in MathJax (cards, hints, solutions) is `\textcolor{#A60000}{a}`. MathJax rejects the `\textcolor[HTML]{...}` form, and an error there shows up as red error text on the page, not as a failed render. Use colour for meaning, e.g. FOIL's "these two terms get multiplied".
+- If you need a new package, library or style, add it as a **new item** in the `header-includes` list, one LaTeX command per item. Two commands in one item get a stray `\\` between them, and every diagram fails. `additional-packages` looks like it should work, but the diagram filter turns it into plain text and drops the LaTeX. It is **not applied**, so pgfplots, tkz-euclide and the rest listed there are not loaded.
 - Diagrams normally go in a `## Hint` section of a game file, not in the question itself.
 
 To check a diagram, run `scripts/check.sh`. A TikZ error makes it fail.

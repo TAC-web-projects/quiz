@@ -1,22 +1,22 @@
 ---
 type: memory
-title: "FOIL steps for (x + 3)(x + 5)"
+title: "FOIL: which terms get multiplied?"
 ---
 
-For $(x + 3)(x + 5)$, match each **FOIL step** to the **product** it gives.
+Match each **FOIL letter** to the bracket where its two multiplied terms are shown in red.
 
-| Step | Product |
-|:-----|:--------|
-| First | $x \cdot x = x^2$ |
-| Outer | $x \cdot 5 = 5x$ |
-| Inner | $3 \cdot x = 3x$ |
-| Last | $3 \cdot 5 = 15$ |
+| Letter | Terms multiplied |
+|:------:|:-----------------|
+| F | $(\textcolor{#A60000}{a} + b)(\textcolor{#A60000}{c} + d)$ |
+| O | $(\textcolor{#A60000}{a} + b)(c + \textcolor{#A60000}{d})$ |
+| I | $(a + \textcolor{#A60000}{b})(\textcolor{#A60000}{c} + d)$ |
+| L | $(a + \textcolor{#A60000}{b})(c + \textcolor{#A60000}{d})$ |
 
 ## Hint
 **F**irst: the first term in each bracket. **L**ast: the last term in each bracket.
 
 ## Hint
-**O**uter: the two terms on the far ends, $(\underline{x} + 3)(x + \underline{5})$. **I**nner: the two in the middle, $(x + \underline{3})(\underline{x} + 5)$.
+**O**uter: the two terms on the far ends. **I**nner: the two in the middle, next to each other.
 
 ```{.tikz}
 \begin{tikzpicture}
@@ -24,23 +24,24 @@ For $(x + 3)(x + 5)$, match each **FOIL step** to the **product** it gives.
   \draw[seg] (0,0) rectangle (4,3.2);
   \draw[seg] (2.4,0) -- (2.4,3.2);
   \draw[seg] (0,1.2) -- (4,1.2);
-  \node[above] at (1.2,3.2) {$x$};
-  \node[above] at (3.2,3.2) {$+5$};
-  \node[left] at (0,2.2) {$x$};
-  \node[left] at (0,0.6) {$+3$};
-  \node at (1.2,2.2) {$x^2$};
-  \node at (3.2,2.2) {$5x$};
-  \node at (1.2,0.6) {$3x$};
-  \node at (3.2,0.6) {$15$};
-  \node at (2,-0.6) {$x^2 + 5x + 3x + 15$};
+  \node[above] at (1.2,3.2) {$c$};
+  \node[above] at (3.2,3.2) {$+d$};
+  \node[left] at (0,2.2) {$a$};
+  \node[left] at (0,0.6) {$+b$};
+  \node at (1.2,2.2) {F: $ac$};
+  \node at (3.2,2.2) {O: $ad$};
+  \node at (1.2,0.6) {I: $bc$};
+  \node at (3.2,0.6) {L: $bd$};
+  \node at (2,-0.6) {$(a+b)(c+d) = ac + ad + bc + bd$};
 \end{tikzpicture}
 ```
 
 ## Solution
-Add the four products and combine the like terms in the middle:
+Add the four products:
 $$
 \begin{aligned}
-    (x + 3)(x + 5) &= x^2 + 5x + 3x + 15 \\
-                   &= x^2 + 8x + 15
+    (a + b)(c + d) &= \underbrace{ac}_{F} + \underbrace{ad}_{O} + \underbrace{bc}_{I} + \underbrace{bd}_{L}
 \end{aligned}
 $$
+
+For example, $(x + 3)(x + 5) = x^2 + 5x + 3x + 15 = x^2 + 8x + 15$.

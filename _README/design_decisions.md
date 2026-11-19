@@ -37,6 +37,8 @@ Follow them unless the owner changes them, and update this file when they do.
 - If a Wordle row (left side + tiles) is too wide for the screen, the left side
   is shown **once above the board** instead of at the start of every row, so
   long left sides like `m = (y₁ − y₂) ÷` work on phones.
+- A carousel with only **one** game has no Previous / Next / Shuffle buttons, and its
+  title has no "1 of 1".
 - **Memory cards never give the pair away**: a formula card shows `= \pi r^2`,
   never `A = \pi r^2`. Authors write the full formula. The filter strips a
   one-symbol left side, and the Solution tab shows the full table.

@@ -1,0 +1,28 @@
+---
+type: wordle
+title: Subtracting fractions with variables on the bottom, 3/x − 2/y
+lhs: "3/x − 2/y ="
+answer: ( 3y − 2x ) ÷ xy
+keys: ( ) 3y 2x 3x 2y 6 xy + − ÷
+---
+
+## Hint
+The bottoms are $x$ and $y$. Multiply them to get a common bottom: $xy$.
+
+## Hint
+Multiply each top by the **other** bottom: $3$ gets multiplied by $y$, and $2$ gets multiplied by $x$.
+
+## Solution
+**Answer:** $\frac{3}{x} - \frac{2}{y} = \frac{3y - 2x}{xy}$
+
+$$
+\begin{aligned}
+    \frac{3}{x} - \frac{2}{y} &= \frac{3 \cdot y}{x \cdot y} - \frac{2 \cdot x}{y \cdot x} \\
+                              &= \frac{3y - 2x}{xy}
+\end{aligned}
+$$
+
+- **3x** or **2y**: each top was multiplied by its *own* bottom. It has to be the other one.
+- **6** on top: multiplying the tops together is never part of adding or subtracting.
+
+Check with numbers: if $x = 1$ and $y = 2$, then $\frac{3}{1} - \frac{2}{2} = 2$, and $\frac{3 \cdot 2 - 2 \cdot 1}{1 \cdot 2} = \frac{4}{2} = 2$.
