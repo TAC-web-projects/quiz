@@ -1,0 +1,19 @@
+---
+type: wordle
+title: Diameter of a circle, using its radius
+lhs: "d ="
+answer: 2 r
+---
+
+## Hint
+The diameter goes all the way across the circle, through the center.
+
+## Hint
+How many radii, placed end to end, make one diameter?
+
+## Solution
+**Answer:** $d = 2r$
+
+The diameter is made of two radii placed end to end: $d = r + r = 2r$.
+
+A common mistake is $d = \frac{1}{2}r$. That would make the diameter *shorter* than the radius, which can't happen.

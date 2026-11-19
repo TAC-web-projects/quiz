@@ -1,0 +1,21 @@
+---
+type: wordle
+title: Area of a circle
+lhs: "A ="
+answer: π r ²
+---
+
+## Hint
+Area is measured in **square** units (like ft²), so something in the formula gets squared.
+
+## Hint
+The formula uses the radius, not the diameter, and the constant $\pi$.
+Careful: a plain **2** is a different symbol from the exponent **²**.
+
+## Solution
+**Answer:** $A = \pi r^2$
+
+The area is $\pi$ times the radius **squared**. The other keys are traps:
+
+- **2**: belongs in the circumference formula, $C = 2\pi r$, not in the area formula.
+- **d**: using the diameter instead of the radius gives an area 4 times too big.

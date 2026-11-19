@@ -1,6 +1,6 @@
 ---
 name: quiz-latex-style
-description: How this Quarto quiz site writes math and TikZ diagrams, and the house style for questions, hints and solutions. Use it whenever you add or edit anything in index.qmd or another .qmd here that involves math. That covers $...$ or $$ equations, ```{.tikz} diagrams, memory-match formulas, Wordle symbols, new quiz questions, hints, solutions, and changes to the TikZ preamble in _quarto.yml. Use it even when the user just says "add a question about X" or "draw a picture for this hint".
+description: How this Quarto quiz site writes math and TikZ diagrams, and the house voice for hints and solutions. Use it whenever you write or edit math in any .qmd here, especially the game files under topic/. That covers $...$ or $$ equations, ```{.tikz} diagrams, Memory Match formula tables, Wordle answer symbols, hints, solutions, and changes to the TikZ preamble in _quarto.yml. Use it even when the user just says "add a wordle about X" or "draw a picture for this hint". For where files go and how games are wired up, see the quiz-authoring skill.
 ---
 
 # Quiz LaTeX & style
@@ -9,10 +9,10 @@ The site is Quarto HTML (`_quarto.yml`, output in `docs/`) for ACT-level geometr
 
 | Where | Engine | How to write it |
 |---|---|---|
-| Prose, choices, solutions | MathJax (`html-math-method: mathjax`) | `$...$` / `$$...$$` |
+| Hints, solutions, titles, notes | MathJax (`html-math-method: mathjax`) | `$...$` / `$$...$$` |
 | Diagrams | `pandoc-ext/diagram` → lualatex → SVG | ` ```{.tikz} ` block |
-| Memory-match cards | OJS `tex` (KaTeX) inside a JS string | double the backslashes: `"A = \\pi r^2"` |
-| Wordle tiles/keys | plain text, no LaTeX | Unicode: `π r d 2 ² C θ ½` |
+| Memory Match table | MathJax, via the quiz filter | full formula in `$...$`, normal single backslashes: `$A = \pi r^2$`. Cards drop a one-symbol left side by themselves (`= \pi r^2`). |
+| Wordle `answer:` / `keys:` | plain text, no LaTeX | Unicode, space-separated: `π r ²` (from `π r d 2 ² C θ ½`) |
 
 ## Math in prose (MathJax)
 
@@ -30,7 +30,8 @@ $$
 $$
 ```
 
-- Keep display math out of quiz `<label>`s and memory cards, because they have to fit on one line on a phone (`.mm-card .katex` is `nowrap`, and the text shrinks to fit).
+- Keep Memory Match formulas to one short inline formula. Cards never wrap a formula, and they shrink text to fit a phone-width card.
+- In Wordle, a plain **2** and the exponent **²** are different keys. Make sure `answer:` uses the one the formula means.
 
 ## TikZ diagrams
 
@@ -47,15 +48,17 @@ House conventions:
 - Labels are math (`{$r$}`). Use `font=\footnotesize` on crowded labels. Hatch a shaded region with `pattern=north east lines`.
 - Add color only to tell parts apart: `red!65!black` and `blue!65!black`. Everything else stays black.
 - If you need a new library or style, add it to `additional-packages`. That key passes raw TeX through. `header-includes` escapes the backslashes, so it has no effect.
-- Diagrams normally go inside a hint callout, not in the question itself.
+- Diagrams normally go in a `## Hint` section of a game file, not in the question itself.
 
-To check a diagram, render it with `quarto render index.qmd`. A TikZ error makes the render fail, and the message names the block.
+To check a diagram, run `scripts/check.sh`. A TikZ error makes it fail.
 
-## Question/hint/solution style
+## Hint/solution style
 
-Each item is a `.carousel-item` with a `.panel-tabset` that has the tabs **Question / Hint / Solution**. Copy an existing item, then bump `name="qN"` and "of N".
+Each game file has its body split by `## Hint` and `## Solution` headings. The filter turns them into the Hint/Solution tabs. File formats are covered in the `quiz-authoring` skill.
 
-- **Question:** a checkbox `<form class="quiz-question" data-answer="b,d">`. Write choices as `A. $...$`. Add "(more than one correct choice)" after a `<br>`. Make the wrong choices *plausible mistakes*, such as a 2 on the wrong side, a missing square, or radius and diameter swapped.
-- **Hint:** two `::: {.callout-tip collapse="true"}` blocks titled `## Hint 1` and `## Hint 2`. Hint 1 nudges and often shows a diagram. Hint 2 gives a concrete check ("try $r = 3$").
-- **Solution:** `**Answer: B & D.**`, then the derivation in `aligned`, then `**Why the others are wrong:**` as bullets. Each bullet starts with the bold letter and names the mistake ("forgets to square the 2. That's 2 times too big.").
+- **Title:** for a Wordle, `title:` names the quantity in words ("Area of a circle", "Circumference of a circle, using its diameter"). It's shown above the board, so it should say exactly what is being asked.
+- **Hints:** usually two. Hint 1 nudges ("Area is measured in square units…") and may show a diagram. Hint 2 gives a concrete check ("How many radii make one diameter?", "try $r = 3$").
+- **Solution:** start with `**Answer:** $A = \pi r^2$`, give the reasoning (multi-step work in `aligned`), then name the likely traps as bullets that start with the bold key or mistake ("**d**: using the diameter instead of the radius gives an area 4 times too big.").
 - **Voice:** short, plain sentences for a teenager. Use units to reason ("square units means area"). No em dashes; use colons or periods instead.
+
+The old multiple-choice format (checkbox forms, "Why the others are wrong" by letter) is archived in `archive/_multiple-choice-circles.qmd` and is no longer used.

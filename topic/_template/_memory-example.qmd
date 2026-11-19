@@ -1,0 +1,30 @@
+---
+# MEMORY MATCH. Copy this file into a topic folder, e.g. topic/circles/_memory-2-angles.qmd
+# (the name must start with "_" and end in ".qmd"; files are shown in filename order).
+type: memory
+# Shown in the slide title and in the results list.
+title: Circle Formulas
+---
+
+<!--
+  One row per pair. Write the FULL formula in $...$ with normal single
+  backslashes. Cards hide a one-symbol left side ("A = \pi r^2" shows as
+  "= \pi r^2") so the letter doesn't give the pair away; the Solution tab shows
+  this table as written. Formulas without a one-symbol left side show whole.
+-->
+
+| Name | Formula |
+|:-----|:--------|
+| Area of a circle | $A = \pi r^2$ |
+| Circumference | $C = 2\pi r$ |
+| Diameter | $d = 2r$ |
+| Equation of a circle | $(x-h)^2 + (y-k)^2 = r^2$ |
+
+## Hint
+First hint.
+
+## Hint
+Second hint.
+
+## Solution
+Optional extra explanation, shown under the table.

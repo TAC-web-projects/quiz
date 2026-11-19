@@ -1,0 +1,17 @@
+---
+type: memory
+title: Circle Formulas
+---
+
+| Name | Formula |
+|:-----|:--------|
+| Area of a circle | $A = \pi r^2$ |
+| Circumference | $C = 2\pi r$ |
+| Diameter | $d = 2r$ |
+| Equation of a circle | $(x-h)^2 + (y-k)^2 = r^2$ |
+
+## Hint
+Area is measured in square units, so its formula squares the radius: $r^2$. Circumference is a length, so its radius isn't squared.
+
+## Hint
+The diameter is two radii long, so the formula for $d$ has a **2** in it. The equation of a circle is the only one with both $x$ and $y$.

@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  # Only index.qmd is a page. Question files (topic/**/_*.qmd), archive/,
+  # _README/ and the .md notes are pulled in or ignored, never rendered alone.
+  render:
+    - index.qmd
 
 
 website:
@@ -22,10 +26,13 @@ format:
     include-in-header: login-header.html
     include-before-body: login.html
 
-# Runs pandoc-ext/diagram on every page in the project.
-# Install once from the project root:
-#   quarto add pandoc-ext/diagram
+# The quiz filter (our _extensions/quiz) runs first, before Quarto reads the
+# page (`at: pre-ast`), so the callouts/tabsets it writes are handled exactly
+# like hand-written ones. It is listed by path because `at:` needs a path.
+# `diagram` (pandoc-ext/diagram) then turns the TikZ blocks into SVGs.
 filters:
+  - path: _extensions/quiz/quiz.lua
+    at: pre-ast
   - diagram
 
 diagram:

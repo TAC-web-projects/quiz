@@ -1,0 +1,19 @@
+---
+type: wordle
+title: Circumference of a circle, using its diameter
+lhs: "C ="
+answer: π d
+---
+
+## Hint
+Circumference is a **length**, not an area, so nothing gets squared.
+
+## Hint
+$\pi$ is defined as the number of diameters that fit around a circle: the circumference is a little more than 3 diameters long.
+
+## Solution
+**Answer:** $C = \pi d$
+
+This is the definition of $\pi$: $\pi = \frac{C}{d}$, so $C = \pi d$.
+
+You may also know $C = 2\pi r$. It's the same formula written with the radius, since $d = 2r$, but this puzzle uses the diameter.

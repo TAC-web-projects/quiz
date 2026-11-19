@@ -1,0 +1,423 @@
+---
+# ARCHIVED, not rendered (underscore prefix + render list in _quarto.yml).
+# The original multiple-choice "Practice Questions" section, copied verbatim from
+# index.qmd before the topic/ refactor. It depends on the .quiz-question CSS and the
+# Submit script below, which are kept here for reference only.
+---
+
+```{=html}
+<style>
+  /* Two columns, filled top-to-bottom, for any number of choices */
+  .quiz-question {
+    columns: 2;
+    column-gap: 2em;
+    max-width: 40em;
+    margin: 1em 0;
+  }
+
+  .quiz-question br {
+    display: none;
+  }
+
+  .quiz-question label {
+    display: block;          /* one choice per line */
+    break-inside: avoid;     /* never split a choice across columns */
+    margin-bottom: 0.6em;
+    cursor: pointer;
+  }
+
+  /* One column on phones */
+  @media (max-width: 500px) {
+    .quiz-question {
+      columns: 1;
+    }
+  }
+
+
+## Practice Questions
+
+Answer each question, then check the **Hint** and **Solution** tabs if you need help.
+Use the buttons below the questions to move between them, then press **Submit** when you're done.
+
+::: {#questions .carousel .slide data-bs-interval="false"}
+::: {.carousel-inner}
+
+::: {.carousel-item .active}
+### Question [1]{.slide-num} of 4 {.unlisted}
+
+::: {.panel-tabset}
+
+### Question
+
+Which of the following equations correctly model the relationship between a circle’s Area $A$ and
+Radius $r$ ?
+<br>
+(more than one correct choice)
+
+<!--
+  MULTIPLE-ANSWER QUESTION
+  - Use type="checkbox" so more than one choice can be picked.
+  - List every correct letter in data-answer, separated by commas.
+-->
+<form class="quiz-question" data-question="Question 1" data-answer="b,d">
+<label><input type="checkbox" name="q1" value="a"> A. $A = (\pi r)^2$</label><br>
+<label><input type="checkbox" name="q1" value="b"> B. $\frac{A}{r}=\pi r$</label><br>
+<label><input type="checkbox" name="q1" value="c"> C. $A=\pi^2 r$</label><br>
+<label><input type="checkbox" name="q1" value="d"> D. $A = \pi r^2$</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+Demo of math diagrams
+
+```{.tikz}
+
+\begin{tikzpicture}[scale=1]
+  \def\R{1.6}
+
+  % ---------------- (1) Radius ----------------
+  \begin{scope}[shift={(0,0)}]
+    \draw[circ] (0,0) circle (\R);
+    \draw[seg] (0,0) -- node[right] {$r$} (0,\R);
+    \node[center dot] at (0,0) {};
+    \node at (0,-\R-0.55) {\small (a) Radius};
+  \end{scope}
+
+  % ---------------- (2) Area: the r^2 square ----------------
+  \begin{scope}[shift={(4.6,0)}]
+    \draw[circ] (0,0) circle (\R);
+    % hatched r-by-r square in the upper-left quadrant
+    \fill[pattern=north east lines] (-\R,0) rectangle (0,\R);
+    \draw[seg] (-\R,0) rectangle (0,\R);
+    \node[right] at (0,\R/2) {$r$};
+    \node[below] at (-\R/2,0) {$r$};
+    \node[center dot] at (0,0) {};
+    % r^2 call-out
+    \node (lbl) at (-\R-0.6,\R+0.75) {$r^2$};
+    \draw[callout] (lbl.south east) to[bend left=25] (-\R+0.35,\R-0.35);
+  \end{scope}
+
+  % ---------------- (3) Diameter ----------------
+  \begin{scope}[shift={(9.4,0)}]
+    \draw[circ] (0,0) circle (\R);
+    \draw[seg] (0,-\R) -- (0,\R);
+    \node[right] at (0,\R/2)  {$r$};
+    \node[right] at (0,-\R/2) {$r$};
+    \node[center dot] at (0,0) {};
+    \draw[dim brace] (\R+0.15,\R) -- node[right=11pt] {$2r$} (\R+0.15,-\R);
+    \node at (0,-\R-0.55) {\small (c) Diameter $=2r$};
+  \end{scope}
+\end{tikzpicture}
+```
+
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+```{.tikz}
+\begin{tikzpicture}
+    % (left) one quarter of the circle: two radii and the chord between their ends
+    \begin{scope}[shift={(0,0)}]
+      \def\R{1.6}
+
+      \colorlet{sqcol}{red!65!black}     % dark red: square sides
+      \colorlet{circcol}{blue!65!black}  % dark blue: circle
+      \draw[circ] (0,0) circle (\R);
+      \draw[seg, dashed] (-\R,0) -- (0,0) -- node[below, font=\footnotesize]{$r$}(\R,0);
+      \draw[seg, dashed] (0,-\R) -- (0,\R);
+      \draw[seg]
+        (\R,0)  -- node[below=0pt, font=\footnotesize] {$x$}
+        (0,\R)  -- node[below=0pt, font=\footnotesize] {$x$}
+        (-\R,0) -- node[above=0pt, font=\footnotesize] {$x$}
+        (0,-\R) -- node[above=0pt, font=\footnotesize] {$x$}
+        cycle;
+      \node[center dot] at (0,0) {};
+      % C call-out pointing to the circle
+      \node(Clbl) at (\R+0.8,\R+0.2) {$C$};
+      \draw[callout] (Clbl) -- (45:\R+0.05);
+      \node[center dot] at (0,0) {};
+      \node[align=left] at (0,-2.6)
+      {$C > \:x+x+x+x$};
+    \end{scope}
+\end{tikzpicture}
+```
+:::
+
+### Solution
+
+**Answer: B & D.**
+<br>
+**B**: <br>
+$$
+\begin{aligned}
+    \frac{A}{r}&=\pi r \\
+    r*\frac{A}{r}&=\pi r * r \\
+    A&=\pi r^2 \\
+\end{aligned}
+$$
+
+:::
+:::
+
+::: {.carousel-item}
+### Question [2]{.slide-num} of 4 {.unlisted}
+
+::: {.panel-tabset}
+
+### Question
+
+A circle has radius $r$ and diameter $d$. Which of the following equations correctly relate $r$ and $d$?
+<br>
+(more than one correct choice)
+
+<form class="quiz-question" data-question="Question 2" data-answer="b,d">
+<label><input type="checkbox" name="q2" value="a"> A. $d = \frac{r}{2}$</label><br>
+<label><input type="checkbox" name="q2" value="b"> B. $r = \frac{d}{2}$</label><br>
+<label><input type="checkbox" name="q2" value="c"> C. $r = 2d$</label><br>
+<label><input type="checkbox" name="q2" value="d"> D. $d = 2r$</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+The diameter goes all the way across the circle through the center, so it's made of two radii placed end to end.
+
+```{.tikz}
+\begin{tikzpicture}
+  \def\R{1.6}
+  \draw[circ] (0,0) circle (\R);
+  \draw[seg] (-\R,0) -- node[above] {$r$} (0,0) -- node[above] {$r$} (\R,0);
+  \node[center dot] at (0,0) {};
+  \fill (-\R,0) circle (1.3pt);
+  \fill (\R,0) circle (1.3pt);
+  \draw[dim brace] (\R,0) -- node[below=11pt] {$d$} (-\R,0);
+  \node at (0,-\R-0.55) {$d = r + r$};
+\end{tikzpicture}
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+Which is bigger, $d$ or $r$? An equation that makes the bigger one come out smaller is written backwards.
+Test each choice with a real number, like $r = 3$ (so $d = 6$).
+:::
+
+### Solution
+
+**Answer: B & D.**
+<br>
+Two radii make one diameter:
+$$
+\begin{aligned}
+    d &= r + r = 2r \\
+    \frac{d}{2} &= r
+\end{aligned}
+$$
+
+**Why the others are wrong:** A and C put the 2 on the wrong side.
+With $r = 3$: choice A gives $d = 1.5$ and choice C gives $r = 12$ when $d = 6$. In both cases the diameter comes out *shorter* than the radius, which can't happen.
+
+:::
+:::
+
+::: {.carousel-item}
+### Question [3]{.slide-num} of 4 {.unlisted}
+
+::: {.panel-tabset}
+
+### Question
+
+Which of the following equations correctly give the circumference $C$ of a circle with radius $r$ and diameter $d$?
+<br>
+(more than one correct choice)
+
+<form class="quiz-question" data-question="Question 3" data-answer="a,c">
+<label><input type="checkbox" name="q3" value="a"> A. $C = 2\pi r$</label><br>
+<label><input type="checkbox" name="q3" value="b"> B. $C = \pi r^2$</label><br>
+<label><input type="checkbox" name="q3" value="c"> C. $C = \pi d$</label><br>
+<label><input type="checkbox" name="q3" value="d"> D. $C = 2\pi d$</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+Circumference is a *length*: the distance around the circle. If you cut the circle and unroll it, its edge is a little more than 3 diameters long. That "little more than 3" is $\pi \approx 3.14$.
+
+```{.tikz}
+\begin{tikzpicture}
+  \def\R{0.8}
+  \def\D{1.6}
+  % the circle, sitting off to the left
+  \draw[circ] (-1.6,\R) circle (\R);
+  \draw[seg] (-1.6-\R,\R) -- node[above, font=\footnotesize] {$d$} (-1.6+\R,\R);
+  \node[center dot] at (-1.6,\R) {};
+  % the unrolled circumference
+  \draw[red!65!black, line width=1.6pt] (0,0) -- ({pi*\D},0);
+  \foreach \k in {0,1,2,3}
+    \draw[seg] ({\k*\D},-0.12) -- ({\k*\D},0.12);
+  \draw[seg] ({pi*\D},-0.12) -- ({pi*\D},0.12);
+  \foreach \k in {1,2,3}
+    \node[above, font=\footnotesize] at ({(\k-0.5)*\D},0.1) {$d$};
+  \draw[dim brace] ({pi*\D},0) -- node[below=11pt] {$C = \pi d \approx 3.14\,d$} (0,0);
+\end{tikzpicture}
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+Since $d = 2r$, try replacing $d$ with $2r$ in one choice and see whether it turns into another choice.
+<br>
+Also, a formula with $r^2$ gives *square* units (like ft²), which measures area, not length.
+:::
+
+### Solution
+
+**Answer: A & C.**
+<br>
+**C** is the definition of $\pi$: the circumference is $\pi$ diameters long. Substituting $d = 2r$ gives **A**:
+$$
+\begin{aligned}
+    C &= \pi d \\
+      &= \pi (2r) \\
+      &= 2\pi r
+\end{aligned}
+$$
+
+**Why the others are wrong:**
+
+- **B** ($\pi r^2$) is the *area* formula. It's the most common mix-up on the ACT.
+- **D** ($2\pi d$) uses the "2" twice. Since $d$ already equals $2r$, $2\pi d = 4\pi r$, which is double the real circumference.
+
+:::
+:::
+
+::: {.carousel-item}
+### Question [4]{.slide-num} of 4 {.unlisted}
+
+::: {.panel-tabset}
+
+### Question
+
+Which of the following equations correctly give the area $A$ of a circle in terms of its **diameter** $d$?
+<br>
+(more than one correct choice)
+
+<form class="quiz-question" data-question="Question 4" data-answer="b,d">
+<label><input type="checkbox" name="q4" value="a"> A. $A = \pi d^2$</label><br>
+<label><input type="checkbox" name="q4" value="b"> B. $A = \pi \left(\frac{d}{2}\right)^2$</label><br>
+<label><input type="checkbox" name="q4" value="c"> C. $A = \frac{\pi d^2}{2}$</label><br>
+<label><input type="checkbox" name="q4" value="d"> D. $A = \frac{\pi d^2}{4}$</label>
+</form>
+
+### Hint
+
+::: {.callout-tip collapse="true"}
+## Hint 1
+The area formula you know uses the radius: $A = \pi r^2$. What do you replace $r$ with if you only know $d$?
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+A $d \times d$ square around the circle splits into four $r \times r$ squares.
+
+```{.tikz}
+\begin{tikzpicture}
+  \def\R{1.6}
+  \fill[pattern=north east lines] (-\R,0) rectangle (0,\R);
+  \draw[seg] (-\R,-\R) rectangle (\R,\R);
+  \draw[seg, dashed] (-\R,0) -- (\R,0);
+  \draw[seg, dashed] (0,-\R) -- (0,\R);
+  \draw[circ, blue!65!black] (0,0) circle (\R);
+  \node[center dot] at (0,0) {};
+  \node[fill=white, inner sep=1.5pt] at (-\R/2,\R/2) {$r^2$};
+  \draw[dim brace] (-\R,\R) -- node[above=11pt] {$d$} (\R,\R);
+  \draw[dim brace] (\R,\R) -- node[right=11pt] {$d$} (\R,-\R);
+  \node at (0,-\R-0.75) {$d^2 = 4r^2 \;\Longrightarrow\; r^2 = \frac{d^2}{4}$};
+\end{tikzpicture}
+```
+When you square a fraction, square the top **and** the bottom: $\left(\frac{d}{2}\right)^2 = \frac{d^2}{2^2}$.
+:::
+
+### Solution
+
+**Answer: B & D.**
+<br>
+Replace $r$ with $\frac{d}{2}$:
+$$
+\begin{aligned}
+    A &= \pi r^2 \\
+      &= \pi \left(\frac{d}{2}\right)^2 \\
+      &= \pi \cdot \frac{d^2}{4} = \frac{\pi d^2}{4}
+\end{aligned}
+$$
+
+**Why the others are wrong:**
+
+- **A** uses the diameter as if it were the radius. That's 4 times too big.
+- **C** squares the $d$ but forgets to square the 2. That's 2 times too big.
+
+:::
+:::
+
+:::
+:::
+
+[‹ Previous Question]{.btn .btn-outline-primary data-bs-target="#questions" data-bs-slide="prev"}
+[Next Question ›]{.btn .btn-outline-primary data-bs-target="#questions" data-bs-slide="next"}
+[Shuffle order]{.btn .btn-outline-secondary data-shuffle="#questions"}
+
+```{=html}
+<button id="submit-quiz" class="btn btn-primary">Submit All</button>
+<div id="quiz-results" style="margin-top: 1em;"></div>
+
+<script>
+  // Turn "b, d" into ["b", "d"] (lowercase, trimmed, sorted)
+  function parseAnswers(str) {
+    return (str || "")
+      .split(",")
+      .map(s => s.trim().toLowerCase())
+      .filter(s => s.length > 0)
+      .sort();
+  }
+
+  // Format ["b", "d"] as "B, D" for display
+  function formatLetters(letters) {
+    return letters.length ? letters.map(l => l.toUpperCase()).join(", ") : "no answer";
+  }
+
+  // Score the quiz on submit.
+  // Works for both radio (single-answer) and checkbox (multiple-answer) questions:
+  // a question is correct only if the student picked EXACTLY the set of correct
+  // answers, with nothing missing and nothing extra.
+  document.getElementById("submit-quiz").addEventListener("click", () => {
+    const questions = document.querySelectorAll(".quiz-question");
+    let score = 0;
+    let details = "";
+
+    questions.forEach(form => {
+      const name = form.dataset.question;
+      const answers = parseAnswers(form.dataset.answer);
+      const picked = Array.from(form.querySelectorAll("input:checked"))
+        .map(input => input.value.trim().toLowerCase())
+        .sort();
+
+      const correct =
+        picked.length === answers.length &&
+        picked.every((letter, i) => letter === answers[i]);
+
+      if (correct) score++;
+
+      details += `<li>${name}: ${formatLetters(picked)} ${correct ? "✅" : "❌"}` +
+                 (correct ? "" : ` <em>(correct: ${formatLetters(answers)})</em>`) +
+                 `</li>`;
+    });
+
+    document.getElementById("quiz-results").innerHTML =
+      `<h3>Score: ${score} / ${questions.length}</h3><ul>${details}</ul>`;
+  });
+</script>
+```

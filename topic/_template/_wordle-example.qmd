@@ -1,0 +1,29 @@
+---
+# FORMULA WORDLE. Copy this file into a topic folder, e.g. topic/circles/_wordle-4-arc.qmd
+# (the name must start with "_" and end in ".qmd"; files are shown in filename order).
+type: wordle
+# The quantity being tested. Shown big above the board and in the slide title.
+title: Area of a circle
+# Left side of the formula, shown before the blanks.
+lhs: "A ="
+# The answer, one symbol per blank, separated by spaces. Plain Unicode, no LaTeX.
+answer: π r ²
+# Optional: the on-screen keys. Every answer symbol must be one of them.
+# Default: π r d 2 ² C θ ½
+# keys: π r d 2 ² C θ ½ h
+# Optional: number of tries (default 6).
+# tries: 6
+---
+
+Optional text here appears under the title, above the board.
+
+## Hint
+First hint. Math and diagrams work as usual: $A = \pi r^2$, ```{.tikz} blocks, callouts…
+
+## Hint
+Second hint. Add as many "## Hint" sections as you like (or none).
+
+## Solution
+**Answer:** $A = \pi r^2$
+
+Explain why, and why the trap keys are wrong.

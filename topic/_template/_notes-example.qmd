@@ -1,0 +1,13 @@
+---
+# NOTES. Plain content shown at the bottom of the topic (not a game, not scored).
+# Good for a "What the symbols mean" table.
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What the symbols mean
+
+| Symbol | Meaning |
+|:------:|:--------|
+| $r$ | **Radius**: the distance from the center to the edge |
+:::

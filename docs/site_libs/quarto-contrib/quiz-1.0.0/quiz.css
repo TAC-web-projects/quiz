@@ -1,0 +1,67 @@
+/* quiz.css: styles for the quiz page (loaded by quiz.lua with quiz.js). */
+
+/* ---------- Topics: big collapsible headers ---------- */
+.quiz-topic-toggle {
+  cursor: pointer;
+  user-select: none;
+  margin-top: 2.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--bs-primary);
+}
+.quiz-topic-toggle::before {
+  content: "▸";
+  display: inline-block;
+  width: 1.2em;
+  transition: transform 0.2s;
+}
+.quiz-topic-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
+
+/* Everything under a topic header is indented so topics are easy to tell apart */
+.quiz-topic-body { margin-left: 1.5rem; }
+
+/* Sub-sections inside a topic (Memory Match, Formula Wordle) */
+.quiz-topic h3 { margin-top: 1.75rem; }
+
+/* Previous / Next / Shuffle under each carousel */
+.quiz-nav { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.75em 0 1.5em; }
+
+/* ---------- Memory match: 4 columns on wide screens, 2 on phones ---------- */
+.mm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5em;
+  max-width: 44em;
+}
+.mm-card {
+  min-height: 5em;
+  padding: 0.25rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);   /* text shrinks a little on small screens */
+}
+.mm-card:disabled { opacity: 1; }                 /* matched cards stay readable */
+.mm-card .mm-face { display: none; }
+.mm-card.open .mm-face { display: inline; }
+.mm-card.open .mm-q { display: none; }
+.mm-card mjx-container { white-space: nowrap; }   /* never break a formula across lines */
+.mm-faces { display: none; }                      /* faces wait here until quiz.js deals */
+
+/* ---------- Formula Wordle ---------- */
+.quiz-quantity {                 /* "Area of a circle" above the board */
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0.25em 0 0.75em;
+}
+.wordle-tile { width: 2.2em; height: 2.2em; }
+.wordle-msg { min-height: 1.5em; }
+/* Wordle-style yellow (Bootstrap's "warning" is orange in the cosmo theme) */
+.wordle-yellow { background-color: #f5d300 !important; border-color: #f5d300 !important; color: #212529 !important; }
+
+/* ---------- Results ---------- */
+.quiz-results-box { margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 0.5em; }
+.quiz-results-output { flex-basis: 100%; }
+.quiz-result-topic ul { list-style: none; padding-left: 0.5em; }
+
+/* ---------- Phones ---------- */
+@media (max-width: 576px) {
+  .mm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quiz-topic-body { margin-left: 0.5rem; }
+}
