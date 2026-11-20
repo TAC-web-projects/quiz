@@ -1,0 +1,43 @@
+---
+type: choice
+title: 'Area with a slanted side'
+---
+
+What is the area of this triangle? The dashed segment is the height: it meets the base at a right angle.
+
+```{.tikz}
+\begin{tikzpicture}[scale=0.6]
+  \draw[seg] (0,0) -- (8,0) -- (3,4) -- cycle;
+  \draw[dashed] (3,4) -- (3,0);
+  \draw (3,0) -- (3.35,0) -- (3.35,0.35) -- (3,0.35);
+  \node[below] at (4,0) {$8$};
+  \node[above left] at (1.5,2) {$5$};
+  \node[right] at (3,1.8) {$4$};
+\end{tikzpicture}
+```
+
+- [x] $16$
+- [ ] $20$
+- [ ] $32$
+- [ ] $40$
+
+## Hint
+Use $A = \frac{1}{2} b h$. Which of the lengths $8$, $5$ and $4$ is the base, and which is the height?
+
+## Hint
+The height must meet the base at a right angle. The side of length $5$ is slanted, so it is not the height.
+
+## Solution
+**Answer:** $16$
+
+The base is $b = 8$ and the height is $h = 4$ (the dashed segment, at a right angle to the base):
+$$
+\begin{aligned}
+    A &= \frac{1}{2} \cdot 8 \cdot 4 \\
+      &= \frac{1}{2} \cdot 32 = 16
+\end{aligned}
+$$
+
+- **$20$**: used the slanted side as the height: $\frac{1}{2} \cdot 8 \cdot 5 = 20$.
+- **$32$**: forgot the $\frac{1}{2}$: $8 \cdot 4 = 32$ is the area of the rectangle.
+- **$40$**: both mistakes: $8 \cdot 5 = 40$.

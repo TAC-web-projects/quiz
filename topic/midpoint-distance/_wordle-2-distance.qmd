@@ -1,0 +1,50 @@
+---
+type: wordle
+title: 'The distance $d$ between $(x_1, y_1)$ and $(x_2, y_2)$, squared'
+lhs: "d² = (x₂ − x₁)² +"
+answer: ( y₂ − y₁ ) ²
+keys: ( ) x₁ x₂ y₁ y₂ + − ² 2 √
+---
+
+The horizontal part, $(x_2 - x_1)^2$, is given. Fill in the vertical part, subtracting in the same order (point 2 minus point 1).
+
+## Hint
+Think of the Pythagorean theorem, $a^2 + b^2 = c^2$. The segment between the two points is the hypotenuse $c$ of a right triangle. What are its legs?
+
+## Hint
+For the points $(1, 2)$ and $(4, 6)$, the right triangle looks like this. The horizontal leg is $x_2 - x_1 = 4 - 1 = 3$.
+
+```{.tikz}
+\begin{tikzpicture}[scale=0.8]
+  \draw[->] (-0.5,0) -- (5.5,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,7) node[above] {$y$};
+  \draw[seg] (1,2) -- (4,2) -- (4,6);
+  \draw[seg, red!65!black] (1,2) -- node[above left] {$d$} (4,6);
+  \draw (3.7,2) -- (3.7,2.3) -- (4,2.3);
+  \node[center dot] at (1,2) {};
+  \node[center dot] at (4,6) {};
+  \node[left] at (1,2) {$(1, 2)$};
+  \node[right] at (4,6) {$(4, 6)$};
+  \node[below] at (2.5,2) {$4 - 1 = 3$};
+  \node[right] at (4,4) {$?$};
+\end{tikzpicture}
+```
+
+## Solution
+**Answer:** $d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2$
+
+The two points are the ends of the hypotenuse of a right triangle. Its legs are the horizontal change $x_2 - x_1$ and the vertical change $y_2 - y_1$. The Pythagorean theorem $a^2 + b^2 = c^2$ gives $d^2$, and taking the square root gives the distance formula:
+$$
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+$$
+For $(1, 2)$ and $(4, 6)$:
+$$
+\begin{aligned}
+    d &= \sqrt{(4 - 1)^2 + (6 - 2)^2} \\
+      &= \sqrt{9 + 16} \\
+      &= \sqrt{25} = 5
+\end{aligned}
+$$
+
+- **Forgetting ²**: $d^2$ is a sum of **squares**. $(4 - 1) + (6 - 2) = 7$ is the length of the path along the two legs, not the straight-line distance $5$.
+- **( y₁ − y₂ )²** gives the same number, because $(-4)^2 = 4^2$. This board just asks for the same order as the $x$ part.

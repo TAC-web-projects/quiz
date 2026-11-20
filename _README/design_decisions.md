@@ -26,12 +26,20 @@ Follow them unless the owner changes them, and update this file when they do.
 - Hints and solutions are written as `## Hint` / `## Solution` headings (not divs).
 
 ## Activity types
-- **Practice Questions (multiple choice) were removed.** The 4 original circle
-  questions are kept, unrendered, in `archive/_multiple-choice-circles.qmd`.
-  Their diagrams were *not* moved into the remaining games.
-- Each topic has fixed sub-sections, in order: **Memory Match**, then **Formula
-  Wordle**. A sub-section is left out if the topic has none. `notes` files go at
-  the bottom of the topic.
+- The old **Practice Questions** (checkbox forms with a Submit button) were removed.
+  The 4 original circle questions are kept, unrendered, in
+  `archive/_multiple-choice-circles.qmd`.
+- **Multiple choice came back as a game type** (`type: choice`, Nov 2026), for
+  questions like "what does the A in SOH CAH TOA stand for". One right option;
+  tapping a wrong option turns it red and crosses it out, and the student keeps
+  going until they find the right one. No Submit button. Options are shuffled.
+- **Parentheses puzzle** (`type: parens`, Nov 2026): the student taps the gaps
+  in an expression to place parentheses until it equals a target. The answer is
+  checked by evaluating it, not by comparing strings, so any correct placement
+  counts. Wrong tries say what their version equals at a sample $x$.
+- Each topic has fixed sub-sections, in order: **Multiple Choice**, **Memory
+  Match**, **Formula Wordle**, **Parentheses Puzzle**. A sub-section is left out
+  if the topic has none. `notes` files go at the bottom of the topic.
 - **Wordle shows the quantity being tested** (its `title:`, e.g. "Area of a
   circle") prominently above the `A = ___` board.
 - If a Wordle row (left side + tiles) is too wide for the screen, the left side

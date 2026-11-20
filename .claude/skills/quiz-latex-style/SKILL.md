@@ -74,4 +74,4 @@ Each game file has its body split by `## Hint` and `## Solution` headings. The f
   - Re-derive every worked example.
 - **Voice:** short, plain sentences for a teenager. Use units to reason ("square units means area"). No em dashes; use colons or periods instead.
 
-The old multiple-choice format (checkbox forms, "Why the others are wrong" by letter) is archived in `archive/_multiple-choice-circles.qmd` and is no longer used.
+Multiple choice (`type: choice`): the options are a task list (`- [x]` marks the right one). The Solution explains the right option and then has one trap bullet per wrong option, starting with the option itself in bold (**$x < -3$**: ...). The old checkbox-form format is archived in `archive/_multiple-choice-circles.qmd` and is no longer used.

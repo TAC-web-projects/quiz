@@ -1,0 +1,29 @@
+---
+type: parens
+title: 'Make it equal $x^2$'
+expression: − 1 · x · − 1 + x + 2 − 2 − 1
+target: x²
+---
+
+Tap a gap to place **(**, then a gap to its right to place **)**. Put **one** pair of parentheses in the expression so that it equals $x^2$ for **every** $x$.
+
+## Hint
+$x^2 = x \cdot x$. The expression already has one factor $x$ at the start. Can a group of the other terms equal $x$?
+
+## Hint
+Look at $1 + x + 2 - 2 - 1$. What does it simplify to? A minus sign in front of a group, $-(\dots)$, takes the opposite of the whole group.
+
+## Solution
+**Answer:** $-1 \cdot x \cdot -(1 + x + 2 - 2 - 1)$
+
+The parentheses start **between** the minus sign and the $1$, so the minus sign applies to the whole group:
+$$
+\begin{aligned}
+    -1 \cdot x \cdot -(1 + x + 2 - 2 - 1) &= -1 \cdot x \cdot -(x) \\
+                                          &= (-1) \cdot (-1) \cdot x \cdot x \\
+                                          &= x^2
+\end{aligned}
+$$
+
+- **$-1 \cdot x \cdot (-1 + x + 2 - 2 - 1)$**: the group is $x - 2$, so this is $-x(x - 2) = -x^2 + 2x$.
+- **$(-1 \cdot x \cdot -1 + x) + 2 - 2 - 1$**: parentheses around a part that is already done first change nothing: it still equals $2x - 1$.

@@ -26,7 +26,25 @@ Your progress is saved on this device, and **Check your results** at the bottom 
 ::: {.topic folder="topic/fractions" title="Adding Fractions"}
 :::
 
+::: {.topic folder="topic/pemdas" title="Order of Operations (PEMDAS)"}
+:::
+
+::: {.topic folder="topic/inequalities" title="Inequalities"}
+:::
+
+::: {.topic folder="topic/percent" title="Percent Increase"}
+:::
+
 ::: {.topic folder="topic/lines" title="Slope & Point-Slope"}
+:::
+
+::: {.topic folder="topic/midpoint-distance" title="Midpoint & Distance"}
+:::
+
+::: {.topic folder="topic/triangle-area" title="Area of a Triangle"}
+:::
+
+::: {.topic folder="topic/trig" title="SOH CAH TOA"}
 :::
 
 ::: {.quiz-results}

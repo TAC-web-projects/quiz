@@ -326,6 +326,101 @@ Fill in the blanks to finish each formula, then press **Enter**.
   end,
 }
 
+-- Multiple choice ---------------------------------------------------------
+-- The options are a task list in the question text:
+--     - [ ] wrong
+--     - [x] right        (exactly one)
+-- Pandoc reads the boxes as the characters ☐ / ☒.
+
+local function task_mark(item)
+  local first = item[1]
+  if first and (first.t == "Plain" or first.t == "Para") then
+    local s = first.content[1]
+    if s and s.t == "Str" then
+      if s.text == "☐" then return false elseif s.text == "☒" then return true end
+    end
+  end
+  return nil
+end
+
+TYPES.choice = {
+  section = "Multiple Choice",
+  noun = "Question",
+  order = 0,
+  build = function(game, meta, blocks)
+    local parts = split_sections(blocks, game.file)
+    local list_at
+    for i, b in ipairs(parts.intro) do
+      if b.t == "BulletList" and task_mark(b.content[1]) ~= nil then list_at = i end
+    end
+    if not list_at then
+      fail(game.file, "a choice question needs its options as a list: '- [ ] wrong' and '- [x] right'")
+    end
+    local list = parts.intro:remove(list_at)
+    local options, correct = pandoc.Blocks {}, 0
+    for _, item in ipairs(list.content) do
+      local mark = task_mark(item)
+      if mark == nil then fail(game.file, "every option must start with '[ ]' or '[x]'") end
+      local inl = pandoc.utils.blocks_to_inlines(item)
+      inl:remove(1)                                        -- the ☐ / ☒ box
+      if inl[1] and inl[1].t == "Space" then inl:remove(1) end
+      if mark then correct = correct + 1 end
+      options:insert(pandoc.Div({ pandoc.Plain(inl) },
+        attr("", { "choice-option" }, { ["data-correct"] = mark and "true" or "false" })))
+    end
+    if correct ~= 1 then fail(game.file, "mark exactly one option with [x] (found " .. correct .. ")") end
+    if #options < 2 then fail(game.file, "a choice question needs at least 2 options") end
+
+    local question = pandoc.Blocks {}
+    question:extend(parts.intro)
+    question:insert(game_div(game, "choice", {
+      -- `shuffle: false` keeps the options in the order they are written
+      ["data-order"] = (meta.shuffle and stringify(meta.shuffle) == "false") and "fixed" or "shuffle",
+    }, { pandoc.Div(options, attr("", { "choice-options" })) }))
+    game.tabs = tabset(question, parts.hints, parts.solution)
+  end,
+}
+
+-- Parentheses puzzle --------------------------------------------------------
+-- The student taps the gaps between the tokens of `expression:` to place
+-- parentheses until it equals `target:` (for every x, or only at `x:`).
+-- quiz.js does the arithmetic, so any correct placement is accepted.
+
+-- Characters the quiz.js calculator understands.
+local function check_math(file, field, s)
+  local rest = s:gsub("[%d%.x%s%(%)%+%-%^%*/]", ""):gsub("−", ""):gsub("·", ""):gsub("×", "")
+    :gsub("÷", ""):gsub("²", "")
+  if rest ~= "" then
+    fail(file, "`" .. field .. ":` can only use digits, x, + − · × ÷ ^ ² and parentheses (found '" .. rest .. "')")
+  end
+end
+
+TYPES.parens = {
+  section = "Parentheses Puzzle",
+  noun = "Puzzle",
+  order = 3,
+  build = function(game, meta, blocks)
+    local parts = split_sections(blocks, game.file)
+    local tokens = symbol_list(meta.expression)
+    if #tokens < 3 then fail(game.file, "a parens puzzle needs `expression:` (space-separated, e.g. − 1 · x + 2)") end
+    if not meta.target then fail(game.file, "a parens puzzle needs `target:` (e.g. target: x²)") end
+    local target = stringify(meta.target)
+    check_math(game.file, "expression", table.concat(tokens, " "))
+    check_math(game.file, "target", target)
+    if meta.x then check_math(game.file, "x", stringify(meta.x)) end
+
+    local question = pandoc.Blocks {}
+    question:extend(parts.intro)
+    question:insert(game_div(game, "parens", {
+      ["data-expression"] = table.concat(tokens, " "),
+      ["data-target"] = target,
+      ["data-x"] = meta.x and stringify(meta.x) or "",
+      ["data-pairs"] = meta.pairs and stringify(meta.pairs) or "1",
+    }))
+    game.tabs = tabset(question, parts.hints, parts.solution)
+  end,
+}
+
 -- Notes: plain content shown at the bottom of the topic (no carousel) -----
 
 TYPES.notes = {

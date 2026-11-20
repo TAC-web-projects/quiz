@@ -1,0 +1,18 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## Order of operations (PEMDAS)
+
+| Step | Meaning |
+|:----:|:--------|
+| **P** | **Parentheses**: work out what is inside first |
+| **E** | **Exponents**: $3^2$, $x^2$ |
+| **MD** | **Multiplication and Division**, together, from left to right |
+| **AS** | **Addition and Subtraction**, together, from left to right |
+
+- $8 - 3 - 1 = 5 - 1 = 4$, not $8 - 2 = 6$: subtraction goes left to right.
+- $(-1) \cdot (-1) = 1$: two negative factors make a positive product.
+- $-(a + b) = -a - b$: a minus sign in front of parentheses takes the opposite of everything inside.
+:::

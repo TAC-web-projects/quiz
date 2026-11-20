@@ -1,0 +1,34 @@
+---
+type: choice
+title: 'A $10\%$ increase as one multiplication'
+---
+
+Increasing a number by $10\%$ gives the same result as multiplying it by:
+
+- [x] $1.1$
+- [ ] $0.1$
+- [ ] $0.001$
+- [ ] $1.01$
+
+## Hint
+Try it with $100$. What is $100$ increased by $10\%$? Which multiplier turns $100$ into that?
+
+## Hint
+"Increase by $10\%$" means: keep the whole number ($100\%$ of it) and add $10\%$ more.
+
+## Solution
+**Answer:** $1.1$
+
+$10\% = \frac{10}{100} = 0.1$. Increasing $x$ by $10\%$ keeps all of $x$ and adds $0.1x$:
+$$
+\begin{aligned}
+    x + 0.1x &= 1 \cdot x + 0.1 \cdot x \\
+             &= (1 + 0.1)\,x \\
+             &= 1.1x
+\end{aligned}
+$$
+Check with $100$: $100 \cdot 1.1 = 110$, which is $100 + 10$.
+
+- **$0.1$**: $0.1x$ is the **increase** alone ($10\%$ of $x$), not the new amount. $100 \cdot 0.1 = 10$.
+- **$0.001$**: $0.001 = 0.1\%$, and multiplying by it makes the number much smaller. $100 \cdot 0.001 = 0.1$.
+- **$1.01$**: that is a $1\%$ increase, because $1\% = 0.01$. $100 \cdot 1.01 = 101$.

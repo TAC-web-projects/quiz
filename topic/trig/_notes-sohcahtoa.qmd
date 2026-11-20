@@ -1,0 +1,33 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## SOH CAH TOA
+
+For an angle $\theta$ in a right triangle (not the right angle):
+
+| Letters | Meaning |
+|:-------:|:--------|
+| **SOH** | $\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}$ |
+| **CAH** | $\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}$ |
+| **TOA** | $\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}$ |
+
+- **Hypotenuse**: the side across from the right angle (the longest side).
+- **Opposite**: the side across from $\theta$ (it doesn't touch $\theta$).
+- **Adjacent**: the side next to $\theta$ that isn't the hypotenuse.
+
+```{.tikz}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (B) at (0,0); \coordinate (A) at (4,0); \coordinate (C) at (4,2.6);
+  \draw[seg] (B) -- (A);
+  \draw[seg] (A) -- (C);
+  \draw[seg] (C) -- (B);
+  \draw (3.7,0) -- (3.7,0.3) -- (4,0.3);
+  \pic[draw, "$\theta$", angle eccentricity=1.6, angle radius=0.7cm] {angle = A--B--C};
+  \node[below, font=\small] at (2,0) {adjacent};
+  \node[right, font=\small] at (4,1.3) {opposite};
+  \node[above left, font=\small] at (2,1.3) {hypotenuse};
+\end{tikzpicture}
+```
+:::

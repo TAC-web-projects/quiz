@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="182.61467"
+   height="108.988"
+   viewBox="0 0 182.61467 108.988"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <g
+     id="g8"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,108.988)">
+    <g
+       id="g10"
+       transform="translate(0.448,13.261)">
+      <g
+         id="g12">
+        <g
+           id="g14">
+          <g
+             id="g16">
+            <path
+               d="M 0,0 H 136.06606 L 51.02477,68.03302 Z"
+               style="fill:none;stroke:#000000;stroke-width:0.89664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path18" />
+          </g>
+          <g
+             id="g20">
+            <path
+               d="M 51.02477,68.03302 V 0"
+               style="fill:none;stroke:#000000;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:2.98883, 2.98883;stroke-dashoffset:0;stroke-opacity:1"
+               id="path22" />
+          </g>
+          <path
+             d="m 51.02477,0 h 5.95298 v 5.95299 h -5.95298"
+             style="fill:none;stroke:#000000;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path24" />
+          <g
+             id="g26">
+            <g
+               id="g28"
+               transform="translate(65.542,-9.94)">
+              <g
+                 id="g30">
+                <g
+                   id="g32"
+                   transform="translate(-65.99,-3.321)">
+                  <text
+                     xml:space="preserve"
+                     transform="matrix(1,0,0,-1,65.99,3.321)"
+                     style="font-variant:normal;font-weight:normal;font-size:9.96264px;font-family:CMR10;-inkscape-font-specification:CMR10;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text36"><tspan
+                       x="0"
+                       y="0"
+                       id="tspan34">8</tspan></text>
+                  <g
+                     id="g38"
+                     transform="translate(65.99,3.321)" />
+                </g>
+              </g>
+              <g
+                 id="g40"
+                 transform="translate(-65.542,9.94)" />
+            </g>
+          </g>
+          <g
+             id="g42">
+            <g
+               id="g44"
+               transform="translate(17.011,37.536)">
+              <g
+                 id="g46">
+                <g
+                   id="g48"
+                   transform="translate(-17.459,-50.797)">
+                  <text
+                     xml:space="preserve"
+                     transform="matrix(1,0,0,-1,17.459,50.797)"
+                     style="font-variant:normal;font-weight:normal;font-size:9.96264px;font-family:CMR10;-inkscape-font-specification:CMR10;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text52"><tspan
+                       x="0"
+                       y="0"
+                       id="tspan50">5</tspan></text>
+                  <g
+                     id="g54"
+                     transform="translate(17.459,50.797)" />
+                </g>
+              </g>
+              <g
+                 id="g56"
+                 transform="translate(-17.011,-37.536)" />
+            </g>
+          </g>
+          <g
+             id="g58">
+            <g
+               id="g60"
+               transform="translate(54.544,27.404)">
+              <g
+                 id="g62">
+                <g
+                   id="g64"
+                   transform="translate(-54.992,-40.665)">
+                  <text
+                     xml:space="preserve"
+                     transform="matrix(1,0,0,-1,54.992,40.665)"
+                     style="font-variant:normal;font-weight:normal;font-size:9.96264px;font-family:CMR10;-inkscape-font-specification:CMR10;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text68"><tspan
+                       x="0"
+                       y="0"
+                       id="tspan66">4</tspan></text>
+                  <g
+                     id="g70"
+                     transform="translate(54.992,40.665)" />
+                </g>
+              </g>
+              <g
+                 id="g72"
+                 transform="translate(-54.544,-27.404)" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

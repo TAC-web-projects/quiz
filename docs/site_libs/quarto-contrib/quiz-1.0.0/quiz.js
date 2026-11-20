@@ -336,6 +336,235 @@
     },
   });
 
+  // ======================================================== MULTIPLE CHOICE
+  // el contains <div class="choice-option" data-correct="true|false">…</div> per option,
+  // already typeset by MathJax. Each becomes a button. A wrong pick turns red and
+  // stays disabled; the right pick turns green and ends the question.
+  // state = { wrong: [option numbers], solved: true/false }
+  Quiz.register("choice", {
+    init(el, game) {
+      const box = el.querySelector(".choice-options");
+      const options = [...box.children];
+      const msg = h(`<p class="choice-msg"></p>`);
+      const resetBtn = h(`<button class="btn btn-secondary btn-sm">Try again</button>`);
+      const btns = options.map((opt, i) => {
+        const b = h(`<button class="btn btn-outline-primary choice-btn"></button>`);
+        b.append(...opt.childNodes);
+        b.dataset.i = i;
+        b.dataset.correct = opt.dataset.correct;
+        b.onclick = () => pick(i);
+        return b;
+      });
+      box.replaceChildren(...(el.dataset.order === "fixed" ? btns : shuffle([...btns])));
+      el.append(msg, resetBtn);
+
+      const show = () => {
+        const s = game.state, wrong = s.wrong || [];
+        btns.forEach((b, i) => {
+          const isWrong = wrong.includes(i), isRight = s.solved && b.dataset.correct === "true";
+          b.classList.toggle("choice-wrong", isWrong);
+          b.classList.toggle("choice-right", isRight);
+          b.disabled = isWrong || !!s.solved;
+        });
+        msg.textContent = s.solved
+          ? (wrong.length ? `Correct, after ${wrong.length} wrong ${wrong.length === 1 ? "pick" : "picks"}.` : "Correct on the first try! 🎉")
+          : wrong.length ? "Not that one. Try another option." : "";
+        resetBtn.hidden = !s.solved && !wrong.length;
+      };
+      function pick(i) {
+        const s = { wrong: [...(game.state.wrong || [])], solved: !!game.state.solved };
+        if (s.solved) return;
+        if (btns[i].dataset.correct === "true") s.solved = true;
+        else if (!s.wrong.includes(i)) s.wrong.push(i);
+        game.save(s);
+        show();
+      }
+      resetBtn.onclick = () => {
+        game.save({ wrong: [], solved: false });
+        if (el.dataset.order !== "fixed") box.replaceChildren(...shuffle([...btns]));
+        show();
+      };
+      show();
+    },
+
+    summary(s) {
+      const w = (s.wrong || []).length;
+      if (!s.solved && !w) return { solved: false, detail: "not started" };
+      const miss = `${w} wrong ${w === 1 ? "pick" : "picks"}`;
+      return s.solved ? { solved: true, detail: w ? `solved, ${miss}` : "solved on the first try" }
+        : { solved: false, detail: `${miss} so far` };
+    },
+  });
+
+  // ======================================================== PARENTHESES PUZZLE
+  // data-expression="− 1 · x · − 1 + x" (tokens; the gaps between them are tappable),
+  // data-target="x²", data-x="2" (optional: only check at this x), data-pairs="1".
+  // The student's version is evaluated as arithmetic, so every correct placement counts.
+  // state = { marks: [[gap, "(" or ")"], ...], tries: n, solved: true/false }
+
+  // A tiny calculator: + − · × ÷ ^ ², unary minus, parentheses, numbers and x.
+  // calc("−1·x·−(1+x)", 3) → 12. Throws on a malformed expression.
+  function calc(src, x) {
+    const toks = src.replace(/\s+/g, "").match(/\d+(?:\.\d+)?|./gu) || [];
+    let p = 0;
+    const peek = () => toks[p];
+    const take = (t) => { if (toks[p] !== t) throw new Error("expected " + t); p++; };
+    const isMinus = (t) => t === "−" || t === "-";
+    function expr() {
+      let v = term();
+      while (peek() === "+" || isMinus(peek())) v = toks[p++] === "+" ? v + term() : v - term();
+      return v;
+    }
+    function term() {
+      let v = unary();
+      for (;;) {
+        const t = peek();
+        if (t === "·" || t === "×" || t === "*") { p++; v *= unary(); }
+        else if (t === "÷" || t === "/") { p++; v /= unary(); }
+        else return v;
+      }
+    }
+    function unary() { if (isMinus(peek())) { p++; return -unary(); } return power(); }
+    function power() {
+      let v = atom();
+      if (peek() === "²") { p++; return v * v; }
+      if (peek() === "^") { p++; return Math.pow(v, unary()); }
+      return v;
+    }
+    function atom() {
+      const t = toks[p++];
+      if (t === "(") { const v = expr(); take(")"); return v; }
+      if (t === "x") return x;
+      if (t !== undefined && /^\d/.test(t)) return Number(t);
+      throw new Error("unexpected " + t);
+    }
+    const v = expr();
+    if (p !== toks.length) throw new Error("unexpected " + toks[p]);
+    return v;
+  }
+  Quiz.calc = calc;
+
+  Quiz.register("parens", {
+    init(el, game) {
+      const tokens = el.dataset.expression.split(" ");
+      const target = el.dataset.target;
+      const fixedX = el.dataset.x === "" ? null : calc(el.dataset.x, 0);
+      const pairsNeeded = Number(el.dataset.pairs || 1);
+      const xs = fixedX === null ? [3, -2, 0.5, 5, -7] : [fixedX];
+
+      const expr = h(`<div class="parens-expr" role="group" aria-label="Expression: tap a gap to add a parenthesis"></div>`);
+      const msg = h(`<p class="parens-msg"></p>`);
+      const checkBtn = h(`<button class="btn btn-primary">Check</button>`);
+      const undoBtn = h(`<button class="btn btn-outline-secondary">Undo</button>`);
+      const clearBtn = h(`<button class="btn btn-secondary">Clear</button>`);
+      const controls = h(`<div class="parens-controls"></div>`);
+      controls.append(checkBtn, undoBtn, clearBtn);
+      el.append(expr, msg, controls);
+
+      let marks = [...(game.state.marks || [])];   // [[gap, "(" | ")"], ...] in the order placed
+      let solved = !!game.state.solved;
+      const gaps = [];
+      tokens.forEach((t, i) => {
+        const g = h(`<button class="parens-gap" aria-label="gap ${i + 1}"></button>`);
+        g.onclick = () => tap(i);
+        gaps.push(g);
+        const span = h(`<span class="parens-token"></span>`);
+        span.textContent = t;
+        expr.append(g, span);
+      });
+      const end = h(`<button class="parens-gap" aria-label="gap ${tokens.length + 1}"></button>`);
+      end.onclick = () => tap(tokens.length);
+      gaps.push(end);
+      expr.append(end);
+
+      const openGap = () => {           // the "(" still waiting for its ")"
+        const opens = marks.filter(m => m[1] === "(").length, closes = marks.length - opens;
+        return opens > closes ? marks[marks.length - 1][0] : null;
+      };
+      // Text of the gap: closing parentheses first, then opening ones ("a)(b").
+      const gapText = (i) => marks.filter(m => m[0] === i && m[1] === ")").map(() => ")").join("")
+        + marks.filter(m => m[0] === i && m[1] === "(").map(() => "(").join("");
+      const build = () => tokens.map((t, i) => gapText(i) + t).join(" ") + " " + gapText(tokens.length);
+
+      // Shrink a long expression a little to fit one line; if that isn't enough,
+      // wrap it onto two lines (shrinking further would make the gaps too small to tap).
+      const fit = () => {
+        expr.style.fontSize = "";
+        expr.classList.remove("parens-wrap");
+        for (let s = 1.5; s >= 1.2 && expr.scrollWidth > expr.clientWidth; s -= 0.1) expr.style.fontSize = s.toFixed(1) + "rem";
+        if (expr.scrollWidth > expr.clientWidth) expr.classList.add("parens-wrap");
+      };
+      const draw = () => {
+        const open = openGap();
+        gaps.forEach((g, i) => {
+          g.textContent = gapText(i);
+          g.classList.toggle("parens-filled", g.textContent !== "");
+          g.classList.toggle("parens-pending", i === open);
+          g.disabled = solved;
+        });
+        checkBtn.disabled = undoBtn.disabled = solved;
+      };
+      const save = (extra) => game.save({ ...game.state, marks, solved, ...extra });
+
+      function tap(i) {
+        if (solved) return;
+        const open = openGap();
+        msg.textContent = "";
+        if (open === null) {
+          if (marks.length / 2 >= pairsNeeded) {
+            msg.textContent = `That's ${pairsNeeded} ${pairsNeeded === 1 ? "pair" : "pairs"} already. Press Check, or Undo / Clear to move them.`;
+            return;
+          }
+          marks.push([i, "("]);
+        } else if (i <= open) {
+          marks.pop();                                  // tapped at or left of "(": move it
+          if (i < open) marks.push([i, "("]);
+        } else {
+          marks.push([i, ")"]);
+        }
+        save();
+        draw();
+      }
+
+      const fmt = (v) => Number.isFinite(v) ? String(Math.round(v * 1e4) / 1e4).replace("-", "−") : "undefined";
+      checkBtn.onclick = () => {
+        if (openGap() !== null) { msg.textContent = "Tap a gap to the right to close the parenthesis."; return; }
+        if (marks.length / 2 < pairsNeeded) {
+          msg.textContent = `Place ${pairsNeeded} ${pairsNeeded === 1 ? "pair" : "pairs"} of parentheses first: tap a gap for "(", then a gap to its right for ")".`;
+          return;
+        }
+        const tries = (game.state.tries || 0) + 1;
+        let theirs;
+        try { theirs = xs.map(x => calc(build(), x)); }
+        catch (e) { msg.textContent = "That doesn't make a complete expression inside the parentheses. Try other gaps."; return; }
+        const want = xs.map(x => calc(target, x));
+        const bad = xs.findIndex((x, k) => !(Math.abs(theirs[k] - want[k]) < 1e-9));
+        solved = bad === -1;
+        save({ tries });
+        draw();
+        if (solved) msg.textContent = `Correct${tries === 1 ? " on the first try! 🎉" : `, in ${tries} tries.`}`;
+        else {
+          const x = fmt(xs[bad]);
+          msg.textContent = fixedX === null
+            ? `Not yet: with x = ${x}, yours equals ${fmt(theirs[bad])}, but ${target} = ${fmt(want[bad])}.`
+            : `Not yet: with x = ${x}, yours equals ${fmt(theirs[bad])}, not ${fmt(want[bad])}.`;
+        }
+      };
+      undoBtn.onclick = () => { marks.pop(); msg.textContent = ""; save(); draw(); };
+      clearBtn.onclick = () => { marks = []; solved = false; msg.textContent = ""; save(); draw(); };
+
+      draw();
+      if (solved) msg.textContent = "Solved! 🎉";
+      new ResizeObserver(() => { if (el.clientWidth > 0) fit(); }).observe(el);
+    },
+
+    summary(s) {
+      const n = s.tries || 0, tries = `${n} ${n === 1 ? "try" : "tries"}`;
+      if (s.solved) return { solved: true, detail: `solved in ${tries}` };
+      return { solved: false, detail: n ? `${tries} so far` : "not started" };
+    },
+  });
+
   // ======================================================== PAGE-WIDE PIECES
 
   // Shuffle buttons: put a carousel's slides in random order, show the new first

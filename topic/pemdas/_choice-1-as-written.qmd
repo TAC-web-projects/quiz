@@ -1,0 +1,37 @@
+---
+type: choice
+title: 'Simplify $-1 \cdot x \cdot -1 + x + 2 - 2 - 1$'
+---
+
+With **no** parentheses added, what does this expression equal?
+$$
+-1 \cdot x \cdot -1 + x + 2 - 2 - 1
+$$
+
+- [x] $2x - 1$
+- [ ] $-1$
+- [ ] $2x + 1$
+- [ ] $-2$
+
+## Hint
+PEMDAS: do the multiplications ($\cdot$) before any addition or subtraction. What is $-1 \cdot x \cdot -1$?
+
+## Hint
+After the multiplication, add and subtract from **left to right**, one step at a time.
+
+## Solution
+**Answer:** $2x - 1$
+
+Multiply first. Two negative factors make a positive product: $-1 \cdot x \cdot -1 = x$. Then add and subtract from left to right:
+$$
+\begin{aligned}
+    -1 \cdot x \cdot -1 + x + 2 - 2 - 1 &= x + x + 2 - 2 - 1 \\
+                                        &= 2x + 2 - 2 - 1 \\
+                                        &= 2x + 0 - 1 \\
+                                        &= 2x - 1
+\end{aligned}
+$$
+
+- **$-1$**: used $-1 \cdot x \cdot -1 = -x$. But $(-1) \cdot (-1) = 1$, so the product is $+x$, and $-x + x$ would cancel the $x$ terms.
+- **$2x + 1$**: did $2 - 1 = 1$ before $2 - 2$, as if it were $2 - (2 - 1)$. Subtraction goes left to right: $2 - 2 - 1 = 0 - 1 = -1$.
+- **$-2$**: read "$\cdot\, -1$" as "$-\,1$", so the start became $-x - 1$.

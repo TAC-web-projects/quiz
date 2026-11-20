@@ -1,0 +1,39 @@
+---
+type: choice
+title: 'The H in SOH CAH TOA'
+---
+
+In **SOH CAH TOA**, what does the **H** stand for?
+
+- [ ] Horizontal
+- [ ] Height
+- [ ] High
+- [x] Hypotenuse
+
+## Hint
+The **S**, **C** and **T** are the functions (sine, cosine, tangent). The other letters name **sides** of a right triangle.
+
+## Hint
+A right triangle has one side that is always the longest. What is it called?
+
+## Solution
+**Answer:** Hypotenuse
+
+**SOH** means $\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}$, and **CAH** means $\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}$. The **hypotenuse** is the side across from the right angle. It is the longest side.
+
+```{.tikz}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (B) at (0,0); \coordinate (A) at (4,0); \coordinate (C) at (4,2.6);
+  \draw[seg] (B) -- (A);
+  \draw[seg] (A) -- (C);
+  \draw[seg, red!65!black, line width=1.6pt] (C) -- (B);
+  \draw (3.7,0) -- (3.7,0.3) -- (4,0.3);
+  \pic[draw, "$\theta$", angle eccentricity=1.6, angle radius=0.7cm] {angle = A--B--C};
+  \node[below, font=\small] at (2,0) {adjacent};
+  \node[right, font=\small] at (4,1.3) {opposite};
+  \node[above left, red!65!black, font=\small] at (2,1.3) {hypotenuse};
+\end{tikzpicture}
+```
+
+- **Horizontal** and **Height**: a right triangle can be drawn turned any way, so "horizontal" or "height" could be any side. The hypotenuse is always the side across from the right angle.
+- **High**: not a side of a triangle.

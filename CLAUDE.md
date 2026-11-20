@@ -12,7 +12,7 @@ a Lua filter (`_extensions/quiz/`).
 ## Where things are documented
 
 - `_README/design_decisions.md`: **the decisions the owner made** (one page,
-  auto-discovered files, Memory/Wordle only, scoring, persistence, ...). Read it
+  auto-discovered files, four game types (multiple choice, Memory Match, Wordle, parentheses puzzle), scoring, persistence, ...). Read it
   before changing structure or behavior, and update it when the owner changes a decision.
 - `_README/lua_filter.md`: how the filter, `quiz.js` and `quiz.css` fit
   together, and the step-by-step recipe for **adding a new question type**.

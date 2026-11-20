@@ -96,8 +96,9 @@ filters:
 3. **Check it.** A missing `type:`, an unknown type, a missing `title:` and
    similar mistakes stop the render with a message such as
    `[quiz] topic/circles/_wordle-1-area.qmd: missing `title:``.
-4. **Group by type** and lay out each group in a fixed order (Memory Match,
-   then Formula Wordle, then notes). Each type that has a `section` becomes a
+4. **Group by type** and lay out each group in a fixed order (each type's
+   `order`: Multiple Choice 0, Memory Match 1, Formula Wordle 2, Parentheses
+   Puzzle 3, notes last). Each type that has a `section` becomes a
    `### Memory Match` sub-heading plus a **carousel** with one slide per file
    and Previous / Next / Shuffle buttons (left out when there's only one slide,
    or when the type sets `nav = false` and draws its own, like Wordle does).
@@ -131,7 +132,20 @@ type. That code reads the `data-` attributes and builds the board.
 Math is the one exception. The Memory Match faces are written as real pandoc
 `Math` (inside a hidden `.mm-faces` div), so **MathJax typesets them with the
 rest of the page**, and `quiz.js` only moves those finished faces into the
-card buttons.
+card buttons. Multiple-choice options work the same way (`.choice-option` divs
+that become buttons).
+
+### The types that exist
+
+| `type:` | Sub-section | What the student does | Saved state |
+|---|---|---|---|
+| `choice` | Multiple Choice | Taps options until the right one (`- [x]`); wrong ones turn red | `{ wrong: [...], solved }` |
+| `memory` | Memory Match | Matches name cards to formula cards | `{ found: [...], mismatches, done }` |
+| `wordle` | Formula Wordle | Types the right side of a formula, Wordle-style | `{ guesses: [...], solved, max }` |
+| `parens` | Parentheses Puzzle | Taps gaps to place `(` `)` until the expression equals `target:`; checked by evaluating it (`Quiz.calc`) | `{ marks: [...], tries, solved }` |
+| `notes` | (none) | Reads it: plain content at the bottom of the topic | (not scored) |
+
+Each has a copy-me file in `topic/_template/`.
 
 ## 4. Adding a new question type
 
@@ -163,7 +177,7 @@ $C = 2\pi \cdot 3 = 6\pi \approx 18.85$
 TYPES.numeric = {
   section = "Quick Numbers",   -- sub-heading inside the topic (nil = no carousel)
   noun = "Question",           -- used in "Question 1 of 3" and on the buttons
-  order = 3,                   -- after Memory Match (1) and Wordle (2)
+  order = 4,                   -- after Choice (0), Memory (1), Wordle (2), Parens (3)
   build = function(game, meta, blocks)
     local parts = split_sections(blocks, game.file)    -- intro / hints / solution
     if not meta.answer then fail(game.file, "a numeric question needs `answer:`") end

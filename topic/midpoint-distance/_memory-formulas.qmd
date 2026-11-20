@@ -1,0 +1,24 @@
+---
+type: memory
+title: Coordinate Formulas
+---
+
+Match each **name** to its **formula**: pick one of each. The two points are $(x_1, y_1)$ and $(x_2, y_2)$, with $\Delta x = x_2 - x_1$ and $\Delta y = y_2 - y_1$.
+
+| Name | Formula |
+|:-----|:--------|
+| Midpoint | $M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$ |
+| Distance | $d = \sqrt{(\Delta x)^2 + (\Delta y)^2}$ |
+| Slope | $m = \frac{y_2 - y_1}{x_2 - x_1}$ |
+| Pythagorean theorem | $a^2 + b^2 = c^2$ |
+
+## Hint
+A midpoint is a **point**, so its formula gives two coordinates: $(\dots, \dots)$.
+
+## Hint
+The midpoint is the **average** of the two points. The distance comes from the Pythagorean theorem, so it has squares and a square root.
+
+## Solution
+- **Midpoint**: average the $x$-coordinates and average the $y$-coordinates.
+- **Distance**: the horizontal change $x_2 - x_1$ and the vertical change $y_2 - y_1$ are the legs of a right triangle. The distance $d$ is its hypotenuse, so $d^2 = (\Delta x)^2 + (\Delta y)^2$ and $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.
+- **Slope**: vertical change divided by horizontal change (with $x_1 \neq x_2$).

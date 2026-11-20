@@ -5,7 +5,7 @@ description: How content and code are organized on this Quarto quiz site. It cov
 
 # Quiz authoring
 
-The owner's decisions are in `_README/design_decisions.md`. Treat them as requirements: one scrolling page, Memory Match + Wordle only, no Submit buttons, progress saved in the browser. The mechanics are explained in `_README/lua_filter.md`.
+The owner's decisions are in `_README/design_decisions.md`. Treat them as requirements: one scrolling page, four game types (Multiple Choice, Memory Match, Wordle, Parentheses Puzzle), no Submit buttons, progress saved in the browser. The mechanics are explained in `_README/lua_filter.md`.
 
 ## Add a game (no code)
 
@@ -13,6 +13,8 @@ The owner's decisions are in `_README/design_decisions.md`. Treat them as requir
 2. Fill in the front matter:
    - **Wordle:** `type: wordle`, `title:` (the quantity in words; it's shown above the board), `lhs: "A ="`, `answer:` (space-separated Unicode symbols, e.g. `π r ²`). Every answer symbol must be on the keyboard, which defaults to `π r d 2 ² C θ ½`. Add any others with `keys:`.
    - **Memory:** `type: memory`, `title:`, and a `| Name | Formula |` table with each **full** formula in `$...$`. Cards hide a one-symbol left side by themselves. Never write `= \pi r^2` by hand. Add `face-up: true` to show all cards from the start, with the names in table order (e.g. FOIL letters).
+   - **Multiple choice:** `type: choice`, `title:`, the question text, then the options as a task list: `- [ ] wrong`, `- [x] right` (exactly one `[x]`; math allowed). Options are shuffled unless `shuffle: false`. Use it for recognizing things (what a letter stands for, which calculation is right); put the likely mistakes in as wrong options and explain each in the Solution.
+   - **Parentheses puzzle:** `type: parens`, `title:`, `expression:` (space-separated tokens; a negative number is two tokens `− 1` so a gap can go between them), `target:` (e.g. `x²` or `"0"`), optional `x: 2` (check only at that $x$) and `pairs:` (default 1). quiz.js evaluates the student's version, so every correct placement is accepted. Before writing one, brute-force the placements to confirm the target is reachable and the answer is unique.
    - **Notes:** `type: notes`. The body is shown as-is at the bottom of the topic.
 3. Add `## Hint` sections (as many as needed, gentlest first; Hint 1 must not give the answer away) and a `## Solution`. Write the math and diagrams the way the `quiz-latex-style` skill says.
 4. Run `scripts/check.sh --templates`.

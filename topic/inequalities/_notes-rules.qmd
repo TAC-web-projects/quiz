@@ -1,0 +1,17 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## Inequality rules
+
+| Rule | Example |
+|:-----|:--------|
+| Further left on the number line means smaller | $-5 < -4$, even though $5 > 4$ |
+| Two minus signs cancel | $-(-2) = 2$ |
+| Adding or subtracting the same number on both sides keeps the sign | $x - 5 < -4 \;\Rightarrow\; x < 1$ |
+| Multiplying or dividing both sides by a **positive** number keeps the sign | $2x < 6 \;\Rightarrow\; x < 3$ |
+| Multiplying or dividing both sides by a **negative** number **reverses** the sign | $-2x < 6 \;\Rightarrow\; x > -3$ |
+
+$<$ means "is less than", $\leq$ means "is less than or equal to".
+:::

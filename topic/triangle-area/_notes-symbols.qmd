@@ -1,0 +1,14 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What the symbols mean
+
+| Symbol | Meaning |
+|:------:|:--------|
+| $A$ | **Area** (square units) |
+| $b$ | **Base**: any side of the triangle you choose |
+| $h$ | **Height**: the distance from the base to the opposite corner, measured **at a right angle** to the base |
+| $s$ | A slanted side. It is the height only if it meets the base at a right angle |
+:::

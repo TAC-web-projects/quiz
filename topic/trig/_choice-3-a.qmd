@@ -1,0 +1,40 @@
+---
+type: choice
+title: 'The A in SOH CAH TOA'
+---
+
+In **SOH CAH TOA**, what does the **A** stand for?
+
+- [ ] Anti
+- [x] Adjacent
+- [ ] Apposite
+- [ ] Area
+
+## Hint
+The **S**, **C** and **T** are the functions (sine, cosine, tangent). The other letters name **sides** of a right triangle, measured from the angle $\theta$.
+
+## Hint
+Two sides touch the angle $\theta$. One is the hypotenuse. What is the other one called?
+
+## Solution
+**Answer:** Adjacent
+
+**CAH** means $\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}$, and **TOA** means $\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}$. "Adjacent" means "next to": the **adjacent** side touches the angle $\theta$ and is not the hypotenuse.
+
+```{.tikz}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (B) at (0,0); \coordinate (A) at (4,0); \coordinate (C) at (4,2.6);
+  \draw[seg, red!65!black, line width=1.6pt] (B) -- (A);
+  \draw[seg] (A) -- (C);
+  \draw[seg] (C) -- (B);
+  \draw (3.7,0) -- (3.7,0.3) -- (4,0.3);
+  \pic[draw, "$\theta$", angle eccentricity=1.6, angle radius=0.7cm] {angle = A--B--C};
+  \node[below, red!65!black, font=\small] at (2,0) {adjacent};
+  \node[right, font=\small] at (4,1.3) {opposite};
+  \node[above left, font=\small] at (2,1.3) {hypotenuse};
+\end{tikzpicture}
+```
+
+- **Apposite**: a real word ("fitting"), but not a side. It just looks like **opposite**.
+- **Area**: an area is not a side length, and a ratio of sides can't use it.
+- **Anti**: not a side of a triangle.

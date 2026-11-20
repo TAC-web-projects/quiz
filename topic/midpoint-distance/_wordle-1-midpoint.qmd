@@ -1,0 +1,27 @@
+---
+type: wordle
+title: 'The $x$-coordinate of the midpoint of $(x_1, y_1)$ and $(x_2, y_2)$'
+lhs: "xₘ = ( x₁"
+answer: + x₂ ) ÷ 2
+keys: ( ) x₁ x₂ y₁ y₂ + − ÷ 2 ²
+---
+
+$x_m$ is the $x$-coordinate of the midpoint. The first part, $(x_1$, is given.
+
+## Hint
+The midpoint is exactly halfway between the two points. How do you find the number halfway between two numbers?
+
+## Hint
+Halfway between $2$ and $8$ is $5$. Which calculation with $2$ and $8$ gives $5$?
+
+## Solution
+**Answer:** $x_m = \frac{x_1 + x_2}{2}$
+
+The midpoint's $x$-coordinate is the **average** of the two $x$-coordinates. For example, halfway between $x_1 = 2$ and $x_2 = 8$:
+$$
+x_m = \frac{2 + 8}{2} = \frac{10}{2} = 5
+$$
+The $y$-coordinate works the same way: $y_m = \frac{y_1 + y_2}{2}$.
+
+- **−**: $\frac{x_1 - x_2}{2}$ is half the distance between the $x$-values, not the point halfway between them. For $2$ and $8$ it gives $\frac{2 - 8}{2} = -3$.
+- **y₂**: the $x$-coordinate of the midpoint uses only $x$-coordinates.

@@ -1,0 +1,16 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What the symbols mean
+
+| Symbol | Meaning |
+|:------:|:--------|
+| $(x_1, y_1)$, $(x_2, y_2)$ | The two endpoints ("point 1" and "point 2") |
+| $M$, $(x_m, y_m)$ | The **midpoint**: the point exactly halfway between them |
+| $d$ | The **distance** between the points (the length of the segment) |
+| $\Delta x = x_2 - x_1$ | Horizontal change (a leg of the right triangle). $\Delta$ is the Greek letter delta: "change in" |
+| $\Delta y = y_2 - y_1$ | Vertical change (the other leg) |
+| $a^2 + b^2 = c^2$ | **Pythagorean theorem**: legs $a$, $b$ and hypotenuse $c$ of a right triangle |
+:::
