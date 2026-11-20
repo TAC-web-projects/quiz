@@ -9,9 +9,9 @@ The site is Quarto HTML (`_quarto.yml`, output in `docs/`) for ACT-level geometr
 
 | Where | Engine | How to write it |
 |---|---|---|
-| Hints, solutions, titles, notes | MathJax (`html-math-method: mathjax`) | `$...$` / `$$...$$` |
+| Hints, solutions, titles, notes | MathJax with **SVG output** (`tex-svg-full.js` in `_quarto.yml`; no web fonts needed) | `$...$` / `$$...$$`. In a front-matter `title:`, use single quotes: `title: 'Expand $(x + 3)(x + 5)$'` |
 | Diagrams | `pandoc-ext/diagram` → lualatex → SVG | ` ```{.tikz} ` block |
-| Memory Match table | MathJax, via the quiz filter | full formula in `$...$`, normal single backslashes: `$A = \pi r^2$`. Cards drop a one-symbol left side by themselves (`= \pi r^2`). |
+| Memory Match table | MathJax, via the quiz filter | full formula in `$...$`, normal single backslashes: `$A = \pi r^2$`. Cards drop a one-symbol left side by themselves (`= \pi r^2`), and the filter draws card math in `\displaystyle` with a thin space `\,` before each `)`. Don't add those yourself. |
 | Wordle `answer:` / `keys:` | plain text, no LaTeX | Unicode, space-separated: `π r ²` (from `π r d 2 ² C θ ½`) |
 
 ## Math in prose (MathJax)

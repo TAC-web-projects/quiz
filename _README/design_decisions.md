@@ -39,6 +39,20 @@ Follow them unless the owner changes them, and update this file when they do.
   long left sides like `m = (y₁ − y₂) ÷` work on phones.
 - A carousel with only **one** game has no Previous / Next / Shuffle buttons, and its
   title has no "1 of 1".
+- **Memory Match uses two piles**: names (left column of the table) and formulas
+  (right column), each shuffled separately and labelled with the table's column
+  headings. Flipping a card grays out and locks the rest of its pile until a card
+  from the other pile is picked; tapping the open card again puts it back. This saves
+  students from flipping name after name and waiting for them to turn back.
+- Matched memory cards turn **entirely** light green (no white box around math).
+- Memory card math is drawn in display style (full-size fractions) with a thin
+  space before each `)`, so subscripts, numerators and parentheses stay readable.
+- Wordle: **Enter** sits on its own row with **Reset** and the **← Previous** /
+  **Next →** arrows (only when the topic has several Wordles), away from the
+  symbol keys. Wordles have no Shuffle button. On screens under 360px the arrows
+  drop their words.
+- Titles may contain LaTeX (`title: 'Subtracting two fractions, $\frac{a}{b} - \frac{c}{d}$'`,
+  in single quotes so the backslashes survive YAML).
 - **Memory cards never give the pair away**: a formula card shows `= \pi r^2`,
   never `A = \pi r^2`. Authors write the full formula. The filter strips a
   one-symbol left side, and the Solution tab shows the full table.
@@ -59,6 +73,10 @@ Follow them unless the owner changes them, and update this file when they do.
   like hand-written ones. The TikZ `diagram` filter runs after it.
 - Widgets are **plain JavaScript** (`quiz.js`, no Observable JS). Formulas are
   typeset by the page's MathJax.
+- MathJax uses **SVG output** (`tex-svg-full.js`, pinned to 3.2.2 in `_quarto.yml`).
+  The default CHTML output needs web fonts from the CDN; where those are blocked
+  (some phones and networks, embedded previews) letters get squeezed and
+  descenders clipped. SVG output needs no fonts.
 - A new question type = a `TYPES.<name>` entry in `quiz.lua` + a
   `Quiz.register("<name>", ...)` in `quiz.js` (+ CSS). See `lua_filter.md`.
 

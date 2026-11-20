@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: Slope through two points, (x₁, y₁) and (x₂, y₂)
+title: 'Slope through two points, $(x_1, y_1)$ and $(x_2, y_2)$'
 lhs: "m = (y₁ − y₂) ÷"
 answer: ( x₁ − x₂ )
 keys: ( ) x₁ x₂ y₁ y₂ − +

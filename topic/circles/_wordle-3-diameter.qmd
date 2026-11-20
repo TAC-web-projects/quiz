@@ -6,7 +6,7 @@ answer: 2 r
 ---
 
 ## Hint
-The diameter goes all the way across the circle, through the center. The radius goes from the center to the edge.
+A diameter is larger than a radius.
 
 ## Hint
 How many radii, placed end to end through the center, make one diameter?

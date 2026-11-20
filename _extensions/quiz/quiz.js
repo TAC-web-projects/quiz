@@ -69,21 +69,33 @@
   };
 
   // ======================================================== MEMORY MATCH
-  // el contains pre-rendered faces: <span class="mm-face" data-pair="0">…</span>,
-  // two per pair (name + formula). MathJax has already typeset them, so we only
-  // move them into card buttons and show/hide them.
+  // el contains pre-rendered faces: <span class="mm-face" data-pair="0" data-side="name">…</span>,
+  // one "name" and one "formula" per pair. MathJax has already typeset them, so we
+  // only move them into card buttons and show/hide them.
+  //
+  // Names and formulas are dealt into two separate piles. Flipping a card locks
+  // the rest of its pile (grayed out) until a card from the other pile is picked,
+  // so every second flip is a real match attempt. Tapping the open card again
+  // puts it back.
   // state = { found: [pair numbers], mismatches: n, done: true/false }
   Quiz.register("memory", {
     init(el, game) {
       const faces = [...el.querySelectorAll(".mm-face")];
       const pairs = Number(el.dataset.pairs);
       const status = h(`<p class="mm-status"></p>`);
-      const grid = h(`<div class="mm-grid"></div>`);
       const resetBtn = h(`<button class="btn btn-secondary mb-2">Reset &amp; shuffle</button>`);
+      const piles = {};
+      const pileBox = h(`<div class="mm-piles"></div>`);
+      for (const side of ["name", "formula"]) {
+        const pile = h(`<div class="mm-pile"><div class="mm-pile-label"></div><div class="mm-grid"></div></div>`);
+        pile.firstChild.textContent = side === "name" ? (el.dataset.nameLabel || "Names") : (el.dataset.formulaLabel || "Formulas");
+        piles[side] = pile.querySelector(".mm-grid");
+        pileBox.append(pile);
+      }
       el.querySelector(".mm-faces").remove();
-      el.append(resetBtn, status, grid);
+      el.append(resetBtn, status, pileBox);
 
-      let open = [], timer;
+      let cards = [], first = null, busy = false, timer;
 
       const showStatus = () => {
         const s = game.state, found = (s.found || []).length;
@@ -93,59 +105,78 @@
       };
 
       // Shrink a card's text until it fits on one line (long formulas on phones).
-      const fit = (btn, face) => {
-        face.style.fontSize = "";
-        for (let s = 95; s >= 50 && btn.scrollWidth > btn.clientWidth; s -= 5) face.style.fontSize = s + "%";
+      const fit = (card) => {
+        card.face.style.fontSize = "";
+        for (let s = 95; s >= 50 && card.btn.scrollWidth > card.btn.clientWidth; s -= 5) card.face.style.fontSize = s + "%";
       };
-
       const flip = (card, up) => {
         card.btn.classList.toggle("open", up);
-        if (up) fit(card.btn, card.face);
+        if (up) fit(card);
       };
+      // Lock (gray out) or unlock every unmatched card in one pile except `except`.
+      const lockPile = (side, locked, except) => {
+        for (const c of cards) {
+          if (c.side !== side || c === except || c.matched) continue;
+          c.btn.disabled = locked;
+          c.btn.classList.toggle("mm-locked", locked);
+        }
+      };
+      const markMatched = (c) => {
+        c.matched = true;
+        c.btn.disabled = true;
+        c.btn.className = "btn mm-card mm-matched open";
+      };
+
+      function choose(card) {
+        if (busy || card.matched) return;
+        if (first === card) {                       // tap the open card again: put it back
+          flip(card, false); lockPile(card.side, false); first = null; return;
+        }
+        flip(card, true);
+        if (!first) { first = card; lockPile(card.side, true, card); return; }
+
+        const a = first, b = card;
+        const s = { found: [...(game.state.found || [])], mismatches: game.state.mismatches || 0 };
+        if (a.pair === b.pair) {                    // match: both turn green and stay up
+          markMatched(a); markMatched(b);
+          s.found.push(Number(a.pair));
+          lockPile(a.side, false);
+          first = null;
+        } else {                                    // no match: flip both back after a moment
+          s.mismatches++;
+          busy = true;
+          timer = setTimeout(() => {
+            flip(a, false); flip(b, false);
+            lockPile(a.side, false);
+            first = null; busy = false;
+          }, 1200);
+        }
+        s.done = s.found.length === pairs;
+        game.save(s);
+        showStatus();
+      }
 
       function deal() {
         clearTimeout(timer);
-        open = [];
-        grid.replaceChildren();
+        first = null; busy = false; cards = [];
+        piles.name.replaceChildren(); piles.formula.replaceChildren();
         const found = game.state.found || [];
         for (const face of shuffle([...faces])) {
           const btn = h(`<button class="btn btn-outline-primary mm-card"><span class="mm-q">?</span></button>`);
           btn.append(face);
-          const card = { btn, face, pair: face.dataset.pair };
-          if (found.includes(Number(card.pair))) {
-            btn.disabled = true;
-            btn.className = "btn btn-success mm-card";
-          }
-          btn.onclick = () => {
-            if (open.length === 2 || open.includes(card)) return;   // ignore 3rd click / same card
-            flip(card, true);
-            open.push(card);
-            if (open.length < 2) return;
-            const [a, b] = open;
-            const s = { found: [...(game.state.found || [])], mismatches: game.state.mismatches || 0 };
-            if (a.pair === b.pair) {                                 // match: lock both cards
-              for (const c of open) { c.btn.disabled = true; c.btn.className = "btn btn-success mm-card open"; }
-              s.found.push(Number(a.pair));
-              open = [];
-            } else {                                                 // no match: flip back
-              s.mismatches++;
-              timer = setTimeout(() => { open.forEach(c => flip(c, false)); open = []; }, 1200);
-            }
-            s.done = s.found.length === pairs;
-            game.save(s);
-            showStatus();
-          };
-          grid.append(btn);
-          if (btn.disabled) flip(card, true);
+          const card = { btn, face, pair: face.dataset.pair, side: face.dataset.side || "name", matched: false };
+          btn.onclick = () => choose(card);
+          piles[card.side].append(btn);
+          cards.push(card);
+          if (found.includes(Number(card.pair))) { markMatched(card); fit(card); }
         }
         showStatus();
       }
 
       resetBtn.onclick = () => { game.save({ found: [], mismatches: 0 }); deal(); };
       deal();
-      // MathJax may finish (or fonts load) after we deal; re-fit the open cards then.
-      document.fonts && document.fonts.ready.then(() =>
-        grid.querySelectorAll(".mm-card.open").forEach(btn => fit(btn, btn.querySelector(".mm-face"))));
+      // Fonts can finish loading after we deal; re-fit the open cards then.
+      document.fonts && document.fonts.ready.then(() => cards.filter(c => c.btn.classList.contains("open")).forEach(fit));
     },
 
     summary(s) {
@@ -176,7 +207,19 @@
       const board = h(`<div class="d-flex flex-column gap-1 mb-2"></div>`);
       const msg = h(`<p class="wordle-msg"></p>`);
       const kb = h(`<div class="d-flex flex-wrap gap-1 mb-3"></div>`);
+      // Second row: Enter, Reset, and (when there are several Wordles) Previous / Next.
+      const enterBtn = h(`<button class="btn btn-primary">Enter</button>`);
       const resetBtn = h(`<button class="btn btn-secondary">Reset</button>`);
+      const controls = h(`<div class="wordle-controls"></div>`);
+      controls.append(enterBtn, resetBtn);
+      if (Number(el.dataset.count) > 1) {
+        const nav = h(`<div class="wordle-nav">
+          <button class="btn btn-outline-primary" data-bs-slide="prev" aria-label="Previous Wordle"><i class="bi bi-arrow-left"></i><span class="wordle-nav-text"> Previous</span></button>
+          <button class="btn btn-outline-primary" data-bs-slide="next" aria-label="Next Wordle"><span class="wordle-nav-text">Next </span><i class="bi bi-arrow-right"></i></button>
+        </div>`);
+        nav.querySelectorAll("button").forEach(b => b.dataset.bsTarget = el.dataset.carousel);
+        controls.append(nav);
+      }
       const keyBtns = {};
       let typed, locked, row, guesses, done;
 
@@ -257,14 +300,15 @@
         for (const g of replay) submit(g);   // restore saved progress
       }
 
-      for (const k of [...keys, "⌫", "Enter"]) {
+      for (const k of [...keys, "⌫"]) {
         keyBtns[k] = h(`<button style="min-width:2.5em"></button>`);
         keyBtns[k].textContent = k;
         keyBtns[k].onclick = () => press(k);
         kb.append(keyBtns[k]);
       }
+      enterBtn.onclick = () => press("Enter");
       resetBtn.onclick = () => { game.save({ guesses: [] }); reset([]); };
-      el.append(lhsTop, board, msg, kb, resetBtn);
+      el.append(lhsTop, board, msg, kb, controls);
       reset(game.state.guesses || []);
       // Measure once visible (topics/slides start hidden), and on resize.
       let lastWidth = 0;
@@ -338,6 +382,8 @@
         }
         out.append(section);
       }
+      // Titles may contain math written as \( ... \); typeset it.
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([out]);
     };
 
     box.querySelector("[data-quiz-results]").onclick = () => { shown = true; render(); };

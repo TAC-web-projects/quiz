@@ -12,7 +12,7 @@ The owner's decisions are in `_README/design_decisions.md`. Treat them as requir
 1. Copy the matching file from `topic/_template/` into `topic/<topic>/`. Keep the leading `_`. The filename sets the order, so number it (`_wordle-4-arc-length.qmd`).
 2. Fill in the front matter:
    - **Wordle:** `type: wordle`, `title:` (the quantity in words; it's shown above the board), `lhs: "A ="`, `answer:` (space-separated Unicode symbols, e.g. `π r ²`). Every answer symbol must be on the keyboard, which defaults to `π r d 2 ² C θ ½`. Add any others with `keys:`.
-   - **Memory:** `type: memory`, `title:`, and a `| Name | Formula |` table with each **full** formula in `$...$`. Cards hide a one-symbol left side by themselves. Never write `= \pi r^2` by hand.
+   - **Memory:** `type: memory`, `title:`, and a `| Name | Formula |` table (the two column headings label the two card piles) with each **full** formula in `$...$`. Cards hide a one-symbol left side by themselves. Never write `= \pi r^2` by hand.
    - **Notes:** `type: notes`. The body is shown as-is at the bottom of the topic.
 3. Add `## Hint` sections (usually two: a nudge, then a concrete check) and a `## Solution`. Write the math and diagrams the way the `quiz-latex-style` skill says.
 4. Run `scripts/check.sh --templates`.
@@ -45,6 +45,6 @@ Follow §4 of `_README/lua_filter.md`. It's a worked "numeric" example that has 
 
 For a visible change, serve `docs/`, open it in Playwright on desktop and a phone size, and play the changed game.
 - Set `sessionStorage.authed = "1"` with an init script to skip the login overlay.
-- If the MathJax CDN is blocked in the sandbox, serve `mathjax@3` from npm through `page.route`.
+- If the MathJax CDN is blocked in the sandbox, serve `mathjax@3.2.2` from npm through `page.route` (match `/mathjax@3[^/]*\/es5\/(.*)/`). Count errors with `[data-mml-node="merror"]` (SVG output).
 
 Finally, commit the source and the re-rendered `docs/`, and don't push unless the user says to.

@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: Least common denominator of 2/x and 3/x²
+title: 'Least common denominator of $\frac{2}{x}$ and $\frac{3}{x^2}$'
 lhs: "LCD ="
 answer: x²
 keys: x x² x³ 2x 5 6

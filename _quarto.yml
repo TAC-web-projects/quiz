@@ -21,7 +21,12 @@ format:
       - brand
     css: styles.css
     toc: true
-    html-math-method: mathjax
+    # MathJax with SVG output: formulas are drawn as vector shapes, so they look
+    # right even where MathJax's web fonts can't load (some phones, networks and
+    # embedded previews), which otherwise squeezes letters and clips descenders.
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"
     format:
     include-in-header: login-header.html
     include-before-body: login.html

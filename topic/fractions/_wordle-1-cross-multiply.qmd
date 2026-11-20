@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: Subtracting two fractions, a/b − c/d
+title: 'Subtracting two fractions, $\frac{a}{b} - \frac{c}{d}$'
 lhs: "a/b − c/d ="
 answer: ( ad − bc ) ÷ bd
 keys: ( ) ad bc ac bd + − ÷

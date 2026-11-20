@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: Subtracting fractions with variables in the denominator, 3/x − 2/y
+title: 'Subtracting fractions with variables in the denominator, $\frac{3}{x} - \frac{2}{y}$'
 lhs: "3/x − 2/y ="
 answer: ( 3y − 2x ) ÷ xy
 keys: ( ) 3y 2x 3x 2y 6 xy + − ÷

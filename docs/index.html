@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -270,10 +270,10 @@ window.Quarto = {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Flip two cards at a time. Match each <strong>name</strong> to its <strong>formula</strong>.</p>
-<div class="quiz-game quiz-memory" data-topic-title="Circles" data-pairs="4" data-game="circles/memory-formulas" data-topic="circles" data-title="Circle Formulas">
+<p>Flip one card from each pile to match each <strong>name</strong> to its <strong>formula</strong>.</p>
+<div class="quiz-game quiz-memory" data-name-label="Name" data-game="circles/memory-formulas" data-formula-label="Formula" data-title="Circle Formulas" data-pairs="4" data-topic-title="Circles" data-topic="circles">
 <div class="mm-faces">
-<span class="mm-face" data-pair="0"><strong>Area of a circle</strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(= \pi r^2\)</span></span><span class="mm-face" data-pair="1"><strong>Circumference</strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(= 2\pi r\)</span></span><span class="mm-face" data-pair="2"><strong>Diameter</strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(= 2r\)</span></span><span class="mm-face" data-pair="3"><strong>Equation of a circle</strong></span><span class="mm-face" data-pair="3"><span class="math inline">\((x-h)^2 + (y-k)^2 = r^2\)</span></span>
+<span class="mm-face" data-pair="0" data-side="name"><strong>Area of a circle</strong></span><span class="mm-face" data-pair="0" data-side="formula"><span class="math inline">\(\displaystyle = \pi r^2\)</span></span><span class="mm-face" data-pair="1" data-side="name"><strong>Circumference</strong></span><span class="mm-face" data-pair="1" data-side="formula"><span class="math inline">\(\displaystyle = 2\pi r\)</span></span><span class="mm-face" data-pair="2" data-side="name"><strong>Diameter</strong></span><span class="mm-face" data-pair="2" data-side="formula"><span class="math inline">\(\displaystyle = 2r\)</span></span><span class="mm-face" data-pair="3" data-side="name"><strong>Equation of a circle</strong></span><span class="mm-face" data-pair="3" data-side="formula"><span class="math inline">\(\displaystyle (x-h\,)^2 + (y-k\,)^2 = r^2\)</span></span>
 </div>
 </div>
 </div>
@@ -389,7 +389,7 @@ How to play Wordle
 </div>
 </div>
 </div>
-<div id="circles-wordle-carousel" class="carousel slide" data-bs-interval="false">
+<div id="circles-wordle-carousel" class="carousel slide mb-4" data-bs-interval="false">
 <div class="carousel-inner">
 <section id="circles-wordle-1-area-title" class="level4 unlisted no-anchor carousel-item active">
 <h4 class="unlisted no-anchor" data-anchor-id="circles-wordle-1-area-title">Wordle <span class="slide-num">1</span> of 3: Area of a circle</h4>
@@ -400,7 +400,7 @@ How to play Wordle
 <div class="quiz-quantity">
 Area of a circle
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="A =" data-keys="π r d 2 ² C θ ½" data-topic-title="Circles" data-answer="π r ²" data-tries="6" data-game="circles/wordle-1-area" data-topic="circles" data-title="Area of a circle">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="π r d 2 ² C θ ½" data-title="Area of a circle" data-carousel="#circles-wordle-carousel" data-lhs="A =" data-game="circles/wordle-1-area" data-answer="π r ²" data-topic-title="Circles" data-topic="circles">
 
 </div>
 </div>
@@ -458,7 +458,7 @@ Hint 2
 <div class="quiz-quantity">
 Circumference of a circle, using its diameter
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="C =" data-keys="π r d 2 ² C θ ½" data-topic-title="Circles" data-answer="π d" data-tries="6" data-game="circles/wordle-2-circumference" data-topic="circles" data-title="Circumference of a circle, using its diameter">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="π r d 2 ² C θ ½" data-title="Circumference of a circle, using its diameter" data-carousel="#circles-wordle-carousel" data-lhs="C =" data-game="circles/wordle-2-circumference" data-answer="π d" data-topic-title="Circles" data-topic="circles">
 
 </div>
 </div>
@@ -529,7 +529,7 @@ Hint 3
 <div class="quiz-quantity">
 Diameter of a circle, using its radius
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="d =" data-keys="π r d 2 ² C θ ½" data-topic-title="Circles" data-answer="2 r" data-tries="6" data-game="circles/wordle-3-diameter" data-topic="circles" data-title="Diameter of a circle, using its radius">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="π r d 2 ² C θ ½" data-title="Diameter of a circle, using its radius" data-carousel="#circles-wordle-carousel" data-lhs="d =" data-game="circles/wordle-3-diameter" data-answer="2 r" data-topic-title="Circles" data-topic="circles">
 
 </div>
 </div>
@@ -546,7 +546,7 @@ Hint 1
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The diameter goes all the way across the circle, through the center. The radius goes from the center to the edge.</p>
+<p>A diameter is larger than a radius.</p>
 </div>
 </div>
 </div>
@@ -578,11 +578,6 @@ Hint 2
 </div>
 </section>
 </div>
-</div>
-<div class="quiz-nav">
-<button class="btn btn-outline-primary" data-bs-target="#circles-wordle-carousel" data-bs-slide="prev">‹ Previous Wordle</button>
-<button class="btn btn-outline-primary" data-bs-target="#circles-wordle-carousel" data-bs-slide="next">Next Wordle ›</button>
-<button class="btn btn-outline-secondary" data-shuffle="#circles-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -661,10 +656,10 @@ What the symbols mean
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>Flip two cards at a time. Match each <strong>expression</strong> to its <strong>simplified form</strong>. (Assume <span class="math inline">\(x \neq 0\)</span> and <span class="math inline">\(y \neq 0\)</span>.)</p>
-<div class="quiz-game quiz-memory" data-topic-title="Exponent Rules" data-pairs="6" data-game="exponent-rules/memory-rules" data-topic="exponent-rules" data-title="Exponent Rules">
+<p>Flip one card from each pile to match each <strong>expression</strong> to its <strong>simplified form</strong>. (Assume <span class="math inline">\(x \neq 0\)</span> and <span class="math inline">\(y \neq 0\)</span>.)</p>
+<div class="quiz-game quiz-memory" data-name-label="Expression" data-game="exponent-rules/memory-rules" data-formula-label="Simplified" data-title="Exponent Rules" data-pairs="6" data-topic-title="Exponent Rules" data-topic="exponent-rules">
 <div class="mm-faces">
-<span class="mm-face" data-pair="0"><strong><span class="math inline">\(x^a \cdot x^b\)</span></strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(x^{a+b}\)</span></span><span class="mm-face" data-pair="1"><strong><span class="math inline">\(\frac{x^a}{x^b}\)</span></strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(x^{a-b}\)</span></span><span class="mm-face" data-pair="2"><strong><span class="math inline">\((x^a)^b\)</span></strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(x^{ab}\)</span></span><span class="mm-face" data-pair="3"><strong><span class="math inline">\((xy)^a\)</span></strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(x^a y^a\)</span></span><span class="mm-face" data-pair="4"><strong><span class="math inline">\(x^0\)</span></strong></span><span class="mm-face" data-pair="4"><span class="math inline">\(1\)</span></span><span class="mm-face" data-pair="5"><strong><span class="math inline">\(x^{-a}\)</span></strong></span><span class="mm-face" data-pair="5"><span class="math inline">\(\frac{1}{x^a}\)</span></span>
+<span class="mm-face" data-pair="0" data-side="name"><strong><span class="math inline">\(\displaystyle x^a \cdot x^b\)</span></strong></span><span class="mm-face" data-pair="0" data-side="formula"><span class="math inline">\(\displaystyle x^{a+b}\)</span></span><span class="mm-face" data-pair="1" data-side="name"><strong><span class="math inline">\(\displaystyle \frac{x^a}{x^b}\)</span></strong></span><span class="mm-face" data-pair="1" data-side="formula"><span class="math inline">\(\displaystyle x^{a-b}\)</span></span><span class="mm-face" data-pair="2" data-side="name"><strong><span class="math inline">\(\displaystyle (x^a\,)^b\)</span></strong></span><span class="mm-face" data-pair="2" data-side="formula"><span class="math inline">\(\displaystyle x^{ab}\)</span></span><span class="mm-face" data-pair="3" data-side="name"><strong><span class="math inline">\(\displaystyle (xy\,)^a\)</span></strong></span><span class="mm-face" data-pair="3" data-side="formula"><span class="math inline">\(\displaystyle x^a y^a\)</span></span><span class="mm-face" data-pair="4" data-side="name"><strong><span class="math inline">\(\displaystyle x^0\)</span></strong></span><span class="mm-face" data-pair="4" data-side="formula"><span class="math inline">\(\displaystyle 1\)</span></span><span class="mm-face" data-pair="5" data-side="name"><strong><span class="math inline">\(\displaystyle x^{-a}\)</span></strong></span><span class="mm-face" data-pair="5" data-side="formula"><span class="math inline">\(\displaystyle \frac{1}{x^a}\)</span></span>
 </div>
 </div>
 </div>
@@ -791,7 +786,7 @@ How to play Wordle
 </div>
 </div>
 </div>
-<div id="exponent-rules-wordle-carousel" class="carousel slide" data-bs-interval="false">
+<div id="exponent-rules-wordle-carousel" class="carousel slide mb-4" data-bs-interval="false">
 <div class="carousel-inner">
 <section id="exponent-rules-wordle-1-product-title" class="level4 unlisted no-anchor carousel-item active">
 <h4 class="unlisted no-anchor" data-anchor-id="exponent-rules-wordle-1-product-title">Wordle <span class="slide-num">1</span> of 4: Multiplying powers with the same base</h4>
@@ -803,7 +798,7 @@ How to play Wordle
 Multiplying powers with the same base
 </div>
 <p>Fill in the exponent.</p>
-<div class="quiz-game quiz-wordle" data-lhs="xᵃ · xᵇ = x" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-topic-title="Exponent Rules" data-answer="ᵃ ⁺ ᵇ" data-tries="6" data-game="exponent-rules/wordle-1-product" data-topic="exponent-rules" data-title="Multiplying powers with the same base">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="4" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-title="Multiplying powers with the same base" data-carousel="#exponent-rules-wordle-carousel" data-lhs="xᵃ · xᵇ = x" data-game="exponent-rules/wordle-1-product" data-answer="ᵃ ⁺ ᵇ" data-topic-title="Exponent Rules" data-topic="exponent-rules">
 
 </div>
 </div>
@@ -862,7 +857,7 @@ Hint 2
 Dividing powers with the same base
 </div>
 <p>Fill in the exponent. (Assume <span class="math inline">\(x \neq 0\)</span>.)</p>
-<div class="quiz-game quiz-wordle" data-lhs="xᵃ ÷ xᵇ = x" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-topic-title="Exponent Rules" data-answer="ᵃ ⁻ ᵇ" data-tries="6" data-game="exponent-rules/wordle-2-quotient" data-topic="exponent-rules" data-title="Dividing powers with the same base">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="4" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-title="Dividing powers with the same base" data-carousel="#exponent-rules-wordle-carousel" data-lhs="xᵃ ÷ xᵇ = x" data-game="exponent-rules/wordle-2-quotient" data-answer="ᵃ ⁻ ᵇ" data-topic-title="Exponent Rules" data-topic="exponent-rules">
 
 </div>
 </div>
@@ -921,7 +916,7 @@ Hint 2
 A power raised to a power
 </div>
 <p>Fill in the exponent. (Two letters side by side, like <span class="math inline">\(ab\)</span>, means <span class="math inline">\(a \cdot b\)</span>.)</p>
-<div class="quiz-game quiz-wordle" data-lhs="(xᵃ)ᵇ = x" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-topic-title="Exponent Rules" data-answer="ᵃ ᵇ" data-tries="6" data-game="exponent-rules/wordle-3-power" data-topic="exponent-rules" data-title="A power raised to a power">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="4" data-keys="ᵃ ᵇ ⁺ ⁻ ¹ ²" data-title="A power raised to a power" data-carousel="#exponent-rules-wordle-carousel" data-lhs="(xᵃ)ᵇ = x" data-game="exponent-rules/wordle-3-power" data-answer="ᵃ ᵇ" data-topic-title="Exponent Rules" data-topic="exponent-rules">
 
 </div>
 </div>
@@ -979,7 +974,7 @@ Hint 2
 A negative exponent
 </div>
 <p>Assume <span class="math inline">\(x \neq 0\)</span>.</p>
-<div class="quiz-game quiz-wordle" data-lhs="x⁻ᵃ =" data-keys="1 0 − ÷ xᵃ x" data-topic-title="Exponent Rules" data-answer="1 ÷ xᵃ" data-tries="6" data-game="exponent-rules/wordle-4-negative" data-topic="exponent-rules" data-title="A negative exponent">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="4" data-keys="1 0 − ÷ xᵃ x" data-title="A negative exponent" data-carousel="#exponent-rules-wordle-carousel" data-lhs="x⁻ᵃ =" data-game="exponent-rules/wordle-4-negative" data-answer="1 ÷ xᵃ" data-topic-title="Exponent Rules" data-topic="exponent-rules">
 
 </div>
 </div>
@@ -1029,11 +1024,6 @@ Hint 2
 </div>
 </section>
 </div>
-</div>
-<div class="quiz-nav">
-<button class="btn btn-outline-primary" data-bs-target="#exponent-rules-wordle-carousel" data-bs-slide="prev">‹ Previous Wordle</button>
-<button class="btn btn-outline-primary" data-bs-target="#exponent-rules-wordle-carousel" data-bs-slide="next">Next Wordle ›</button>
-<button class="btn btn-outline-secondary" data-shuffle="#exponent-rules-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
@@ -1101,9 +1091,9 @@ What the symbols mean
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
 <p>FOIL multiplies <span class="math inline">\((a + b)(c + d)\)</span> one pair of terms at a time. Match each <strong>letter</strong> to the product in which that step’s two terms are shown in red.</p>
-<div class="quiz-game quiz-memory" data-topic-title="Expanding with FOIL" data-pairs="4" data-game="expanding-with-foil/memory-1-foil-steps" data-topic="expanding-with-foil" data-title="FOIL: which terms get multiplied?">
+<div class="quiz-game quiz-memory" data-name-label="Letter" data-game="expanding-with-foil/memory-1-foil-steps" data-formula-label="Terms multiplied" data-title="FOIL: which terms get multiplied?" data-pairs="4" data-topic-title="Expanding with FOIL" data-topic="expanding-with-foil">
 <div class="mm-faces">
-<span class="mm-face" data-pair="0"><strong>F</strong></span><span class="mm-face" data-pair="0"><span class="math inline">\((\textcolor{#A60000}{a} + b)(\textcolor{#A60000}{c} + d)\)</span></span><span class="mm-face" data-pair="1"><strong>O</strong></span><span class="mm-face" data-pair="1"><span class="math inline">\((\textcolor{#A60000}{a} + b)(c + \textcolor{#A60000}{d})\)</span></span><span class="mm-face" data-pair="2"><strong>I</strong></span><span class="mm-face" data-pair="2"><span class="math inline">\((a + \textcolor{#A60000}{b})(\textcolor{#A60000}{c} + d)\)</span></span><span class="mm-face" data-pair="3"><strong>L</strong></span><span class="mm-face" data-pair="3"><span class="math inline">\((a + \textcolor{#A60000}{b})(c + \textcolor{#A60000}{d})\)</span></span>
+<span class="mm-face" data-pair="0" data-side="name"><strong>F</strong></span><span class="mm-face" data-pair="0" data-side="formula"><span class="math inline">\(\displaystyle (\textcolor{#A60000}{a} + b\,)(\textcolor{#A60000}{c} + d\,)\)</span></span><span class="mm-face" data-pair="1" data-side="name"><strong>O</strong></span><span class="mm-face" data-pair="1" data-side="formula"><span class="math inline">\(\displaystyle (\textcolor{#A60000}{a} + b\,)(c + \textcolor{#A60000}{d}\,)\)</span></span><span class="mm-face" data-pair="2" data-side="name"><strong>I</strong></span><span class="mm-face" data-pair="2" data-side="formula"><span class="math inline">\(\displaystyle (a + \textcolor{#A60000}{b}\,)(\textcolor{#A60000}{c} + d\,)\)</span></span><span class="mm-face" data-pair="3" data-side="name"><strong>L</strong></span><span class="mm-face" data-pair="3" data-side="formula"><span class="math inline">\(\displaystyle (a + \textcolor{#A60000}{b}\,)(c + \textcolor{#A60000}{d}\,)\)</span></span>
 </div>
 </div>
 </div>
@@ -1202,9 +1192,9 @@ Hint 3
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
 <p>Match each <strong>product</strong> to its <strong>expanded form</strong>.</p>
-<div class="quiz-game quiz-memory" data-topic-title="Expanding with FOIL" data-pairs="4" data-game="expanding-with-foil/memory-2-special-products" data-topic="expanding-with-foil" data-title="Special Products">
+<div class="quiz-game quiz-memory" data-name-label="Product" data-game="expanding-with-foil/memory-2-special-products" data-formula-label="Expanded" data-title="Special Products" data-pairs="4" data-topic-title="Expanding with FOIL" data-topic="expanding-with-foil">
 <div class="mm-faces">
-<span class="mm-face" data-pair="0"><strong><span class="math inline">\((a + b)(c + d)\)</span></strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(ac + ad + bc + bd\)</span></span><span class="mm-face" data-pair="1"><strong><span class="math inline">\((a + b)^2\)</span></strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(a^2 + 2ab + b^2\)</span></span><span class="mm-face" data-pair="2"><strong><span class="math inline">\((a - b)^2\)</span></strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(a^2 - 2ab + b^2\)</span></span><span class="mm-face" data-pair="3"><strong><span class="math inline">\((a + b)(a - b)\)</span></strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(a^2 - b^2\)</span></span>
+<span class="mm-face" data-pair="0" data-side="name"><strong><span class="math inline">\(\displaystyle (a + b\,)(c + d\,)\)</span></strong></span><span class="mm-face" data-pair="0" data-side="formula"><span class="math inline">\(\displaystyle ac + ad + bc + bd\)</span></span><span class="mm-face" data-pair="1" data-side="name"><strong><span class="math inline">\(\displaystyle (a + b\,)^2\)</span></strong></span><span class="mm-face" data-pair="1" data-side="formula"><span class="math inline">\(\displaystyle a^2 + 2ab + b^2\)</span></span><span class="mm-face" data-pair="2" data-side="name"><strong><span class="math inline">\(\displaystyle (a - b\,)^2\)</span></strong></span><span class="mm-face" data-pair="2" data-side="formula"><span class="math inline">\(\displaystyle a^2 - 2ab + b^2\)</span></span><span class="mm-face" data-pair="3" data-side="name"><strong><span class="math inline">\(\displaystyle (a + b\,)(a - b\,)\)</span></strong></span><span class="mm-face" data-pair="3" data-side="formula"><span class="math inline">\(\displaystyle a^2 - b^2\)</span></span>
 </div>
 </div>
 </div>
@@ -1312,18 +1302,18 @@ How to play Wordle
 </div>
 </div>
 </div>
-<div id="expanding-with-foil-wordle-carousel" class="carousel slide" data-bs-interval="false">
+<div id="expanding-with-foil-wordle-carousel" class="carousel slide mb-4" data-bs-interval="false">
 <div class="carousel-inner">
 <section id="expanding-with-foil-wordle-1-sum-title" class="level4 unlisted no-anchor carousel-item active">
-<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-1-sum-title">Wordle <span class="slide-num">1</span> of 3: Expand (x + 3)(x + 5)</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-1-sum-title">Wordle <span class="slide-num">1</span> of 3: Expand <span class="math inline">\((x + 3)(x + 5)\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-3" role="tab" aria-controls="tabset-12-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
 <div class="quiz-quantity">
-Expand (x + 3)(x + 5)
+Expand <span class="math inline">\((x + 3)(x + 5)\)</span>
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="x² +" data-keys="1 2 3 5 8 x + −" data-topic-title="Expanding with FOIL" data-answer="8 x + 1 5" data-tries="6" data-game="expanding-with-foil/wordle-1-sum" data-topic="expanding-with-foil" data-title="Expand (x + 3)(x + 5)">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="1 2 3 5 8 x + −" data-title="Expand \((x + 3)(x + 5)\)" data-carousel="#expanding-with-foil-wordle-carousel" data-lhs="x² +" data-game="expanding-with-foil/wordle-1-sum" data-answer="8 x + 1 5" data-topic-title="Expanding with FOIL" data-topic="expanding-with-foil">
 
 </div>
 </div>
@@ -1393,15 +1383,15 @@ Hint 3
 </div>
 </section>
 <section id="expanding-with-foil-wordle-2-square-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-2-square-title">Wordle <span class="slide-num">2</span> of 3: Expand (x − 4)²</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-2-square-title">Wordle <span class="slide-num">2</span> of 3: Expand <span class="math inline">\((x - 4)^2\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
 <div class="quiz-quantity">
-Expand (x − 4)²
+Expand <span class="math inline">\((x - 4)^2\)</span>
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="x²" data-keys="1 2 4 6 8 x + −" data-topic-title="Expanding with FOIL" data-answer="− 8 x + 1 6" data-tries="6" data-game="expanding-with-foil/wordle-2-square" data-topic="expanding-with-foil" data-title="Expand (x − 4)²">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="1 2 4 6 8 x + −" data-title="Expand \((x - 4)^2\)" data-carousel="#expanding-with-foil-wordle-carousel" data-lhs="x²" data-game="expanding-with-foil/wordle-2-square" data-answer="− 8 x + 1 6" data-topic-title="Expanding with FOIL" data-topic="expanding-with-foil">
 
 </div>
 </div>
@@ -1457,15 +1447,15 @@ Hint 2
 </div>
 </section>
 <section id="expanding-with-foil-wordle-3-difference-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-3-difference-title">Wordle <span class="slide-num">3</span> of 3: Expand (x + 6)(x − 6)</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="expanding-with-foil-wordle-3-difference-title">Wordle <span class="slide-num">3</span> of 3: Expand <span class="math inline">\((x + 6)(x - 6)\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-3" role="tab" aria-controls="tabset-14-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
 <div class="quiz-quantity">
-Expand (x + 6)(x − 6)
+Expand <span class="math inline">\((x + 6)(x - 6)\)</span>
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="=" data-keys="x ² 1 2 3 6 + −" data-topic-title="Expanding with FOIL" data-answer="x ² − 3 6" data-tries="6" data-game="expanding-with-foil/wordle-3-difference" data-topic="expanding-with-foil" data-title="Expand (x + 6)(x − 6)">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="x ² 1 2 3 6 + −" data-title="Expand \((x + 6)(x - 6)\)" data-carousel="#expanding-with-foil-wordle-carousel" data-lhs="=" data-game="expanding-with-foil/wordle-3-difference" data-answer="x ² − 3 6" data-topic-title="Expanding with FOIL" data-topic="expanding-with-foil">
 
 </div>
 </div>
@@ -1537,11 +1527,6 @@ Hint 3
 </section>
 </div>
 </div>
-<div class="quiz-nav">
-<button class="btn btn-outline-primary" data-bs-target="#expanding-with-foil-wordle-carousel" data-bs-slide="prev">‹ Previous Wordle</button>
-<button class="btn btn-outline-primary" data-bs-target="#expanding-with-foil-wordle-carousel" data-bs-slide="next">Next Wordle ›</button>
-<button class="btn btn-outline-secondary" data-shuffle="#expanding-with-foil-wordle-carousel">Shuffle order</button>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1606,10 +1591,10 @@ What FOIL means
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-3" role="tab" aria-controls="tabset-15-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
-<p>Flip two cards at a time. Match each <strong>sum or difference</strong> to the <strong>single fraction</strong> it equals. (Assume no denominator is <span class="math inline">\(0\)</span>.)</p>
-<div class="quiz-game quiz-memory" data-topic-title="Adding Fractions" data-pairs="5" data-game="adding-fractions/memory-rules" data-topic="adding-fractions" data-title="Adding &amp; Subtracting Fractions">
+<p>Flip one card from each pile to match each <strong>sum or difference</strong> to the <strong>single fraction</strong> it equals. (Assume no denominator is <span class="math inline">\(0\)</span>.)</p>
+<div class="quiz-game quiz-memory" data-name-label="Expression" data-game="adding-fractions/memory-rules" data-formula-label="Combined" data-title="Adding &amp; Subtracting Fractions" data-pairs="5" data-topic-title="Adding Fractions" data-topic="adding-fractions">
 <div class="mm-faces">
-<span class="mm-face" data-pair="0"><strong><span class="math inline">\(\frac{a}{x} + \frac{b}{x}\)</span></strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(\frac{a + b}{x}\)</span></span><span class="mm-face" data-pair="1"><strong><span class="math inline">\(\frac{a}{b} + \frac{c}{d}\)</span></strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(\frac{ad + bc}{bd}\)</span></span><span class="mm-face" data-pair="2"><strong><span class="math inline">\(\frac{a}{b} - \frac{c}{d}\)</span></strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(\frac{ad - bc}{bd}\)</span></span><span class="mm-face" data-pair="3"><strong><span class="math inline">\(\frac{1}{x} + \frac{1}{y}\)</span></strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(\frac{y + x}{xy}\)</span></span><span class="mm-face" data-pair="4"><strong><span class="math inline">\(\frac{2}{x} + \frac{3}{x^2}\)</span></strong></span><span class="mm-face" data-pair="4"><span class="math inline">\(\frac{2x + 3}{x^2}\)</span></span>
+<span class="mm-face" data-pair="0" data-side="name"><strong><span class="math inline">\(\displaystyle \frac{a}{x} + \frac{b}{x}\)</span></strong></span><span class="mm-face" data-pair="0" data-side="formula"><span class="math inline">\(\displaystyle \frac{a + b}{x}\)</span></span><span class="mm-face" data-pair="1" data-side="name"><strong><span class="math inline">\(\displaystyle \frac{a}{b} + \frac{c}{d}\)</span></strong></span><span class="mm-face" data-pair="1" data-side="formula"><span class="math inline">\(\displaystyle \frac{ad + bc}{bd}\)</span></span><span class="mm-face" data-pair="2" data-side="name"><strong><span class="math inline">\(\displaystyle \frac{a}{b} - \frac{c}{d}\)</span></strong></span><span class="mm-face" data-pair="2" data-side="formula"><span class="math inline">\(\displaystyle \frac{ad - bc}{bd}\)</span></span><span class="mm-face" data-pair="3" data-side="name"><strong><span class="math inline">\(\displaystyle \frac{1}{x} + \frac{1}{y}\)</span></strong></span><span class="mm-face" data-pair="3" data-side="formula"><span class="math inline">\(\displaystyle \frac{y + x}{xy}\)</span></span><span class="mm-face" data-pair="4" data-side="name"><strong><span class="math inline">\(\displaystyle \frac{2}{x} + \frac{3}{x^2}\)</span></strong></span><span class="mm-face" data-pair="4" data-side="formula"><span class="math inline">\(\displaystyle \frac{2x + 3}{x^2}\)</span></span>
 </div>
 </div>
 </div>
@@ -1731,18 +1716,18 @@ How to play Wordle
 </div>
 </div>
 </div>
-<div id="adding-fractions-wordle-carousel" class="carousel slide" data-bs-interval="false">
+<div id="adding-fractions-wordle-carousel" class="carousel slide mb-4" data-bs-interval="false">
 <div class="carousel-inner">
 <section id="adding-fractions-wordle-1-cross-multiply-title" class="level4 unlisted no-anchor carousel-item active">
-<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-1-cross-multiply-title">Wordle <span class="slide-num">1</span> of 3: Subtracting two fractions, a/b − c/d</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-1-cross-multiply-title">Wordle <span class="slide-num">1</span> of 3: Subtracting two fractions, <span class="math inline">\(\frac{a}{b} - \frac{c}{d}\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-3" role="tab" aria-controls="tabset-16-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-16-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-16-1-tab">
 <div class="quiz-quantity">
-Subtracting two fractions, a/b − c/d
+Subtracting two fractions, <span class="math inline">\(\frac{a}{b} - \frac{c}{d}\)</span>
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="a/b − c/d =" data-keys="( ) ad bc ac bd + − ÷" data-topic-title="Adding Fractions" data-answer="( ad − bc ) ÷ bd" data-tries="6" data-game="adding-fractions/wordle-1-cross-multiply" data-topic="adding-fractions" data-title="Subtracting two fractions, a/b − c/d">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="( ) ad bc ac bd + − ÷" data-title="Subtracting two fractions, \(\frac{a}{b} - \frac{c}{d}\)" data-carousel="#adding-fractions-wordle-carousel" data-lhs="a/b − c/d =" data-game="adding-fractions/wordle-1-cross-multiply" data-answer="( ad − bc ) ÷ bd" data-topic-title="Adding Fractions" data-topic="adding-fractions">
 
 </div>
 </div>
@@ -1814,16 +1799,16 @@ Hint 3
 </div>
 </section>
 <section id="adding-fractions-wordle-2-variables-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-2-variables-title">Wordle <span class="slide-num">2</span> of 3: Subtracting fractions with variables in the denominator, 3/x − 2/y</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-2-variables-title">Wordle <span class="slide-num">2</span> of 3: Subtracting fractions with variables in the denominator, <span class="math inline">\(\frac{3}{x} - \frac{2}{y}\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-3" role="tab" aria-controls="tabset-17-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
 <div class="quiz-quantity">
-Subtracting fractions with variables in the denominator, 3/x − 2/y
+Subtracting fractions with variables in the denominator, <span class="math inline">\(\frac{3}{x} - \frac{2}{y}\)</span>
 </div>
 <p>Assume <span class="math inline">\(x \neq 0\)</span> and <span class="math inline">\(y \neq 0\)</span>.</p>
-<div class="quiz-game quiz-wordle" data-lhs="3/x − 2/y =" data-keys="( ) 3y 2x 3x 2y 6 xy + − ÷" data-topic-title="Adding Fractions" data-answer="( 3y − 2x ) ÷ xy" data-tries="6" data-game="adding-fractions/wordle-2-variables" data-topic="adding-fractions" data-title="Subtracting fractions with variables in the denominator, 3/x − 2/y">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="( ) 3y 2x 3x 2y 6 xy + − ÷" data-title="Subtracting fractions with variables in the denominator, \(\frac{3}{x} - \frac{2}{y}\)" data-carousel="#adding-fractions-wordle-carousel" data-lhs="3/x − 2/y =" data-game="adding-fractions/wordle-2-variables" data-answer="( 3y − 2x ) ÷ xy" data-topic-title="Adding Fractions" data-topic="adding-fractions">
 
 </div>
 </div>
@@ -1879,16 +1864,16 @@ Hint 2
 </div>
 </section>
 <section id="adding-fractions-wordle-3-lcd-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-3-lcd-title">Wordle <span class="slide-num">3</span> of 3: Least common denominator of 2/x and 3/x²</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="adding-fractions-wordle-3-lcd-title">Wordle <span class="slide-num">3</span> of 3: Least common denominator of <span class="math inline">\(\frac{2}{x}\)</span> and <span class="math inline">\(\frac{3}{x^2}\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-18-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-1" role="tab" aria-controls="tabset-18-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-2" role="tab" aria-controls="tabset-18-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-3" role="tab" aria-controls="tabset-18-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-18-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-18-1-tab">
 <div class="quiz-quantity">
-Least common denominator of 2/x and 3/x²
+Least common denominator of <span class="math inline">\(\frac{2}{x}\)</span> and <span class="math inline">\(\frac{3}{x^2}\)</span>
 </div>
 <p>The <strong>least common denominator</strong> (LCD) is the simplest expression that both denominators divide into evenly. Assume <span class="math inline">\(x \neq 0\)</span>.</p>
-<div class="quiz-game quiz-wordle" data-lhs="LCD =" data-keys="x x² x³ 2x 5 6" data-topic-title="Adding Fractions" data-answer="x²" data-tries="6" data-game="adding-fractions/wordle-3-lcd" data-topic="adding-fractions" data-title="Least common denominator of 2/x and 3/x²">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="x x² x³ 2x 5 6" data-title="Least common denominator of \(\frac{2}{x}\) and \(\frac{3}{x^2}\)" data-carousel="#adding-fractions-wordle-carousel" data-lhs="LCD =" data-game="adding-fractions/wordle-3-lcd" data-answer="x²" data-topic-title="Adding Fractions" data-topic="adding-fractions">
 
 </div>
 </div>
@@ -1960,11 +1945,6 @@ Hint 3
 </section>
 </div>
 </div>
-<div class="quiz-nav">
-<button class="btn btn-outline-primary" data-bs-target="#adding-fractions-wordle-carousel" data-bs-slide="prev">‹ Previous Wordle</button>
-<button class="btn btn-outline-primary" data-bs-target="#adding-fractions-wordle-carousel" data-bs-slide="next">Next Wordle ›</button>
-<button class="btn btn-outline-secondary" data-shuffle="#adding-fractions-wordle-carousel">Shuffle order</button>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2006,10 +1986,10 @@ Steps for adding or subtracting fractions
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-19-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-1" role="tab" aria-controls="tabset-19-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-19-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-2" role="tab" aria-controls="tabset-19-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-19-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-3" role="tab" aria-controls="tabset-19-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-19-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-19-1-tab">
-<p>Flip two cards at a time. Match each <strong>name</strong> to its <strong>formula</strong>.</p>
-<div class="quiz-game quiz-memory" data-topic-title="Slope &amp; Point-Slope" data-pairs="5" data-game="slope-point-slope/memory-formulas" data-topic="slope-point-slope" data-title="Line Formulas">
+<p>Flip one card from each pile to match each <strong>name</strong> to its <strong>formula</strong>.</p>
+<div class="quiz-game quiz-memory" data-name-label="Name" data-game="slope-point-slope/memory-formulas" data-formula-label="Formula" data-title="Line Formulas" data-pairs="5" data-topic-title="Slope &amp; Point-Slope" data-topic="slope-point-slope">
 <div class="mm-faces">
-<span class="mm-face" data-pair="0"><strong>Slope from two points</strong></span><span class="mm-face" data-pair="0"><span class="math inline">\(= \frac{y_1 - y_2}{x_1 - x_2}\)</span></span><span class="mm-face" data-pair="1"><strong>Slope from a graph</strong></span><span class="mm-face" data-pair="1"><span class="math inline">\(= \frac{\text{rise}}{\text{run}}\)</span></span><span class="mm-face" data-pair="2"><strong>Point-slope form</strong></span><span class="mm-face" data-pair="2"><span class="math inline">\(y - y_1 = m(x - x_1)\)</span></span><span class="mm-face" data-pair="3"><strong>Slope-intercept form</strong></span><span class="mm-face" data-pair="3"><span class="math inline">\(= mx + b\)</span></span><span class="mm-face" data-pair="4"><strong>Slope of a horizontal line</strong></span><span class="mm-face" data-pair="4"><span class="math inline">\(= 0\)</span></span>
+<span class="mm-face" data-pair="0" data-side="name"><strong>Slope from two points</strong></span><span class="mm-face" data-pair="0" data-side="formula"><span class="math inline">\(\displaystyle = \frac{y_1 - y_2}{x_1 - x_2}\)</span></span><span class="mm-face" data-pair="1" data-side="name"><strong>Slope from a graph</strong></span><span class="mm-face" data-pair="1" data-side="formula"><span class="math inline">\(\displaystyle = \frac{\text{rise}}{\text{run}}\)</span></span><span class="mm-face" data-pair="2" data-side="name"><strong>Point-slope form</strong></span><span class="mm-face" data-pair="2" data-side="formula"><span class="math inline">\(\displaystyle y - y_1 = m(x - x_1\,)\)</span></span><span class="mm-face" data-pair="3" data-side="name"><strong>Slope-intercept form</strong></span><span class="mm-face" data-pair="3" data-side="formula"><span class="math inline">\(\displaystyle = mx + b\)</span></span><span class="mm-face" data-pair="4" data-side="name"><strong>Slope of a horizontal line</strong></span><span class="mm-face" data-pair="4" data-side="formula"><span class="math inline">\(\displaystyle = 0\)</span></span>
 </div>
 </div>
 </div>
@@ -2126,7 +2106,7 @@ How to play Wordle
 </div>
 </div>
 </div>
-<div id="slope-point-slope-wordle-carousel" class="carousel slide" data-bs-interval="false">
+<div id="slope-point-slope-wordle-carousel" class="carousel slide mb-4" data-bs-interval="false">
 <div class="carousel-inner">
 <section id="slope-point-slope-wordle-1-rise-run-title" class="level4 unlisted no-anchor carousel-item active">
 <h4 class="unlisted no-anchor" data-anchor-id="slope-point-slope-wordle-1-rise-run-title">Wordle <span class="slide-num">1</span> of 3: Slope of a line from its graph</h4>
@@ -2137,7 +2117,7 @@ How to play Wordle
 <div class="quiz-quantity">
 Slope of a line from its graph
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="m =" data-keys="rise run ÷ × + −" data-topic-title="Slope &amp; Point-Slope" data-answer="rise ÷ run" data-tries="6" data-game="slope-point-slope/wordle-1-rise-run" data-topic="slope-point-slope" data-title="Slope of a line from its graph">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="rise run ÷ × + −" data-title="Slope of a line from its graph" data-carousel="#slope-point-slope-wordle-carousel" data-lhs="m =" data-game="slope-point-slope/wordle-1-rise-run" data-answer="rise ÷ run" data-topic-title="Slope &amp; Point-Slope" data-topic="slope-point-slope">
 
 </div>
 </div>
@@ -2187,16 +2167,16 @@ Hint 2
 </div>
 </section>
 <section id="slope-point-slope-wordle-2-two-points-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="slope-point-slope-wordle-2-two-points-title">Wordle <span class="slide-num">2</span> of 3: Slope through two points, (x₁, y₁) and (x₂, y₂)</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="slope-point-slope-wordle-2-two-points-title">Wordle <span class="slide-num">2</span> of 3: Slope through two points, <span class="math inline">\((x_1, y_1)\)</span> and <span class="math inline">\((x_2, y_2)\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-21-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-1" role="tab" aria-controls="tabset-21-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-21-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-2" role="tab" aria-controls="tabset-21-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-21-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-3" role="tab" aria-controls="tabset-21-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-21-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-21-1-tab">
 <div class="quiz-quantity">
-Slope through two points, (x₁, y₁) and (x₂, y₂)
+Slope through two points, <span class="math inline">\((x_1, y_1)\)</span> and <span class="math inline">\((x_2, y_2)\)</span>
 </div>
 <p>The numerator <span class="math inline">\((y_1 - y_2)\)</span> is given. Fill in the denominator. Assume <span class="math inline">\(x_1 \neq x_2\)</span>.</p>
-<div class="quiz-game quiz-wordle" data-lhs="m = (y₁ − y₂) ÷" data-keys="( ) x₁ x₂ y₁ y₂ − +" data-topic-title="Slope &amp; Point-Slope" data-answer="( x₁ − x₂ )" data-tries="6" data-game="slope-point-slope/wordle-2-two-points" data-topic="slope-point-slope" data-title="Slope through two points, (x₁, y₁) and (x₂, y₂)">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="( ) x₁ x₂ y₁ y₂ − +" data-title="Slope through two points, \((x_1, y_1)\) and \((x_2, y_2)\)" data-carousel="#slope-point-slope-wordle-carousel" data-lhs="m = (y₁ − y₂) ÷" data-game="slope-point-slope/wordle-2-two-points" data-answer="( x₁ − x₂ )" data-topic-title="Slope &amp; Point-Slope" data-topic="slope-point-slope">
 
 </div>
 </div>
@@ -2252,15 +2232,15 @@ Hint 2
 </div>
 </section>
 <section id="slope-point-slope-wordle-3-point-slope-title" class="level4 unlisted no-anchor carousel-item">
-<h4 class="unlisted no-anchor" data-anchor-id="slope-point-slope-wordle-3-point-slope-title">Wordle <span class="slide-num">3</span> of 3: Point-slope form of a line through (x₁, y₁) with slope m</h4>
+<h4 class="unlisted no-anchor" data-anchor-id="slope-point-slope-wordle-3-point-slope-title">Wordle <span class="slide-num">3</span> of 3: Point-slope form of a line through <span class="math inline">\((x_1, y_1)\)</span> with slope <span class="math inline">\(m\)</span></h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-22-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-1" role="tab" aria-controls="tabset-22-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-22-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-2" role="tab" aria-controls="tabset-22-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-22-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-3" role="tab" aria-controls="tabset-22-3" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-22-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-22-1-tab">
 <div class="quiz-quantity">
-Point-slope form of a line through (x₁, y₁) with slope m
+Point-slope form of a line through <span class="math inline">\((x_1, y_1)\)</span> with slope <span class="math inline">\(m\)</span>
 </div>
-<div class="quiz-game quiz-wordle" data-lhs="y − y₁ =" data-keys="m b x y x₁ y₁ ( ) − +" data-topic-title="Slope &amp; Point-Slope" data-answer="m ( x − x₁ )" data-tries="6" data-game="slope-point-slope/wordle-3-point-slope" data-topic="slope-point-slope" data-title="Point-slope form of a line through (x₁, y₁) with slope m">
+<div class="quiz-game quiz-wordle" data-tries="6" data-count="3" data-keys="m b x y x₁ y₁ ( ) − +" data-title="Point-slope form of a line through \((x_1, y_1)\) with slope \(m\)" data-carousel="#slope-point-slope-wordle-carousel" data-lhs="y − y₁ =" data-game="slope-point-slope/wordle-3-point-slope" data-answer="m ( x − x₁ )" data-topic-title="Slope &amp; Point-Slope" data-topic="slope-point-slope">
 
 </div>
 </div>
@@ -2332,11 +2312,6 @@ Hint 3
 </div>
 </section>
 </div>
-</div>
-<div class="quiz-nav">
-<button class="btn btn-outline-primary" data-bs-target="#slope-point-slope-wordle-carousel" data-bs-slide="prev">‹ Previous Wordle</button>
-<button class="btn btn-outline-primary" data-bs-target="#slope-point-slope-wordle-carousel" data-bs-slide="next">Next Wordle ›</button>
-<button class="btn btn-outline-secondary" data-shuffle="#slope-point-slope-wordle-carousel">Shuffle order</button>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">

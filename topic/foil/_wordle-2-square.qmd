@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: "Expand (x − 4)²"
+title: 'Expand $(x - 4)^2$'
 lhs: "x²"
 answer: − 8 x + 1 6
 keys: 1 2 4 6 8 x + −

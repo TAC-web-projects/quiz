@@ -3,7 +3,7 @@ type: memory
 title: Exponent Rules
 ---
 
-Flip two cards at a time. Match each **expression** to its **simplified form**. (Assume $x \neq 0$ and $y \neq 0$.)
+Flip one card from each pile to match each **expression** to its **simplified form**. (Assume $x \neq 0$ and $y \neq 0$.)
 
 | Expression | Simplified |
 |:-----------|:-----------|

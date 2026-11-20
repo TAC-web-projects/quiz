@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: "Expand (x + 6)(x − 6)"
+title: 'Expand $(x + 6)(x - 6)$'
 lhs: "="
 answer: x ² − 3 6
 keys: x ² 1 2 3 6 + −

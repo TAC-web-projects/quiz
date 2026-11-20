@@ -1,6 +1,6 @@
 ---
 type: wordle
-title: Point-slope form of a line through (x₁, y₁) with slope m
+title: 'Point-slope form of a line through $(x_1, y_1)$ with slope $m$'
 lhs: "y − y₁ ="
 answer: m ( x − x₁ )
 keys: m b x y x₁ y₁ ( ) − +

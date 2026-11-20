@@ -132,11 +132,12 @@ local function carousel_item(game)
   }, attr("", classes))
 end
 
--- A carousel of slides plus Previous / Next / Shuffle buttons
--- (the buttons are left out when there is only one slide).
-local function carousel(id, noun, items)
+-- A carousel of slides plus Previous / Next / Shuffle buttons underneath.
+-- The buttons are left out when there is only one slide, or when the type
+-- draws its own (show_nav = false, e.g. Wordle puts them next to Enter).
+local function carousel(id, noun, items, show_nav)
   local inner = pandoc.Div(items, attr("", { "carousel-inner" }))
-  if #items < 2 then
+  if #items < 2 or show_nav == false then
     return pandoc.Blocks {
       pandoc.Div({ inner }, attr(id, { "carousel", "slide", "mb-4" }, { ["data-bs-interval"] = "false" })),
     }
@@ -153,13 +154,24 @@ local function carousel(id, noun, items)
   }
 end
 
+-- Plain-text title for data-title: math stays as \( ... \) so quiz.js can
+-- have MathJax typeset it (e.g. in the results list).
+local function title_text(inlines)
+  local parts = {}
+  for _, il in ipairs(inlines) do
+    if il.t == "Math" then table.insert(parts, "\\(" .. il.text .. "\\)")
+    else table.insert(parts, stringify(il)) end
+  end
+  return table.concat(parts)
+end
+
 -- The <div> a game's JavaScript attaches to (see quiz.js: Quiz.register).
 local function game_div(game, type_name, extra_attrs, content)
   local a = {
     ["data-game"] = game.id,
     ["data-topic"] = game.topic_id,
     ["data-topic-title"] = game.topic_title,
-    ["data-title"] = stringify(game.title),
+    ["data-title"] = title_text(game.title),
   }
   for k, v in pairs(extra_attrs or {}) do a[k] = v end
   return pandoc.Div(content or {}, attr("", { "quiz-game", "quiz-" .. type_name }, a))
@@ -173,6 +185,8 @@ end
 --   noun     = word used on the slide titles and Previous/Next buttons
 --   order    = position of its sub-section inside a topic
 --   intro    = optional blocks shown once at the top of the sub-section
+--   nav      = false to leave out the Previous / Next / Shuffle buttons under
+--              the carousel (the widget draws its own; game.carousel_id is set)
 --   build(game, meta, blocks) -> fills game.tabs (for carousel types)
 --                                or returns blocks (for non-carousel types)
 ---------------------------------------------------------------------------
@@ -181,14 +195,22 @@ local TYPES = {}
 
 -- Memory match ------------------------------------------------------------
 
+-- Math on a card: display style (full-size fractions, so subscripts and
+-- numerators stay readable) and a thin space before each ")" so it doesn't
+-- crowd the letter in front of it. "\right)" is left alone.
+local function card_style(tex)
+  tex = tex:gsub("\\right%)", "@@RIGHTPAREN@@"):gsub("%)", "\\,)"):gsub("@@RIGHTPAREN@@", "\\right)")
+  return "\\displaystyle " .. tex
+end
+
 -- Only hide the left side when it is a single symbol (A, C, d, r_1, \theta).
 local function card_tex(tex)
   local lhs, rhs = tex:match("^%s*(.-)%s*=%s*(.-)%s*$")
   if lhs and (lhs:match("^%a$") or lhs:match("^%a_%w$") or lhs:match("^%a_%b{}$")
       or lhs:match("^\\%a+$")) then
-    return "= " .. rhs
+    tex = "= " .. rhs
   end
-  return tex
+  return card_style(tex)
 end
 
 TYPES.memory = {
@@ -218,10 +240,15 @@ TYPES.memory = {
         if not math then
           fail(game.file, "the formula for '" .. stringify(name) .. "' must be written in $...$")
         end
+        -- Math in the name column (e.g. "$x^a \cdot x^b$") gets the card styling too.
+        name = pandoc.Inlines(name):walk({
+          Math = function(m) return pandoc.Math("InlineMath", card_style(m.text)) end,
+        })
+        -- data-side puts each face in its pile: names on one side, formulas on the other.
         faces:insert(pandoc.Span({ pandoc.Strong(name) },
-          attr("", { "mm-face" }, { ["data-pair"] = tostring(n) })))
+          attr("", { "mm-face" }, { ["data-pair"] = tostring(n), ["data-side"] = "name" })))
         faces:insert(pandoc.Span({ pandoc.Math("InlineMath", card_tex(math.text)) },
-          attr("", { "mm-face" }, { ["data-pair"] = tostring(n) })))
+          attr("", { "mm-face" }, { ["data-pair"] = tostring(n), ["data-side"] = "formula" })))
         n = n + 1
       end
     end
@@ -232,9 +259,18 @@ TYPES.memory = {
       question:extend(parts.intro)
     else
       question:insert(pandoc.Para(pandoc.read(
-        "Flip two cards at a time. Match each **name** to its **formula**.", "markdown").blocks[1].content))
+        "Flip one card from each pile to match each **name** to its **formula**.", "markdown").blocks[1].content))
     end
-    question:insert(game_div(game, "memory", { ["data-pairs"] = tostring(n) },
+    -- The table's column headings label the two piles ("Name" / "Formula").
+    local head = tbl.head and tbl.head.rows[1] and tbl.head.rows[1].cells
+    local label = function(i)
+      return head and head[i] and stringify(head[i].contents) ~= "" and stringify(head[i].contents) or nil
+    end
+    question:insert(game_div(game, "memory", {
+      ["data-pairs"] = tostring(n),
+      ["data-name-label"] = label(1) or "Names",
+      ["data-formula-label"] = label(2) or "Formulas",
+    },
       { pandoc.Div({ pandoc.Plain(faces) }, attr("", { "mm-faces" })) }))
 
     -- The solution always shows the full table (with the left-hand sides).
@@ -250,6 +286,7 @@ TYPES.wordle = {
   section = "Formula Wordle",
   noun = "Wordle",
   order = 2,
+  nav = false,   -- Previous / Next sit on the Enter / Reset row instead (quiz.js)
   intro = function()
     return pandoc.read([[
 Fill in the blanks to finish each formula, then press **Enter**.
@@ -287,6 +324,8 @@ Fill in the blanks to finish each formula, then press **Enter**.
       ["data-answer"] = table.concat(answer, " "),
       ["data-keys"] = table.concat(keys, " "),
       ["data-tries"] = meta.tries and stringify(meta.tries) or "6",
+      ["data-carousel"] = "#" .. game.carousel_id,   -- for the Previous / Next buttons
+      ["data-count"] = tostring(game.count),
     }))
     game.tabs = tabset(question, parts.hints, parts.solution)
   end,
@@ -355,12 +394,13 @@ local function build_topic(div)
       body:insert(pandoc.Header(3, T.section, attr(topic_id .. "-" .. type_name, { "no-anchor" })))
       if T.intro then body:extend(T.intro()) end
       local items = {}
+      local carousel_id = topic_id .. "-" .. type_name .. "-carousel"
       for i, game in ipairs(games) do
-        game.index, game.count, game.label = i, #games, T.noun
+        game.index, game.count, game.label, game.carousel_id = i, #games, T.noun, carousel_id
         T.build(game, game.meta, game.blocks)
         table.insert(items, carousel_item(game))
       end
-      body:extend(carousel(topic_id .. "-" .. type_name .. "-carousel", T.noun, items))
+      body:extend(carousel(carousel_id, T.noun, items, T.nav))
     else
       for _, game in ipairs(games) do body:extend(T.build(game, game.meta, game.blocks)) end
     end

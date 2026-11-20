@@ -99,7 +99,8 @@ filters:
 4. **Group by type** and lay out each group in a fixed order (Memory Match,
    then Formula Wordle, then notes). Each type that has a `section` becomes a
    `### Memory Match` sub-heading plus a **carousel** with one slide per file
-   and Previous / Next / Shuffle buttons.
+   and Previous / Next / Shuffle buttons (left out when there's only one slide,
+   or when the type sets `nav = false` and draws its own, like Wordle does).
 5. **Build each slide** by calling that type's `build` function (see §4). It
    produces the Question / Hint / Solution tabs:
    - `## Hint` sections in the file → collapsible "Hint 1", "Hint 2" callouts
@@ -118,7 +119,7 @@ It passes everything the game needs to the browser as `data-` attributes:
 <div class="quiz-game quiz-wordle"
      data-game="circles/wordle-1-area"     ← unique id, used to save progress
      data-topic="circles" data-topic-title="Circles"
-     data-title="Area of a circle"
+     data-title="Area of a circle"         ← math in a title arrives as \( ... \)
      data-lhs="A =" data-answer="π r ²" data-keys="π r d 2 ² C θ ½" data-tries="6">
 </div>
 ```

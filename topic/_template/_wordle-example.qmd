@@ -3,6 +3,7 @@
 # (the name must start with "_" and end in ".qmd"; files are shown in filename order).
 type: wordle
 # The quantity being tested. Shown big above the board and in the slide title.
+# May contain LaTeX; then use single quotes: title: 'Area of a circle, $A$' 
 title: Area of a circle
 # Left side of the formula, shown before the blanks.
 lhs: "A ="
