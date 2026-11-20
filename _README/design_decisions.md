@@ -39,11 +39,16 @@ Follow them unless the owner changes them, and update this file when they do.
   long left sides like `m = (y₁ − y₂) ÷` work on phones.
 - A carousel with only **one** game has no Previous / Next / Shuffle buttons, and its
   title has no "1 of 1".
-- **Memory Match uses two piles**: names (left column of the table) and formulas
-  (right column), each shuffled separately and labelled with the table's column
-  headings. Flipping a card grays out and locks the rest of its pile until a card
-  from the other pile is picked; tapping the open card again puts it back. This saves
-  students from flipping name after name and waiting for them to turn back.
+- **Memory Match is one grid, and cards never move.** Picking a card dims and
+  locks the other cards of the same kind (names or formulas) until one of the
+  other kind is picked; tapping the picked card again puts it back. This saves
+  students from flipping name after name. A whole board must fit on one phone
+  screen without scrolling (2 columns and shorter cards on phones; tried
+  separate piles, rejected because they made the board taller).
+- `face-up: true` in a memory file shows every card from the start, with the
+  names first **in table order** and the formulas shuffled after them. Used for
+  FOIL (F, O, I, L in reading order). A wrong pair flashes red instead of
+  flipping back.
 - Matched memory cards turn **entirely** light green (no white box around math).
 - Memory card math is drawn in display style (full-size fractions) with a thin
   space before each `)`, so subscripts, numerators and parentheses stay readable.

@@ -3,7 +3,7 @@ type: memory
 title: Adding & Subtracting Fractions
 ---
 
-Flip one card from each pile to match each **sum or difference** to the **single fraction** it equals. (Assume no denominator is $0$.)
+Match each **sum or difference** to the **single fraction** it equals: flip one of each. (Assume no denominator is $0$.)
 
 | Expression | Combined |
 |:-----------|:---------|

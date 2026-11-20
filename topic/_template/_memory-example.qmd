@@ -4,6 +4,9 @@
 type: memory
 # Shown in the slide title and in the results list.
 title: Circle Formulas
+# Optional: show every card from the start, names first in table order
+# (good when the names have a natural order, like F, O, I, L).
+# face-up: true
 ---
 
 <!--

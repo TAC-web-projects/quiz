@@ -244,7 +244,7 @@ TYPES.memory = {
         name = pandoc.Inlines(name):walk({
           Math = function(m) return pandoc.Math("InlineMath", card_style(m.text)) end,
         })
-        -- data-side puts each face in its pile: names on one side, formulas on the other.
+        -- data-side: picking a card dims the other cards of the same side (quiz.js).
         faces:insert(pandoc.Span({ pandoc.Strong(name) },
           attr("", { "mm-face" }, { ["data-pair"] = tostring(n), ["data-side"] = "name" })))
         faces:insert(pandoc.Span({ pandoc.Math("InlineMath", card_tex(math.text)) },
@@ -259,17 +259,12 @@ TYPES.memory = {
       question:extend(parts.intro)
     else
       question:insert(pandoc.Para(pandoc.read(
-        "Flip one card from each pile to match each **name** to its **formula**.", "markdown").blocks[1].content))
-    end
-    -- The table's column headings label the two piles ("Name" / "Formula").
-    local head = tbl.head and tbl.head.rows[1] and tbl.head.rows[1].cells
-    local label = function(i)
-      return head and head[i] and stringify(head[i].contents) ~= "" and stringify(head[i].contents) or nil
+        "Pick a **name** and a **formula** to match them. Once you pick a card, the other cards of the same kind dim.", "markdown").blocks[1].content))
     end
     question:insert(game_div(game, "memory", {
       ["data-pairs"] = tostring(n),
-      ["data-name-label"] = label(1) or "Names",
-      ["data-formula-label"] = label(2) or "Formulas",
+      -- `face-up: true`: all cards visible from the start, names in table order
+      ["data-face-up"] = (meta["face-up"] and stringify(meta["face-up"]) == "true") and "true" or "false",
     },
       { pandoc.Div({ pandoc.Plain(faces) }, attr("", { "mm-faces" })) }))
 

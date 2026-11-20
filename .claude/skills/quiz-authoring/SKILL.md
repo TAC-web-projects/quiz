@@ -12,7 +12,7 @@ The owner's decisions are in `_README/design_decisions.md`. Treat them as requir
 1. Copy the matching file from `topic/_template/` into `topic/<topic>/`. Keep the leading `_`. The filename sets the order, so number it (`_wordle-4-arc-length.qmd`).
 2. Fill in the front matter:
    - **Wordle:** `type: wordle`, `title:` (the quantity in words; it's shown above the board), `lhs: "A ="`, `answer:` (space-separated Unicode symbols, e.g. `π r ²`). Every answer symbol must be on the keyboard, which defaults to `π r d 2 ² C θ ½`. Add any others with `keys:`.
-   - **Memory:** `type: memory`, `title:`, and a `| Name | Formula |` table (the two column headings label the two card piles) with each **full** formula in `$...$`. Cards hide a one-symbol left side by themselves. Never write `= \pi r^2` by hand.
+   - **Memory:** `type: memory`, `title:`, and a `| Name | Formula |` table with each **full** formula in `$...$`. Cards hide a one-symbol left side by themselves. Never write `= \pi r^2` by hand. Add `face-up: true` to show all cards from the start, with the names in table order (e.g. FOIL letters).
    - **Notes:** `type: notes`. The body is shown as-is at the bottom of the topic.
 3. Add `## Hint` sections (as many as needed, gentlest first; Hint 1 must not give the answer away) and a `## Solution`. Write the math and diagrams the way the `quiz-latex-style` skill says.
 4. Run `scripts/check.sh --templates`.

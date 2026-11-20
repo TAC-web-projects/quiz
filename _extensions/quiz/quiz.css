@@ -25,18 +25,13 @@
 /* Previous / Next / Shuffle under each carousel */
 .quiz-nav { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.75em 0 1.5em; }
 
-/* ---------- Memory match: two piles (names | formulas), side by side on wide
-   screens and stacked on phones; each pile is a 2-column grid ---------- */
-.mm-piles { display: flex; flex-wrap: wrap; gap: 1em 1.5em; max-width: 52em; }
-.mm-pile { flex: 1 1 20em; min-width: 0; }
-.mm-pile-label {
-  font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
-  color: var(--bs-secondary-color, #6c757d); margin-bottom: 0.3em;
-}
+/* ---------- Memory match: one grid, 4 columns on wide screens, 2 on phones.
+   Cards never move; picking one dims the others of the same kind. ---------- */
 .mm-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.5em;
+  max-width: 44em;
 }
 .mm-card {
   min-height: 5em;
@@ -44,8 +39,11 @@
   font-size: clamp(0.8rem, 3vw, 1rem);   /* text shrinks a little on small screens */
 }
 .mm-card:disabled { opacity: 1; }                 /* matched cards stay readable */
-/* While a card is picked, the rest of its pile is grayed out and can't be clicked */
+/* While a card is picked, the other cards of its kind are dimmed and can't be clicked */
 .mm-card.mm-locked { opacity: 0.35; cursor: not-allowed; }
+/* Face-up games (`face-up: true`): the picked card is highlighted, a wrong pair flashes red */
+.mm-card.open.mm-selected:not(.mm-matched) { background-color: #cfe2ff; border-width: 2px; }
+.mm-card.mm-wrong, .mm-card.mm-wrong:disabled { background-color: #f8d7da !important; border: 2px solid #dc3545 !important; }
 /* An open card stays white even while hovered, so the math stays readable */
 .mm-card.open:not(.mm-matched) { background-color: #fff; color: var(--bs-primary); }
 /* Matched: the whole card is light green (dark text, so colored terms stay readable) */
@@ -98,7 +96,8 @@
 
 /* ---------- Phones ---------- */
 @media (max-width: 576px) {
-  .mm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4em; }
+  .mm-card { min-height: 3.6em; }    /* shorter cards so a whole board fits on one screen */
   .quiz-topic-body { margin-left: 0.5rem; }
   /* keep Enter, Reset, Previous and Next on one row */
   .wordle-controls { gap: 0.3em; }

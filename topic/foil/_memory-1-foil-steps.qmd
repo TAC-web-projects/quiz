@@ -1,9 +1,11 @@
 ---
 type: memory
 title: "FOIL: which terms get multiplied?"
+# All cards visible from the start; F, O, I, L stay in order
+face-up: true
 ---
 
-FOIL multiplies $(a + b)(c + d)$ one pair of terms at a time. Match each **letter** to the product in which that step's two terms are shown in red.
+FOIL multiplies $(a + b)(c + d)$ one pair of terms at a time. Tap a **letter**, then the product in which that step's two terms are shown in red.
 
 | Letter | Terms multiplied |
 |:------:|:-----------------|

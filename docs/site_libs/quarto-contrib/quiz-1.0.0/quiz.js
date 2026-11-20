@@ -73,27 +73,26 @@
   // one "name" and one "formula" per pair. MathJax has already typeset them, so we
   // only move them into card buttons and show/hide them.
   //
-  // Names and formulas are dealt into two separate piles. Flipping a card locks
-  // the rest of its pile (grayed out) until a card from the other pile is picked,
-  // so every second flip is a real match attempt. Tapping the open card again
-  // puts it back.
+  // All cards share one grid and never move. Picking a card dims (and locks) the
+  // other cards of the same kind, so the next pick is always from the other kind;
+  // tapping the picked card again puts it back.
+  //
+  // data-face-up="true" (front matter `face-up: true`): every card is visible from
+  // the start, the names come first in table order, then the shuffled formulas.
+  // A wrong pair flashes red instead of flipping back.
+  //
   // state = { found: [pair numbers], mismatches: n, done: true/false }
   Quiz.register("memory", {
     init(el, game) {
       const faces = [...el.querySelectorAll(".mm-face")];
       const pairs = Number(el.dataset.pairs);
+      const faceUp = el.dataset.faceUp === "true";
       const status = h(`<p class="mm-status"></p>`);
+      const grid = h(`<div class="mm-grid"></div>`);
       const resetBtn = h(`<button class="btn btn-secondary mb-2">Reset &amp; shuffle</button>`);
-      const piles = {};
-      const pileBox = h(`<div class="mm-piles"></div>`);
-      for (const side of ["name", "formula"]) {
-        const pile = h(`<div class="mm-pile"><div class="mm-pile-label"></div><div class="mm-grid"></div></div>`);
-        pile.firstChild.textContent = side === "name" ? (el.dataset.nameLabel || "Names") : (el.dataset.formulaLabel || "Formulas");
-        piles[side] = pile.querySelector(".mm-grid");
-        pileBox.append(pile);
-      }
       el.querySelector(".mm-faces").remove();
-      el.append(resetBtn, status, pileBox);
+      el.classList.toggle("mm-face-up", faceUp);
+      el.append(resetBtn, status, grid);
 
       let cards = [], first = null, busy = false, timer;
 
@@ -113,8 +112,10 @@
         card.btn.classList.toggle("open", up);
         if (up) fit(card);
       };
-      // Lock (gray out) or unlock every unmatched card in one pile except `except`.
-      const lockPile = (side, locked, except) => {
+      // Pick / un-pick a card. Face-down cards flip; face-up cards get highlighted.
+      const pick = (card, on) => faceUp ? card.btn.classList.toggle("mm-selected", on) : flip(card, on);
+      // Dim (and lock) or restore every unmatched card of one kind except `except`.
+      const lockSide = (side, locked, except) => {
         for (const c of cards) {
           if (c.side !== side || c === except || c.matched) continue;
           c.btn.disabled = locked;
@@ -129,27 +130,28 @@
 
       function choose(card) {
         if (busy || card.matched) return;
-        if (first === card) {                       // tap the open card again: put it back
-          flip(card, false); lockPile(card.side, false); first = null; return;
+        if (first === card) {                       // tap the picked card again: put it back
+          pick(card, false); lockSide(card.side, false); first = null; return;
         }
-        flip(card, true);
-        if (!first) { first = card; lockPile(card.side, true, card); return; }
+        pick(card, true);
+        if (!first) { first = card; lockSide(card.side, true, card); return; }
 
         const a = first, b = card;
         const s = { found: [...(game.state.found || [])], mismatches: game.state.mismatches || 0 };
-        if (a.pair === b.pair) {                    // match: both turn green and stay up
+        if (a.pair === b.pair) {                    // match: both turn green and stay
           markMatched(a); markMatched(b);
           s.found.push(Number(a.pair));
-          lockPile(a.side, false);
+          lockSide(a.side, false);
           first = null;
-        } else {                                    // no match: flip both back after a moment
+        } else {                                    // no match: undo after a moment
           s.mismatches++;
           busy = true;
+          if (faceUp) { a.btn.classList.add("mm-wrong"); b.btn.classList.add("mm-wrong"); }
           timer = setTimeout(() => {
-            flip(a, false); flip(b, false);
-            lockPile(a.side, false);
+            for (const c of [a, b]) { pick(c, false); c.btn.classList.remove("mm-wrong"); }
+            lockSide(a.side, false);
             first = null; busy = false;
-          }, 1200);
+          }, faceUp ? 800 : 1200);
         }
         s.done = s.found.length === pairs;
         game.save(s);
@@ -159,16 +161,21 @@
       function deal() {
         clearTimeout(timer);
         first = null; busy = false; cards = [];
-        piles.name.replaceChildren(); piles.formula.replaceChildren();
+        grid.replaceChildren();
         const found = game.state.found || [];
-        for (const face of shuffle([...faces])) {
+        // Face-up: names in table order, then shuffled formulas. Otherwise all shuffled.
+        const order = faceUp
+          ? [...faces.filter(f => f.dataset.side === "name"), ...shuffle(faces.filter(f => f.dataset.side !== "name"))]
+          : shuffle([...faces]);
+        for (const face of order) {
           const btn = h(`<button class="btn btn-outline-primary mm-card"><span class="mm-q">?</span></button>`);
           btn.append(face);
           const card = { btn, face, pair: face.dataset.pair, side: face.dataset.side || "name", matched: false };
           btn.onclick = () => choose(card);
-          piles[card.side].append(btn);
+          grid.append(btn);
           cards.push(card);
-          if (found.includes(Number(card.pair))) { markMatched(card); fit(card); }
+          if (found.includes(Number(card.pair))) markMatched(card);
+          if (faceUp || card.matched) flip(card, true);
         }
         showStatus();
       }
