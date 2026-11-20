@@ -1,0 +1,15 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## Percent change
+
+| Words | Multiply by | Example with $100$ |
+|:------|:-----------:|:-------------------|
+| $p\%$ **of** $x$ | $\frac{p}{100}$ | $10\%$ of $100 = 0.1 \cdot 100 = 10$ |
+| **increase** $x$ by $p\%$ | $1 + \frac{p}{100}$ | $100 \cdot 1.1 = 110$ |
+| **decrease** $x$ by $p\%$ | $1 - \frac{p}{100}$ | $100 \cdot 0.9 = 90$ |
+
+"Percent" means "per hundred": $10\% = \frac{10}{100} = 0.1$.
+:::

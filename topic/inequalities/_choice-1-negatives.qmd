@@ -1,0 +1,28 @@
+---
+type: choice
+title: 'Comparing negative numbers'
+---
+
+Which statement is **true**?
+
+- [x] $-5 < -4$
+- [ ] $-5 > -4$
+- [ ] $-4 < -5$
+- [ ] $-5 = -4$
+
+## Hint
+Picture a number line. On a number line, the number further to the **left** is the smaller one.
+
+## Hint
+Which is further left on a number line: $-5$ or $-4$?
+
+## Solution
+**Answer:** $-5 < -4$
+
+On a number line, $-5$ is one step to the left of $-4$, and a number further left is smaller:
+$$
+-5 < -4 < -3 < \dots < 0 < \dots < 4 < 5
+$$
+
+- **$-5 > -4$**: this is true for $5 > 4$, but a minus sign reverses the order. Think of money: owing $\$5$ ($-5$) is worse than owing $\$4$ ($-4$).
+- **$-4 < -5$**: this is the same claim as $-5 > -4$, written the other way around, so it is also false.

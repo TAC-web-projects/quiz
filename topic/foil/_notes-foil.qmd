@@ -1,0 +1,18 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What FOIL means
+
+To multiply $(a + b)(c + d)$, multiply each term of the first bracket by each term of the second:
+
+| Letter | Step | In $(a + b)(c + d)$ |
+|:------:|:-----|:--------------------|
+| **F** | **First** terms | $a \cdot c$ |
+| **O** | **Outer** terms | $a \cdot d$ |
+| **I** | **Inner** terms | $b \cdot c$ |
+| **L** | **Last** terms | $b \cdot d$ |
+
+Then add the four products and combine like terms: $(a + b)(c + d) = ac + ad + bc + bd$.
+:::

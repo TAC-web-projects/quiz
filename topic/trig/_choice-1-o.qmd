@@ -1,0 +1,39 @@
+---
+type: choice
+title: 'The O in SOH CAH TOA'
+---
+
+In **SOH CAH TOA**, what does the **O** stand for?
+
+- [x] Opposite
+- [ ] Other
+- [ ] Over
+- [ ] $\cdot$ (times)
+
+## Hint
+Each letter in SOH CAH TOA names either a trig function or a **side** of a right triangle.
+
+## Hint
+The **S**, **C** and **T** are the functions (sine, cosine, tangent). So the **O** names a side. Which side is it, compared with the angle $\theta$?
+
+## Solution
+**Answer:** Opposite
+
+**SOH** means $\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}$, and **TOA** means $\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}$. The **opposite** side is the side across the triangle from the angle $\theta$: it doesn't touch $\theta$.
+
+```{.tikz}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (B) at (0,0); \coordinate (A) at (4,0); \coordinate (C) at (4,2.6);
+  \draw[seg] (B) -- (A);
+  \draw[seg, red!65!black, line width=1.6pt] (A) -- (C);
+  \draw[seg] (C) -- (B);
+  \draw (3.7,0) -- (3.7,0.3) -- (4,0.3);
+  \pic[draw, "$\theta$", angle eccentricity=1.6, angle radius=0.7cm] {angle = A--B--C};
+  \node[below, font=\small] at (2,0) {adjacent};
+  \node[right, red!65!black, font=\small] at (4,1.3) {opposite};
+  \node[above left, font=\small] at (2,1.3) {hypotenuse};
+\end{tikzpicture}
+```
+
+- **Over**: tempting, because $\frac{O}{H}$ is read "O over H". But the fraction bar is not one of the letters: O and H are the two sides.
+- **Other** and **$\cdot$**: they don't name a side of the triangle.

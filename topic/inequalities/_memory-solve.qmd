@@ -1,0 +1,31 @@
+---
+type: memory
+title: Solving Inequalities
+---
+
+Match each **inequality** to its **solution**: pick one of each.
+
+| Inequality | Solution |
+|:-----------|:---------|
+| $-2x < 6$ | $x > -3$ |
+| $2x < 6$ | $x < 3$ |
+| $-3x \geq 12$ | $x \leq -4$ |
+| $\frac{x}{-2} > 1$ | $x < -2$ |
+| $x - 5 < -4$ | $x < 1$ |
+| $-\frac{x}{3} \leq 1$ | $x \geq -3$ |
+
+## Hint
+Only multiplying or dividing both sides by a **negative** number reverses the sign. Adding or subtracting never does.
+
+## Hint
+Test a number. For $-2x < 6$, try $x = 0$: $-2 \cdot 0 = 0 < 6$ is true, so the solution must include $x = 0$.
+
+## Solution
+Each line divides (or multiplies) both sides by the number next to $x$:
+
+- $-2x < 6$: divide by $-2$, and the sign reverses: $x > -3$.
+- $2x < 6$: divide by $2$ (positive), and the sign stays: $x < 3$.
+- $-3x \geq 12$: divide by $-3$, and the sign reverses: $x \leq -4$.
+- $\frac{x}{-2} > 1$: multiply by $-2$, and the sign reverses: $x < -2$.
+- $-\frac{x}{3} \leq 1$: multiply by $-3$, and the sign reverses: $x \geq -3$.
+- $x - 5 < -4$: add $5$ (no sign change): $x < 1$.

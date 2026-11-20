@@ -1,0 +1,36 @@
+---
+type: wordle
+title: Area of a triangle
+lhs: "A ="
+answer: ½ b h
+keys: ½ b h s 2 ² ÷ π
+---
+
+$b$ is the base and $h$ is the height. Write the constant first, then $b$, then $h$.
+
+## Hint
+Area is measured in **square** units, so the formula multiplies two lengths.
+
+## Hint
+A triangle is half of a rectangle (or parallelogram) with the same base and height.
+
+## Solution
+**Answer:** $A = \frac{1}{2} b h$
+
+Two copies of a triangle fit together into a parallelogram with base $b$ and height $h$, whose area is $b h$. One triangle is half of it.
+
+```{.tikz}
+\begin{tikzpicture}[scale=0.9]
+  \fill[blue!65!black, opacity=0.15] (0,0) -- (4,0) -- (1.2,2.4) -- cycle;
+  \draw[seg] (0,0) -- (4,0) -- (1.2,2.4) -- cycle;
+  \draw[seg, dashed] (4,0) -- (5.2,2.4) -- (1.2,2.4);
+  \draw[dashed] (1.2,2.4) -- (1.2,0);
+  \draw (1.2,0) -- (1.45,0) -- (1.45,0.25) -- (1.2,0.25);
+  \node[below] at (2,0) {$b$};
+  \node[left] at (1.2,1.1) {$h$};
+\end{tikzpicture}
+```
+
+- **²**: $b^2$ or $h^2$ multiplies a length by itself. The area uses two different lengths, $b$ and $h$.
+- **2** instead of **½**: $2 b h$ is 4 times the area. The triangle is **half** of $b h$.
+- **s** (a slanted side): the height $h$ is measured **at a right angle** to the base, not along a side.

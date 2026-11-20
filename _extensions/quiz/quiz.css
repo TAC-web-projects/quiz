@@ -1,0 +1,138 @@
+/* quiz.css: styles for the quiz page (loaded by quiz.lua with quiz.js). */
+
+/* ---------- Topics: big collapsible headers ---------- */
+.quiz-topic-toggle {
+  cursor: pointer;
+  user-select: none;
+  margin-top: 2.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--bs-primary);
+}
+.quiz-topic-toggle::before {
+  content: "▸";
+  display: inline-block;
+  width: 1.2em;
+  transition: transform 0.2s;
+}
+.quiz-topic-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
+
+/* Everything under a topic header is indented so topics are easy to tell apart */
+.quiz-topic-body { margin-left: 1.5rem; }
+
+/* Sub-sections inside a topic (Memory Match, Formula Wordle) */
+.quiz-topic h3 { margin-top: 1.75rem; }
+
+/* Previous / Next / Shuffle under each carousel */
+.quiz-nav { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.75em 0 1.5em; }
+
+/* ---------- Memory match: one grid, 4 columns on wide screens, 2 on phones.
+   Cards never move; picking one dims the others of the same kind. ---------- */
+.mm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5em;
+  max-width: 44em;
+}
+.mm-card {
+  min-height: 5em;
+  padding: 0.25rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);   /* text shrinks a little on small screens */
+}
+.mm-card:disabled { opacity: 1; }                 /* matched cards stay readable */
+/* While a card is picked, the other cards of its kind are dimmed and can't be clicked */
+.mm-card.mm-locked { opacity: 0.35; cursor: not-allowed; }
+/* Face-up games (`face-up: true`): the picked card is highlighted, a wrong pair flashes red */
+.mm-card.open.mm-selected:not(.mm-matched) { background-color: #cfe2ff; border-width: 2px; }
+.mm-card.mm-wrong, .mm-card.mm-wrong:disabled { background-color: #f8d7da !important; border: 2px solid #dc3545 !important; }
+/* An open card stays white even while hovered, so the math stays readable */
+.mm-card.open:not(.mm-matched) { background-color: #fff; color: var(--bs-primary); }
+/* Matched: the whole card is light green (dark text, so colored terms stay readable) */
+.mm-card.mm-matched, .mm-card.mm-matched:disabled {
+  background-color: #d1e7dd; border: 2px solid #198754; color: #0f5132;
+}
+.mm-card .mm-face { display: none; }
+.mm-card.open .mm-face { display: inline; }
+.mm-card.open .mm-q { display: none; }
+.mm-card { line-height: 1.2; }
+.mm-card mjx-container {
+  white-space: nowrap;                            /* never break a formula across lines */
+  margin: 0 !important;                           /* display-style math sits inline on the card */
+  overflow: visible !important;                   /* never clip descenders (the y in y₁) */
+}
+.mm-faces { display: none; }                      /* faces wait here until quiz.js deals */
+
+/* ---------- Formula Wordle ---------- */
+.quiz-quantity {                 /* "Area of a circle" above the board */
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0.25em 0 0.75em;
+}
+/* Tiles shrink a little on phones and widen for word symbols ("rise") */
+.wordle-tile { min-width: min(2.2em, 11vw); height: min(2.2em, 11vw); padding: 0 0.15em; }
+/* quiz.js sets --tile when a row has too many tiles for the screen */
+.quiz-wordle[style*="--tile"] .wordle-tile {
+  min-width: var(--tile); width: var(--tile); height: var(--tile);
+  padding: 0; font-size: calc(var(--tile) * 0.5) !important;
+}
+.wordle-row { white-space: nowrap; }
+/* Enter / Reset on their own row, Previous / Next pushed to the right */
+.wordle-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5em; }
+.wordle-nav { display: flex; gap: 0.4em; margin-left: auto; }
+/* Long left sides ("m = (y₁ − y₂) ÷") move above the board when rows don't fit */
+.wordle-lhs-top { display: none; }
+.wordle-lhs-above .wordle-lhs-top { display: block; }
+.wordle-lhs-above .wordle-lhs { display: none; }
+.wordle-msg { min-height: 1.5em; }
+/* Wordle-style yellow (Bootstrap's "warning" is orange in the cosmo theme) */
+.wordle-yellow { background-color: #f5d300 !important; border-color: #f5d300 !important; color: #212529 !important; }
+
+/* ---------- Multiple choice: one option per row, full width ---------- */
+.choice-options { display: grid; gap: 0.5em; max-width: 32em; margin: 0.75em 0; }
+.choice-btn { text-align: left; white-space: normal; }
+.choice-btn mjx-container { margin: 0 !important; }
+.choice-btn:disabled { opacity: 1; }
+.choice-btn.choice-wrong { background-color: #f8d7da; border-color: #dc3545; color: #842029; text-decoration: line-through; }
+.choice-btn.choice-right { background-color: #d1e7dd; border: 2px solid #198754; color: #0f5132; }
+.choice-msg { min-height: 1.5em; margin-bottom: 0.5em; }
+
+/* ---------- Parentheses puzzle ---------- */
+.parens-expr {
+  display: flex; align-items: stretch; white-space: nowrap;
+  font-size: 1.6rem; margin: 0.75em 0;
+}
+.parens-expr.parens-wrap { flex-wrap: wrap; row-gap: 0.25em; }
+.parens-token { display: flex; align-items: center; padding: 0 0.05em; flex-shrink: 0; }
+/* Gaps between tokens: tap targets for "(" and ")". Empty ones show a faint slot. */
+.parens-gap {
+  /* 1em wide to tap, but overlaps its neighbours so it only takes 0.6em of room */
+  min-width: 1em; min-height: 2.4em; margin: 0 -0.12em; padding: 0;
+  border: none; background: none; font: inherit; font-weight: 700;
+  color: #A60000; position: relative; z-index: 1; flex-shrink: 0;
+}
+.parens-gap:not(.parens-filled)::after {
+  content: ""; position: absolute; left: 50%; top: 25%; bottom: 25%;
+  border-left: 2px dotted #adb5bd;
+}
+.parens-gap:not(:disabled):hover { background-color: #e7f1ff; border-radius: 4px; }
+.parens-gap.parens-pending { background-color: #fff3cd; border-radius: 4px; }
+.parens-gap:disabled:not(.parens-filled)::after { display: none; }
+.parens-msg { min-height: 1.5em; }
+.parens-controls { display: flex; flex-wrap: wrap; gap: 0.5em; }
+
+/* ---------- Results ---------- */
+.quiz-results-box { margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 0.5em; }
+.quiz-results-output { flex-basis: 100%; }
+.quiz-result-topic ul { list-style: none; padding-left: 0.5em; }
+
+/* Very narrow phones: arrows only, so the Wordle buttons stay on one row */
+@media (max-width: 359px) { .wordle-nav-text { display: none; } }
+
+/* ---------- Phones ---------- */
+@media (max-width: 576px) {
+  .mm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4em; }
+  .mm-card { min-height: 3.6em; }    /* shorter cards so a whole board fits on one screen */
+  .quiz-topic-body { margin-left: 0.5rem; }
+  /* keep Enter, Reset, Previous and Next on one row */
+  .wordle-controls { gap: 0.3em; }
+  .wordle-controls .btn { padding: 0.3rem 0.5rem; font-size: 0.9rem; }
+}

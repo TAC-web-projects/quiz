@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="178.076"
+   height="100.58"
+   viewBox="0 0 178.076 100.58"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <g
+     id="g8"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,100.58)">
+    <g
+       id="g10"
+       transform="translate(0.448,13.759)">
+      <g
+         id="g12">
+        <g
+           id="g14">
+          <g
+             id="g16">
+            <path
+               d="M 0,0 H 102.0478 L 30.61426,61.22852 Z"
+               style="fill:#0000a6;fill-opacity:0.15;fill-rule:nonzero;stroke:none"
+               id="path18" />
+          </g>
+          <g
+             id="g20">
+            <path
+               d="M 0,0 H 102.0478 L 30.61426,61.22852 Z"
+               style="fill:none;stroke:#000000;stroke-width:0.89664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path22" />
+          </g>
+          <g
+             id="g24">
+            <path
+               d="m 102.0478,0 30.61428,61.22852 H 30.61426"
+               style="fill:none;stroke:#000000;stroke-width:0.89664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:2.98883, 2.98883;stroke-dashoffset:0;stroke-opacity:1"
+               id="path26" />
+          </g>
+          <g
+             id="g28">
+            <path
+               d="M 30.61426,61.22852 V 0"
+               style="fill:none;stroke:#000000;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:2.98883, 2.98883;stroke-dashoffset:0;stroke-opacity:1"
+               id="path30" />
+          </g>
+          <path
+             d="m 30.61426,0 h 6.37797 v 6.37796 h -6.37797"
+             style="fill:none;stroke:#000000;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path32" />
+          <g
+             id="g34">
+            <g
+               id="g36"
+               transform="translate(48.886,-10.438)">
+              <g
+                 id="g38">
+                <g
+                   id="g40"
+                   transform="translate(-49.334,-3.321)">
+                  <text
+                     xml:space="preserve"
+                     transform="matrix(1,0,0,-1,49.334,3.321)"
+                     style="font-variant:normal;font-weight:normal;font-size:9.96264px;font-family:CMMI10;-inkscape-font-specification:CMMI10;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text44"><tspan
+                       x="0"
+                       y="0"
+                       id="tspan42">b</tspan></text>
+                  <g
+                     id="g46"
+                     transform="translate(49.334,3.321)" />
+                </g>
+              </g>
+              <g
+                 id="g48"
+                 transform="translate(-48.886,10.438)" />
+            </g>
+          </g>
+          <g
+             id="g50">
+            <g
+               id="g52"
+               transform="translate(21.354,24.603)">
+              <g
+                 id="g54">
+                <g
+                   id="g56"
+                   transform="translate(-21.802,-38.362)">
+                  <text
+                     xml:space="preserve"
+                     transform="matrix(1,0,0,-1,21.802,38.362)"
+                     style="font-variant:normal;font-weight:normal;font-size:9.96264px;font-family:CMMI10;-inkscape-font-specification:CMMI10;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text60"><tspan
+                       x="0"
+                       y="0"
+                       id="tspan58">h</tspan></text>
+                  <g
+                     id="g62"
+                     transform="translate(21.802,38.362)" />
+                </g>
+              </g>
+              <g
+                 id="g64"
+                 transform="translate(-21.354,-24.603)" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

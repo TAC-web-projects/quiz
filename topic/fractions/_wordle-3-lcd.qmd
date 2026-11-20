@@ -1,0 +1,32 @@
+---
+type: wordle
+title: 'Least common denominator of $\frac{2}{x}$ and $\frac{3}{x^2}$'
+lhs: "LCD ="
+answer: x²
+keys: x x² x³ 2x 5 6
+---
+
+The **least common denominator** (LCD) is the simplest expression that both denominators divide into evenly. Assume $x \neq 0$.
+
+## Hint
+The denominators are $x$ and $x^2$. Is one of them already a multiple of the other?
+
+## Hint
+$x^2 = x \cdot x$. So $\frac{2}{x}$ can be rewritten with denominator $x^2$ by multiplying it by $\frac{x}{x}$.
+
+## Hint
+Multiplying the denominators gives $x \cdot x^2 = x^3$. That is *a* common denominator, but not the least one.
+
+## Solution
+**Answer:** $\text{LCD} = x^2$
+
+Only the first fraction needs to change:
+$$
+\begin{aligned}
+    \frac{2}{x} + \frac{3}{x^2} &= \frac{2 \cdot x}{x \cdot x} + \frac{3}{x^2} \\
+                                &= \frac{2x + 3}{x^2}
+\end{aligned}
+$$
+
+- **x³**: a common denominator, but not the least one. Using it gives $\frac{2x^2 + 3x}{x^3}$, which still has to be simplified by cancelling an $x$.
+- **2x**, **5** or **6**: the LCD comes from the denominators only. The numerators $2$ and $3$ don't affect it.

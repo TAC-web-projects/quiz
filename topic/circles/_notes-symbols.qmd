@@ -1,0 +1,18 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What the symbols mean
+
+| Symbol | Meaning |
+|:------:|:--------|
+| $A$ | **Area**: the space inside the circle (square units) |
+| $C$ | **Circumference**: the distance around the circle |
+| $d$ | **Diameter**: the length of a segment across the circle through its center |
+| $r$ | **Radius**: the distance from the center to any point on the circle |
+| $\pi$ | **Pi**: $\pi = \frac{C}{d} \approx 3.14$, the same for every circle |
+| $\theta$ | **Central angle**: an angle with its vertex at the center, in degrees |
+| $^2$ | **Squared**: $r^2 = r \cdot r$ |
+| $\frac{1}{2}$ | **One half** |
+:::

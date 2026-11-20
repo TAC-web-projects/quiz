@@ -1,0 +1,34 @@
+---
+type: memory
+title: Adding & Subtracting Fractions
+---
+
+Match each **sum or difference** to the **single fraction** it equals: flip one of each. (Assume no denominator is $0$.)
+
+| Expression | Combined |
+|:-----------|:---------|
+| $\frac{a}{x} + \frac{b}{x}$ | $\frac{a + b}{x}$ |
+| $\frac{a}{b} + \frac{c}{d}$ | $\frac{ad + bc}{bd}$ |
+| $\frac{a}{b} - \frac{c}{d}$ | $\frac{ad - bc}{bd}$ |
+| $\frac{1}{x} + \frac{1}{y}$ | $\frac{y + x}{xy}$ |
+| $\frac{2}{x} + \frac{3}{x^2}$ | $\frac{2x + 3}{x^2}$ |
+
+## Hint
+Look for a card whose two fractions already have the same denominator (bottom). Those can be combined without changing anything.
+
+## Hint
+When the denominators are different, rewrite both fractions over a common denominator: $\frac{p}{q} + \frac{r}{s} = \frac{p \cdot s}{q \cdot s} + \frac{r \cdot q}{s \cdot q}$.
+
+## Hint
+In $\frac{2}{x} + \frac{3}{x^2}$, the denominator $x$ is a factor of $x^2$, so $x^2$ is already a common denominator.
+
+## Solution
+Multiplying a fraction by $\frac{d}{d} = 1$ (with $d \neq 0$) doesn't change its value, so:
+$$
+\begin{aligned}
+    \frac{a}{b} + \frac{c}{d} &= \frac{a}{b} \cdot \frac{d}{d} + \frac{c}{d} \cdot \frac{b}{b} \\
+                              &= \frac{ad}{bd} + \frac{bc}{bd} \\
+                              &= \frac{ad + bc}{bd}
+\end{aligned}
+$$
+For $\frac{2}{x} + \frac{3}{x^2}$, only the first fraction needs to change: $\frac{2 \cdot x}{x \cdot x} + \frac{3}{x^2} = \frac{2x + 3}{x^2}$.

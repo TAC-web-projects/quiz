@@ -1,0 +1,26 @@
+---
+type: choice
+title: 'Which is NOT a $10\%$ increase?'
+---
+
+Which of these is **not** the same as increasing $x$ by $10\%$?
+
+- [x] $0.1 \cdot x$
+- [ ] $1.1 \cdot x$
+- [ ] $\frac{110}{100} \cdot x$
+- [ ] $x + 0.1x$
+
+## Hint
+Test each one with $x = 100$. A $10\%$ increase should give $110$.
+
+## Solution
+**Answer:** $0.1 \cdot x$
+
+With $x = 100$:
+
+- $0.1 \cdot 100 = 10$. This is only the increase, so it is **not** a $10\%$ increase.
+- $1.1 \cdot 100 = 110$
+- $\frac{110}{100} \cdot 100 = 110$, because $\frac{110}{100} = 1.1$ (that is $110\%$)
+- $100 + 0.1 \cdot 100 = 100 + 10 = 110$
+
+The last three are the same multiplication written three ways: $x + 0.1x = 1.1x = \frac{110}{100}x$.

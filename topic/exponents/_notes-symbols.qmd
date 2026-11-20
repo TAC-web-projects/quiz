@@ -1,0 +1,15 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## What the symbols mean
+
+| Symbol | Meaning |
+|:------:|:--------|
+| $x$ | The **base** |
+| $a$, $b$ | **Exponents** |
+| $x^a$ | For a whole number $a$: the product of $a$ factors of $x$. Example: $x^3 = x \cdot x \cdot x$ |
+| $x^0$ | $x^0 = 1$ for every $x \neq 0$ |
+| $x^{-a}$ | $x^{-a} = \frac{1}{x^a}$ for $x \neq 0$ (the reciprocal of $x^a$) |
+:::

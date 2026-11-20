@@ -1,0 +1,27 @@
+---
+type: wordle
+title: 'Expand $(x - 4)^2$'
+lhs: "x²"
+answer: − 8 x + 1 6
+keys: 1 2 4 6 8 x + −
+---
+
+## Hint
+Write the square as a product: $(x - 4)^2 = (x - 4)(x - 4)$. Then use FOIL.
+
+## Hint
+Outer: $x \cdot (-4)$. Inner: $(-4) \cdot x$. Last: $(-4) \cdot (-4)$. Watch the signs.
+
+## Solution
+**Answer:** $(x - 4)^2 = x^2 - 8x + 16$
+
+$$
+\begin{aligned}
+    (x - 4)^2 &= (x - 4)(x - 4) \\
+              &= x^2 - 4x - 4x + 16 \\
+              &= x^2 - 8x + 16
+\end{aligned}
+$$
+
+- **x² + 16** or **x² − 16**: $(x - 4)^2 \neq x^2 \pm 16$. Squaring each term separately leaves out the middle term, $-8x$.
+- **− 1 6** at the end: $(-4) \cdot (-4) = +16$.

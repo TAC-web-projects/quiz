@@ -1,0 +1,22 @@
+---
+type: wordle
+title: Circumference of a circle, using its diameter
+lhs: "C ="
+answer: π d
+---
+
+## Hint
+Circumference is a **length**, not an area, so nothing is squared.
+
+## Hint
+A circle with diameter $d = 10$ has a circumference of about $31.4$.
+
+## Hint
+$\pi$ is defined as the circumference divided by the diameter: $\pi = \frac{C}{d}$.
+
+## Solution
+**Answer:** $C = \pi d$
+
+Multiply both sides of $\pi = \frac{C}{d}$ by $d$ to get $C = \pi d$.
+
+You may also know $C = 2\pi r$. It gives the same value, because $d = 2r$: $\pi d = \pi (2r) = 2\pi r$. This puzzle asks for the version with $d$.

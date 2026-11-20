@@ -1,0 +1,33 @@
+---
+type: memory
+title: Exponent Rules
+---
+
+Match each **expression** to its **simplified form**: flip one of each. (Assume $x \neq 0$ and $y \neq 0$.)
+
+| Expression | Simplified |
+|:-----------|:-----------|
+| $x^a \cdot x^b$ | $x^{a+b}$ |
+| $\frac{x^a}{x^b}$ | $x^{a-b}$ |
+| $(x^a)^b$ | $x^{ab}$ |
+| $(xy)^a$ | $x^a y^a$ |
+| $x^0$ | $1$ |
+| $x^{-a}$ | $\frac{1}{x^a}$ |
+
+## Hint
+Write a small example out as factors and count them: $x^2 \cdot x^3 = (x \cdot x)(x \cdot x \cdot x)$.
+
+## Hint
+For $x^0$, simplify $\frac{x^3}{x^3}$ two ways: by cancelling, and with the dividing rule.
+
+## Hint
+For $x^{-a}$, continue the pattern $x^2 = x \cdot x$, $x^1 = x$, $x^0 = 1$: each time the exponent goes down by $1$, the value is divided by $x$.
+
+## Solution
+Each rule comes from counting factors of $x$:
+
+- $x^a \cdot x^b$: $a$ factors of $x$ followed by $b$ more is $a + b$ factors in total.
+- $\frac{x^a}{x^b}$: the $b$ factors in the denominator cancel $b$ of the $a$ factors in the numerator.
+- $(x^a)^b = \underbrace{x^a \cdot x^a \cdots x^a}_{b \text{ factors}} = x^{ab}$.
+- $(xy)^a$: each of the $a$ factors $xy$ contributes one $x$ and one $y$.
+- $x^0 = \frac{x^3}{x^3} = 1$, and $x^{-a} = \frac{x^0}{x^a} = \frac{1}{x^a}$.

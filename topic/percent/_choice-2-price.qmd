@@ -1,0 +1,26 @@
+---
+type: choice
+title: 'A $\$50$ price goes up $10\%$'
+---
+
+A shirt costs $\$50$. The price goes up by $10\%$. Which calculation gives the **new price**?
+
+- [x] $50 \cdot 1.1 = 55$
+- [ ] $50 \cdot 0.1 = 5$
+- [ ] $50 + 10 = 60$
+- [ ] $50 + 0.1 = 50.10$
+
+## Hint
+$10\%$ of a number depends on the number: $10\%$ of $\$50$ is not $\$10$.
+
+## Hint
+First find $10\%$ of $\$50$. Then add it to the old price.
+
+## Solution
+**Answer:** $50 \cdot 1.1 = 55$
+
+$10\%$ of $\$50$ is $0.1 \cdot 50 = 5$, so the new price is $50 + 5 = 55$. In one step: $50 \cdot 1.1 = 55$.
+
+- **$50 \cdot 0.1 = 5$**: that is the increase, not the new price.
+- **$50 + 10 = 60$**: added $\$10$, but $10\%$ means $\frac{10}{100}$ of the price, not $10$ dollars.
+- **$50 + 0.1$**: added $0.1$ dollars. The $0.1$ has to multiply the price: $0.1 \cdot 50$.

@@ -1,0 +1,29 @@
+---
+# MULTIPLE CHOICE. Copy this file into a topic folder, e.g. topic/trig/_choice-1-soh.qmd
+# (the name must start with "_" and end in ".qmd"; files are shown in filename order).
+type: choice
+# Shown in the slide title and in the results list. LaTeX OK in single quotes.
+title: What the A stands for
+# Optional: keep the options in the order written (default: shuffled each time).
+# shuffle: false
+---
+
+The question text goes first. Math works: in **SOH CAH TOA**, what does the **A** stand for?
+
+<!--
+  The options are a list. Mark exactly ONE option right with [x], the rest [ ].
+  Options may contain math, e.g. - [ ] $x > -3$
+-->
+
+- [ ] Anti
+- [x] Adjacent
+- [ ] Apposite
+- [ ] Area
+
+## Hint
+First hint (must not give the answer away).
+
+## Solution
+**Answer:** Adjacent
+
+Explain why, and why each wrong option is tempting.

@@ -1,0 +1,34 @@
+---
+type: choice
+title: 'Solve $-2x < 6$'
+---
+
+Solve for $x$: $\quad -2x < 6$
+
+- [x] $x > -3$
+- [ ] $x < -3$
+- [ ] $x > 3$
+- [ ] $x < 3$
+
+## Hint
+To get $x$ alone, divide both sides by $-2$. What happens to the inequality sign when you divide by a negative number?
+
+## Hint
+Check your answer with a number. For example, $x = 0$: is $-2 \cdot 0 < 6$ true? Does your answer include $x = 0$?
+
+## Solution
+**Answer:** $x > -3$
+
+Divide both sides by $-2$. Dividing by a negative number reverses the sign:
+$$
+\begin{aligned}
+    -2x &< 6 \\
+    \frac{-2x}{-2} &> \frac{6}{-2} \\
+    x &> -3
+\end{aligned}
+$$
+
+Check with $x = 0$: $-2 \cdot 0 = 0 < 6$ is true, and $0 > -3$, so $x = 0$ is included, as it should be.
+
+- **$x < -3$**: divided correctly but forgot to reverse the sign. Check with $x = -4$: $-2 \cdot (-4) = 8$, and $8 < 6$ is false.
+- **$x > 3$** or **$x < 3$**: divided by $2$ instead of $-2$, so the minus sign was lost.

@@ -1,0 +1,9 @@
+title: Quiz
+author: TAC
+version: 1.0.0
+quarto-required: ">=1.4"
+contributes:
+  filters:
+    # Note: _quarto.yml references quiz.lua by path (with `at: pre-ast`)
+    # instead of by the name `quiz`; see the comment there.
+    - quiz.lua

@@ -1,0 +1,28 @@
+---
+# PARENTHESES PUZZLE. Copy this file into a topic folder, e.g. topic/pemdas/_parens-3-name.qmd
+# The student taps the gaps between symbols to place "(" and ")", then presses Check.
+type: parens
+# Shown in the slide title and in the results list. LaTeX OK in single quotes.
+title: 'Make it equal $x^2$'
+# The expression, one symbol per token, separated by spaces. The gaps between tokens
+# are where parentheses can go, so write a negative number as two tokens: − 1.
+# Allowed: numbers, x, + − · × ÷ ^ ² (use the true minus −).
+expression: − 1 · x · − 1 + x + 2 − 2 − 1
+# What it must equal. Checked by arithmetic, so every correct placement counts.
+target: x²
+# Optional: only check at this value of x (default: must be equal for every x).
+# x: 2
+# Optional: how many pairs of parentheses to place (default 1).
+# pairs: 1
+---
+
+Tap a gap to place **(**, then a gap to its right to place **)**.
+Put one pair of parentheses in $-1 \cdot x \cdot -1 + x + 2 - 2 - 1$ so that it equals $x^2$.
+
+## Hint
+First hint (must not give the answer away).
+
+## Solution
+**Answer:** $-1 \cdot x \cdot -(1 + x + 2 - 2 - 1)$
+
+Explain why.

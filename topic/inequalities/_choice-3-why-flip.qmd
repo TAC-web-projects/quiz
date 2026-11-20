@@ -1,0 +1,27 @@
+---
+type: choice
+title: 'Multiplying an inequality by $-1$'
+---
+
+Start with the true statement $2 < 3$. Multiply **both sides** by $-1$. Which statement is true?
+
+- [x] $-2 > -3$
+- [ ] $-2 < -3$
+- [ ] $2 > 3$
+- [ ] $-2 = -3$
+
+## Hint
+Multiply each side by $-1$ first: what are $-1 \cdot 2$ and $-1 \cdot 3$?
+
+## Hint
+Now compare $-2$ and $-3$ on a number line. Which one is further left?
+
+## Solution
+**Answer:** $-2 > -3$
+
+Multiplying by $-1$ gives $-1 \cdot 2 = -2$ and $-1 \cdot 3 = -3$. On a number line, $-3$ is to the left of $-2$, so $-2 > -3$.
+
+The sign **flipped** from $<$ to $>$. That's the rule: when you multiply or divide **both sides** of an inequality by a **negative** number, reverse the inequality sign.
+
+- **$-2 < -3$**: this keeps the sign the same, which is only right when multiplying by a positive number.
+- **$2 > 3$**: this flips the sign but forgets to multiply the numbers by $-1$.

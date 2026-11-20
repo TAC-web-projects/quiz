@@ -1,0 +1,32 @@
+---
+type: wordle
+title: 'Cosine of an angle, $\cos\theta$'
+lhs: "cos θ ="
+answer: adj ÷ hyp
+keys: opp adj hyp ÷ ×
+---
+
+In a right triangle, write $\cos\theta$ using the sides **opp** (opposite $\theta$), **adj** (adjacent to $\theta$) and **hyp** (hypotenuse).
+
+## Hint
+Use the memory trick **SOH CAH TOA**. Each group of three letters is one function.
+
+## Hint
+In each group, the first letter is the function and the next two are the sides: the first side is divided by the second.
+
+## Solution
+**Answer:** $\cos\theta = \frac{\textcolor{#A60000}{\text{adjacent}}}{\textcolor{#0000A6}{\text{hypotenuse}}}$ (**CAH**)
+
+```{.tikz}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (B) at (0,0); \coordinate (A) at (4,0); \coordinate (C) at (4,2.6);
+  \draw[seg, red!65!black, line width=1.6pt] (B) -- (A);
+  \draw[seg] (A) -- (C);
+  \draw[seg, blue!65!black, line width=1.6pt] (C) -- (B);
+  \draw (3.7,0) -- (3.7,0.3) -- (4,0.3);
+  \pic[draw, "$\theta$", angle eccentricity=1.6, angle radius=0.7cm] {angle = A--B--C};
+  \node[below, red!65!black, font=\small] at (2,0) {adjacent};
+  \node[right, font=\small] at (4,1.3) {opposite};
+  \node[above left, blue!65!black, font=\small] at (2,1.3) {hypotenuse};
+\end{tikzpicture}
+```

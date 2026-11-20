@@ -1,0 +1,16 @@
+---
+type: parens
+title: 'Make $2 \cdot x + 3$ equal $2x + 6$'
+expression: 2 · x + 3
+target: 2 · x + 6
+---
+
+Tap a gap to place **(**, then a gap to its right to place **)**. Put one pair of parentheses in so that it equals $2x + 6$ for every $x$.
+
+## Hint
+$6 = 2 \cdot 3$. The $2$ has to multiply the $3$ as well as the $x$.
+
+## Solution
+**Answer:** $2 \cdot (x + 3)$
+
+The $2$ multiplies everything in the parentheses: $2 \cdot (x + 3) = 2x + 2 \cdot 3 = 2x + 6$.

@@ -1,0 +1,15 @@
+---
+type: notes
+---
+
+::: {.callout-note collapse="true"}
+## Steps for adding or subtracting fractions
+
+The **numerator** is the top of a fraction and the **denominator** is the bottom. No denominator can be $0$.
+
+1. **Same denominators?** Add or subtract the numerators and keep the denominator: $\frac{a}{x} + \frac{b}{x} = \frac{a + b}{x}$.
+2. **Different denominators?** Rewrite both fractions over a common denominator.
+   - **Cross multiply**: $\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$. The product $bd$ is always a common denominator.
+   - **Least common denominator (LCD)**: if one denominator is a factor of the other, the other one is the LCD. Example: $x$ is a factor of $x^2$, so the LCD of $\frac{2}{x}$ and $\frac{3}{x^2}$ is $x^2$.
+3. **Never** add the denominators: $\frac{1}{x} + \frac{1}{y} \neq \frac{2}{x + y}$.
+:::

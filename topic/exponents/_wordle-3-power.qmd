@@ -1,0 +1,22 @@
+---
+type: wordle
+title: A power raised to a power
+lhs: "(xᵃ)ᵇ = x"
+answer: ᵃ ᵇ
+keys: ᵃ ᵇ ⁺ ⁻ ¹ ²
+---
+
+Fill in the exponent. (Two letters side by side, like $ab$, means $a \cdot b$.)
+
+## Hint
+Try specific exponents: $(x^2)^3 = x^2 \cdot x^2 \cdot x^2$.
+
+## Hint
+$(x^a)^b$ is $b$ factors of $x^a$. By the product rule their exponents add: $a + a + \cdots + a$, with $b$ terms. What is that sum?
+
+## Solution
+**Answer:** $(x^a)^b = x^{ab}$
+
+$(x^2)^3 = x^2 \cdot x^2 \cdot x^2 = x^{2+2+2} = x^6$, and $2 \cdot 3 = 6$.
+
+- **ᵃ ⁺ ᵇ**: $x^{a+b}$ is $x^a \cdot x^b$. Here $x^a$ is raised to the power $b$, not multiplied by $x^b$.

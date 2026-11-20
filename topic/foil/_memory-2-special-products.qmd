@@ -1,0 +1,30 @@
+---
+type: memory
+title: Special Products
+---
+
+Match each **product** to its **expanded form**.
+
+| Product | Expanded |
+|:--------|:---------|
+| $(a + b)(c + d)$ | $ac + ad + bc + bd$ |
+| $(a + b)^2$ | $a^2 + 2ab + b^2$ |
+| $(a - b)^2$ | $a^2 - 2ab + b^2$ |
+| $(a + b)(a - b)$ | $a^2 - b^2$ |
+
+## Hint
+A square is a product of a bracket with itself: $(a + b)^2 = (a + b)(a + b)$. Expand it with FOIL.
+
+## Hint
+Only two of the expanded forms contain a $2ab$ term: one with $+2ab$ and one with $-2ab$. In $(a + b)(a - b)$, compare the Outer product $a \cdot (-b)$ with the Inner product $b \cdot a$.
+
+## Solution
+$$
+\begin{aligned}
+    (a + b)^2 &= a^2 + ab + ab + b^2 = a^2 + 2ab + b^2 \\
+    (a - b)^2 &= a^2 - ab - ab + b^2 = a^2 - 2ab + b^2 \\
+    (a + b)(a - b) &= a^2 - ab + ab - b^2 = a^2 - b^2
+\end{aligned}
+$$
+
+A common mistake is $(a + b)^2 = a^2 + b^2$. It leaves out the middle term $ab + ab = 2ab$.

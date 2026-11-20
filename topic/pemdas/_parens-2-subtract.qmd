@@ -1,0 +1,16 @@
+---
+type: parens
+title: 'Make $10 - 4 - 2$ equal $8$'
+expression: 10 − 4 − 2
+target: "8"
+---
+
+Tap a gap to place **(**, then a gap to its right to place **)**. Put one pair of parentheses in so that it equals $8$.
+
+## Hint
+Without parentheses, subtraction goes left to right: $10 - 4 - 2 = 6 - 2 = 4$. What if the second subtraction were done first?
+
+## Solution
+**Answer:** $10 - (4 - 2)$
+
+Parentheses are done first: $10 - (4 - 2) = 10 - 2 = 8$.

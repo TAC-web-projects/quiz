@@ -1,0 +1,28 @@
+---
+type: choice
+title: 'Area of a right triangle'
+---
+
+A right triangle has legs of length $6$ and $8$ and a hypotenuse of length $10$. What is its area?
+
+- [x] $24$
+- [ ] $48$
+- [ ] $30$
+- [ ] $40$
+
+## Hint
+In a right triangle, the two legs meet at a right angle. Can one leg be the base and the other the height?
+
+## Solution
+**Answer:** $24$
+
+The legs are perpendicular, so one is the base and the other is the height:
+$$
+\begin{aligned}
+    A &= \frac{1}{2} \cdot 6 \cdot 8 \\
+      &= \frac{1}{2} \cdot 48 = 24
+\end{aligned}
+$$
+
+- **$48$**: forgot the $\frac{1}{2}$.
+- **$30$** or **$40$**: used the hypotenuse as the height, $\frac{1}{2} \cdot 6 \cdot 10$ or $\frac{1}{2} \cdot 8 \cdot 10$. The hypotenuse is not at a right angle to either leg.

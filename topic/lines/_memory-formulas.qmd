@@ -1,0 +1,26 @@
+---
+type: memory
+title: Line Formulas
+---
+
+| Name | Formula |
+|:-----|:--------|
+| Slope from two points | $m = \frac{y_1 - y_2}{x_1 - x_2}$ |
+| Slope from a graph | $m = \frac{\text{rise}}{\text{run}}$ |
+| Point-slope form | $y - y_1 = m(x - x_1)$ |
+| Slope-intercept form | $y = mx + b$ |
+| Slope of a horizontal line | $m = 0$ |
+
+## Hint
+Slope $m$ measures steepness: how much $y$ changes when $x$ increases by $1$.
+
+## Hint
+Slope is the change in $y$ divided by the change in $x$. Two cards say this: one with coordinates, one with words.
+
+## Hint
+Point-slope form uses a known point $(x_1, y_1)$. Slope-intercept form uses the $y$-intercept $b$.
+
+## Solution
+On a horizontal line, $y$ never changes, so the rise is $0$ and $m = \frac{0}{\text{run}} = 0$.
+
+(On a vertical line, $x$ never changes, so the run is $0$. Division by $0$ is undefined, so the slope of a vertical line is **undefined**. Avoid saying "no slope": some books use that phrase to mean a slope of $0$.)

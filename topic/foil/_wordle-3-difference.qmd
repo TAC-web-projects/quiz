@@ -1,0 +1,30 @@
+---
+type: wordle
+title: 'Expand $(x + 6)(x - 6)$'
+lhs: "="
+answer: x ² − 3 6
+keys: x ² 1 2 3 6 + −
+---
+
+## Hint
+Use FOIL, and pay close attention to the Outer and Inner products.
+
+## Hint
+Outer: $x \cdot (-6) = -6x$. Inner: $6 \cdot x = 6x$. What is their sum?
+
+## Hint
+First: $x \cdot x$. Last: $6 \cdot (-6)$.
+
+## Solution
+**Answer:** $(x + 6)(x - 6) = x^2 - 36$
+
+$$
+\begin{aligned}
+    (x + 6)(x - 6) &= x^2 - 6x + 6x - 36 \\
+                   &= x^2 - 36
+\end{aligned}
+$$
+
+This is the **difference of squares** pattern: $(a + b)(a - b) = a^2 - b^2$.
+
+- **+ 3 6**: the Last product is $6 \cdot (-6) = -36$.

@@ -1,0 +1,16 @@
+---
+type: parens
+title: 'Make $2 + 3 \cdot 4$ equal $20$'
+expression: 2 + 3 · 4
+target: "20"
+---
+
+Tap a gap to place **(**, then a gap to its right to place **)**. Put one pair of parentheses in so that it equals $20$.
+
+## Hint
+Without parentheses, multiplication comes first: $2 + 3 \cdot 4 = 2 + 12 = 14$. Which part should be done first instead?
+
+## Solution
+**Answer:** $(2 + 3) \cdot 4$
+
+Parentheses are done first: $(2 + 3) \cdot 4 = 5 \cdot 4 = 20$.

@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  # Only index.qmd is a page. Question files (topic/**/_*.qmd), archive/,
+  # _README/ and the .md notes are pulled in or ignored, never rendered alone.
+  render:
+    - index.qmd
 
 
 website:
@@ -17,15 +21,23 @@ format:
       - brand
     css: styles.css
     toc: true
-    html-math-method: mathjax
+    # MathJax with SVG output: formulas are drawn as vector shapes, so they look
+    # right even where MathJax's web fonts can't load (some phones, networks and
+    # embedded previews), which otherwise squeezes letters and clips descenders.
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"
     format:
     include-in-header: login-header.html
     include-before-body: login.html
 
-# Runs pandoc-ext/diagram on every page in the project.
-# Install once from the project root:
-#   quarto add pandoc-ext/diagram
+# The quiz filter (our _extensions/quiz) runs first, before Quarto reads the
+# page (`at: pre-ast`), so the callouts/tabsets it writes are handled exactly
+# like hand-written ones. It is listed by path because `at:` needs a path.
+# `diagram` (pandoc-ext/diagram) then turns the TikZ blocks into SVGs.
 filters:
+  - path: _extensions/quiz/quiz.lua
+    at: pre-ast
   - diagram
 
 diagram:
@@ -39,18 +51,22 @@ diagram:
       # pdflatex also works; lualatex handles fonts better.
       execpath: lualatex
 
-      header-includes: 
-        \usetikzlibrary{angles,quotes,calc,patterns, decorations.pathreplacing, arrows.meta,positioning,intersections}
-        \tikzset{
+      # THIS is the preamble that actually reaches every diagram. Add packages,
+      # libraries and styles here, ONE LaTeX command per list item (two commands
+      # in one item get a stray "\\" between them and the diagram fails).
+      header-includes:
+        - \usepackage{amsmath,amssymb}
+        - \usetikzlibrary{angles,quotes,calc,patterns, decorations.pathreplacing, arrows.meta,positioning,intersections}
+        - \tikzset{
           circ/.style     = {line width=0.9pt},
           seg/.style      = {line width=0.9pt},
           center dot/.style = {circle, fill, inner sep=1.3pt},
           dim brace/.style  = {decorate, decoration={brace, amplitude=7pt, raise=4pt}, line width=0.7pt},
           callout/.style    = {-{Stealth[length=2mm]}, line width=0.6pt},
-        }
-      # Raw TeX added to the preamble of every diagram.
-      # (additional-packages is passed through unescaped;
-      #  header-includes would escape the backslashes.)
+          }
+      # NOT APPLIED: the diagram filter turns this `|` block into plain text,
+      # which drops the LaTeX, so none of these packages are loaded (checked
+      # Nov 2026: it arrives empty). Kept for reference; use header-includes.
       additional-packages: |
         \usepackage[margin=1in]{geometry}
         \usepackage[T1]{fontenc}

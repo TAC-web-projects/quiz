@@ -1,0 +1,26 @@
+---
+type: choice
+title: 'A negative of a negative, $-(-2)$'
+---
+
+Which statement is **true**?
+
+- [x] $-(-2) < 10$
+- [ ] $-(-2) > 10$
+- [ ] $-(-2) = -2$
+- [ ] $-(-2) < -10$
+
+## Hint
+Work out $-(-2)$ first, then compare the result with $10$ or $-10$.
+
+## Hint
+$-a$ means "the opposite of $a$". What is the opposite of $-2$?
+
+## Solution
+**Answer:** $-(-2) < 10$
+
+The opposite of $-2$ is $2$, so $-(-2) = 2$. Then $2 < 10$ is true.
+
+- **$-(-2) = -2$**: this ignores one of the two minus signs. Two minus signs cancel: $-(-2) = 2$.
+- **$-(-2) < -10$**: this would mean $2 < -10$, but every positive number is greater than every negative number.
+- **$-(-2) > 10$**: this would mean $2 > 10$, which is false.
